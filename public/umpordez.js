@@ -92,17 +92,19 @@ let lastHeaderHeight;
 
 function renderStarsHeader() {
     const canvas = domqs('canvas');
-    const context = canvas.getContext('2d');
+    const newWidth = canvas.clientWidth;
+    const newHeight = Math.max(window.innerHeight / 2, 500);
 
-    canvas.width = canvas.clientWidth;
-    canvas.height = Math.max(window.innerHeight / 2, 500);
-
-    if (lastHeaderWidth === canvas.width && lastHeaderHeight === canvas.height) {
+    if (lastHeaderWidth === newWidth && lastHeaderHeight === newHeight) {
         return;
     }
 
-    lastHeaderWidth = canvas.width;
-    lastHeaderHeight = canvas.height;
+    const context = canvas.getContext('2d');
+    canvas.width = newWidth;
+    canvas.height = newHeight;
+
+    lastHeaderWidth = newWidth;
+    lastHeaderHeight = newHeight;
 
     domqs('body > header').style.height = `${canvas.height}px`;
     context.rect(0, 0, canvas.width, canvas.height);
