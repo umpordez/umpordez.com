@@ -3,6 +3,7 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 const logger = require('./logger');
 const _ = require('lodash');
+const validate = require('deep-email-validator').default;
 
 const cachedEmails = {};
 
@@ -21,6 +22,20 @@ async function sendEmail(to, subject, tplName, data = {}) {
     data.baseUrl = process.env.BASE_URL;
 
     try {
+        const isValidResponse = await validate({
+            email: to,
+            sender: 'ligeiro@umpordez.com',
+            validateRegex: true,
+            validateMx: false,
+            validateTypo: true,
+            validateDisposable: true,
+            validateSMTP: true
+        });
+
+        if (!isValidResponse || !isValidResponse.valid) {
+            throw new Error(`Invalid e-mail address: ${to}`);
+        }
+
         const template = cachedEmails[tplName] || _.template(
             (await fs.promises.readFile(
                 path.resolve(__dirname, 'emails', `${tplName}.html`))
@@ -33,7 +48,7 @@ async function sendEmail(to, subject, tplName, data = {}) {
             to,
             subject,
             html,
-            replyTo: 'ligeiro@umpordez.com',
+            replyTo: 'deividyz@gmail.com',
             from: `ligeiro <ligeiro@umpordez.com>`
         });
 

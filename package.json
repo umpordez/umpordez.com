@@ -21,7 +21,8 @@
         "pg": "",
         "knex": "",
         "dotenv": "",
-        "lodash": ""
+        "lodash": "",
+        "deep-email-validator": ""
     },
     "devDependencies": {
         "babel": "",

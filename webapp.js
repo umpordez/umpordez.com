@@ -56,10 +56,23 @@ app.get = function(route) {
     return _get.apply(this, arguments);
 };
 
+const signupsByIp = {};
+
 app.get('/join/:email', async(req, res) => {
     const { headers, ip } = req;
     const userAgent = headers['user-agent'];
     const { email } = req.params;
+
+    if (!signupsByIp[ip]) { signupsByIp[ip] = 0; }
+
+    signupsByIp[ip]++;
+    if (signupsByIp[ip] > 20) {
+        res.status(500).end('ei, ou você está com dificuldades em receber o ' +
+            'nosso e-mail de cadastro, ou está na maldade. >)\n' +
+            'de qualquer forma, mande um e-mail manual para deividyz@gmail.com'
+        );
+        return;
+    }
 
     try {
         const { id } = (await knex('subscriptions').insert({
@@ -68,6 +81,8 @@ app.get('/join/:email', async(req, res) => {
             user_agent: userAgent,
             headers
         }).returning('*'))[0];
+
+        logger.info(`{subscription} subscribed ${email}`);
 
         res.json({ url: `/${id}/subscribed` });
         sendEmail(email, 'Abra esse e-mail', 'signup', { id });
