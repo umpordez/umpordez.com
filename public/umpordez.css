@@ -219,6 +219,7 @@ body.styled > footer main > a {
     display: block;
     width: max-content;
     margin: auto;
+    padding-bottom: .5rem;
 }
 body.styled > footer main > a:hover,
 body.styled > footer main > a:active { color: tomato; }

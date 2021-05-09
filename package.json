@@ -1,0 +1,32 @@
+{
+    "name": "umpordez.com",
+    "version": "0.0.1",
+    "description": "umpordez landing page and email send :)",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/umpordez/umpordez.com.git"
+    },
+    "author": "",
+    "license": "isc",
+    "bugs": {
+        "url": "https://github.com/umpordez/umpordez.com/issues"
+    },
+    "homepage": "https://github.com/umpordez/umpordez.com#readme",
+    "dependencies": {
+        "@sentry/node": "",
+        "body-parser": "",
+        "express": "",
+        "nodemailer": "",
+        "pg": "",
+        "knex": "",
+        "dotenv": ""
+    },
+    "devDependencies": {
+        "babel": "",
+        "babel-eslint": "",
+        "eslint": "",
+        "eslint-plugin-babel": "",
+        "mocha": ""
+    }
+}

@@ -93,6 +93,7 @@ function renderStarsHeader() {
 
     canvas.width = canvas.clientWidth;
     canvas.height = Math.max(window.innerHeight / 2, 500);
+    domqs('body > header').style.height = `${canvas.height}px`;
 
     context.rect(0, 0, canvas.width, canvas.height);
 
@@ -130,6 +131,56 @@ function renderStarsHeader() {
     }
 };
 
+function tryBindFooterLink() {
+    if (!domqs('body > footer main > a')) { return; }
+
+    domqs('body > footer main > a').addEventListener('click', (ev) => {
+        ev.preventDefault();
+        const bodyElement = domqs('body');
+        bodyElement.classList.toggle('styled');
+
+        const isStyled = isBodyStyled();
+        ev.currentTarget.innerHTML = isStyled ? 'lost hope' :
+            'a new hope';
+
+        isStyled && renderStarsHeader();
+    });
+}
+
+const acceptedEmailRegex = /^\S+@\S+\.\w{2}|\w{3}$/;
+function looksLikeAValidEmail(email) {
+    return acceptedEmailRegex.test(email);
+}
+
+function tryBindForm() {
+    if (!domqs('form')) { return; }
+    domqs('form').addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const email = domqs('input').value.replace(/\s/g, '').slice(0, 200);
+
+        if (!looksLikeAValidEmail(email)) {
+            alert('uh oh! parece que você não digitou um e-mail legal...');
+            domqs('input').focus();
+            return;
+        }
+
+        domqs('button').innerHTML = 'sending...';
+
+        fetch(`/join/${email}`, {
+            method: 'GET',
+            headers: {
+                here: 'without-you',
+                baby: 'loveyou'
+            }
+        }).then((res) => res.json()).then(({ url }) => {
+            window.location.href = url;
+        }).catch((ex) => {
+            alert(ex.message);
+            domqs('button').innerHTML = 'join speedy';
+        });
+    });
+}
+
 window.onload = function() {
     if (isBodyStyled()) {
         renderStarsHeader();
@@ -138,20 +189,7 @@ window.onload = function() {
         inputElement && inputElement.focus();
     }
 
-    const linkStyleToggleElement = domqs('body > footer main > a');
-    if (linkStyleToggleElement) {
-        linkStyleToggleElement.addEventListener('click', (ev) => {
-            ev.preventDefault();
-            const bodyElement = domqs('body');
-            bodyElement.classList.toggle('styled');
-
-            const isStyled = isBodyStyled();
-            ev.currentTarget.innerHTML = isStyled ? 'lost hope' :
-                'a new hope';
-
-            isStyled && renderStarsHeader();
-        });
-    }
+    tryBindFooterLink();
+    tryBindForm();
 }
-
 window.onresize = debounce(renderStarsHeader, 250);
