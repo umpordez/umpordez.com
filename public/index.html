@@ -17,7 +17,7 @@
         rel="stylesheet">
 
     <link rel='icon' type='image/png' href='/favicon.png'>
-    <link href='umpordez.css' rel='stylesheet' />
+    <link href='/umpordez.css' rel='stylesheet' />
 
     <body class='styled'>
         <div class='no-style-header'>
@@ -327,6 +327,28 @@
                 <a href='#'>lost hope</a>
             </main>
         </footer>
-        <script type='text/javascript' src='umpordez.js'></script>
+        <script type='text/javascript' src='/umpordez.js'></script>
+
+        <!--
+            sorry about that, but I need to track you so I know if
+            my landing page is cool and you guys are liking, I also
+            wants to make some remarketing, but I promise that I will not
+            be that bad.
+        -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDL5T1XPDR"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-EDL5T1XPDR');
+            gtag('event', 'page_view', {
+                page_location: window.location.href,
+                page_path: window.location.pathname,
+                page_title: '{landingpage} umpordez'
+            });
+
+        </script>
     </body>
 </html>
