@@ -20,11 +20,6 @@ const htmls = {
     done: fs.readFileSync(path.resolve(__dirname, 'public/done.html'))
 };
 
-const css = fs.readFileSync(path.resolve(__dirname, 'public/umpordez.css'));
-const javascript = fs.readFileSync(
-    path.resolve(__dirname, 'public/umpordez.js')
-);
-
 process.on('uncaughtException', fatalHandler);
 process.on('unhandledRejection', fatalHandler);
 
@@ -133,8 +128,13 @@ app.all('/confirm/:id.:format?', async(req, res) => {
 });
 
 
-app.get('/umpordez.css', (req, res) => { res.end(css); });
-app.get('/umpordez.js', (req, res) => { res.end(javascript); });
+app.get('/umpordez.css', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public/umpordez.css'));
+});
+app.get('/umpordez.js', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public/umpordez.js'));
+});
+
 app.get('/fonts/Starjhol.woff2', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public/fonts/Starjhol.woff2'));
 });
