@@ -172,10 +172,16 @@ function tryBindForm() {
                 here: 'without-you',
                 baby: 'loveyou'
             }
-        }).then((res) => res.json()).then(({ url }) => {
+        }).then((res) => {
+            if (res.status === 200) {
+                return res.json();
+            }
+
+            return res.text().then((res) => { throw new Error(res); });
+        }).then(({ url }) => {
             window.location.href = url;
         }).catch((ex) => {
-            alert(ex.message);
+            alert(ex.message || 'uh oh. :(');
             domqs('button').innerHTML = 'join speedy';
         });
     });

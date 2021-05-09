@@ -20,7 +20,8 @@
         "nodemailer": "",
         "pg": "",
         "knex": "",
-        "dotenv": ""
+        "dotenv": "",
+        "lodash": ""
     },
     "devDependencies": {
         "babel": "",

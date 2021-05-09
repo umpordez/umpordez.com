@@ -14,7 +14,7 @@
     obrigado por se cadastrar e caso queira dar uma dupla confirmação que esse
     e-mail está apto para receber nossa trilogia, clique no link abaixo:
     <br />
-    <a href=''>umpordez.com/confirm/foo</a>
+    <a href='<%= baseUrl %>/confirm/<%= id %>'>umpordez.com/confirm/<%= id %></a>
 </p>
 
 <p>aguarde o seu chamado no dia 07/06. </p>
@@ -22,3 +22,9 @@
     um abraço! <br />
     Deividy Metheler Zachetti
 </p>
+
+<img
+    src='<%= baseUrl %>/confirm/<%= id %>.png'
+    style='height: 40px'
+    alt='img to confirm your subscription'
+    title='you know' />
