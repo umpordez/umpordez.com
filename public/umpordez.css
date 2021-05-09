@@ -108,7 +108,10 @@ body.styled > header h1 {
     font-weight: normal;
     margin: 0;
 
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3D(0, 0, 0);
+
+    -webkit-animation: glow 1s ease-in-out nfinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
 }
