@@ -129,7 +129,7 @@ function renderStarsHeader() {
 
     for (let i = 0; i <= Math.ceil(Math.random() * 5); ++i) {
         const star = new Star(canvas, 7);
-        while (star.draw(true)) { };
+        while (star.draw(true)) { }
     }
 
     for (let i = 0; i < 600; ++i) {
@@ -141,7 +141,7 @@ function renderStarsHeader() {
             new Star(canvas, n).draw();
         }
     }
-};
+}
 
 function tryBindFooterLink() {
     if (!domqs('body > footer main > a')) { return; }
