@@ -24,7 +24,7 @@
 }
 
 @-webkit-keyframes glow-dark {
-    to {
+    0% {
         text-shadow: 0 0 10px #a6179f,
                      0 0 15px #a6179f,
                      0 0 20px #111,
@@ -33,7 +33,7 @@
                      0 0 35px #111,
                      0 0 40px #111;
     }
-    from {
+    100% {
         text-shadow: 0 0 15px #a6179f,
                      0 0 20px #000,
                      0 0 25px #000,
@@ -70,6 +70,10 @@ body.styled > header {
     position: relative;
     background: #000;
     font-size: 20px;
+
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3D(0, 0, 0);
+
 }
 body.styled > .no-style-header { display: none; }
 
@@ -108,10 +112,7 @@ body.styled > header h1 {
     font-weight: normal;
     margin: 0;
 
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translate3D(0, 0, 0);
-
-    -webkit-animation: glow 1s ease-in-out nfinite alternate;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
 }
@@ -123,12 +124,9 @@ body.styled > header h2 {
     color: #aa18a2;
     font-size: 1.5em;
 
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translate3D(0, 0, 0);
-
-    -webkit-animation: glow-dark 1s ease-in-out infinite alternate;
-    -moz-animation: glow-dark 1s ease-in-out infinite alternate;
-    animation: glow-dark 1s ease-in-out infinite alternate;
+    -webkit-animation: glow-dark 1s ease-in-out infinite;
+    -moz-animation: glow-dark 1s ease-in-out infinite;
+    animation: glow-dark 1s ease-in-out infinite;
 }
 
 body.styled > header p {

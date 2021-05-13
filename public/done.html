@@ -25,7 +25,7 @@
             <section>
                 <div class='texts'>
                     <h1>umpordez</h1>
-                    <h2>ligeiro.club</h2>
+                    <h3>ligeiro.club</h3>
                 </div>
 
                 <form>
@@ -43,7 +43,7 @@
             <p style='color: #d4d2d0'>cronograma de suprimentos;</p>
             <header>
                 <small>e-mail #1 - agora</small>
-                <h2>Abra esse e-mail.</h2>
+                <h3>Abra esse e-mail.</h3>
             </header>
             <hr />
             <main>
@@ -61,7 +61,7 @@
 
             <header>
                 <small>e-mail #2 - 07/06</small>
-                <h2>Uma nova esperança.</h2>
+                <h3>Uma nova esperança.</h3>
             </header>
             <hr />
             <main>
@@ -78,7 +78,7 @@
 
             <header>
                 <small>e-mail #3 - 09/06</small>
-                <h2>O impostor contra-ataca.</h2>
+                <h3>O impostor contra-ataca.</h3>
             </header>
             <hr />
             <main>
@@ -95,7 +95,7 @@
 
             <header>
                 <small>e-mail #4 - 11/06</small>
-                <h2>O retorno do programador.</h2>
+                <h3>O retorno do programador.</h3>
             </header>
             <hr />
             <main>
@@ -133,12 +133,15 @@
 
             // you worth only 1 brl, lol.
             gtag('event', 'generate_lead', { currency: 'BRL', value: 1 });
-
             gtag('event', 'page_view', {
                 page_location: window.location.href,
                 page_path: window.location.pathname,
                 page_title: '{done} umpordez'
             });
+
+            gtag('config', 'AW-1039169505', { cookie_flags: 'SameSite=None;Secure' });
+            gtag('event', 'conversion', {'send_to': 'AW-1039169505/1kdQCPmXiZICEOHvwe8D'});
         </script>
+
     </body>
 </html>

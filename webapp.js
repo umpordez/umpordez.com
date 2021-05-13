@@ -24,6 +24,11 @@ process.on('uncaughtException', fatalHandler);
 process.on('unhandledRejection', fatalHandler);
 
 app.set('trust proxy', 1);
+function logResponse(req, res, id, ev) {
+    logger.info(`[${req.ip}] {${req.method}} ${id} - ` +
+        `${ev}: ${req.url} #${res.statusCode}`);
+}
+
 app.use((req, res, next) => {
     const { ip, method, url } = req;
 
@@ -31,10 +36,8 @@ app.use((req, res, next) => {
     const msg = `[${ip}] {${method}} ${id} - Start: ${url}`;
 
     logger.info(msg);
-    res.on('close', () => {
-        logger.info(`[${req.ip}] {${req.method}} ${id} - ` +
-            `Close: ${req.url} #${res.statusCode}`);
-    });
+    res.on('finish', () => { logResponse(req, res, id, 'Finish'); });
+    res.on('close', () => { logResponse(req, res, id, 'Close'); });
 
     next();
 });
@@ -52,7 +55,6 @@ app.get = function(route) {
 };
 
 const signupsByIp = {};
-
 app.get('/join/:email', async(req, res) => {
     const { headers, ip } = req;
     const userAgent = headers['user-agent'];
