@@ -71,21 +71,27 @@ app.get('/join/:email', async(req, res) => {
         return;
     }
 
+    let id;
     try {
-        const { id } = (await knex('subscriptions').insert({
+        const subscription = (await knex('subscriptions').insert({
             email,
             ip,
             user_agent: userAgent,
             headers
         }).returning('*'))[0];
-
+        id = subscription.id;
         logger.info(`{subscription} subscribed ${email}`);
 
         res.json({ url: `/${id}/subscribed` });
-        sendEmail(email, 'Abra esse e-mail', 'signup', { id });
     } catch (ex) {
         logger.error(ex);
         res.status(500).end('foi mal, mas algo deu errado. :/');
+    }
+
+    try {
+        await sendEmail(email, 'Abra esse e-mail', 'signup', { id });
+    } catch (ex) {
+        logger.error(ex);
     }
 });
 
