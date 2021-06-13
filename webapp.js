@@ -55,6 +55,17 @@ app.get = function(route) {
 };
 
 const signupsByIp = {};
+
+// MAY use subscription.id instead of raw email? people can be bad here?
+// :thinking:
+app.get('/leave/:email', async(req, res) => {
+    const { email } = req.params;
+
+    // no return check, no validation, just an update
+    await knex('emails').update({ opt_out: true }).where({ email });
+    res.send('thank you for staying so long. see you around!');
+});
+
 app.get('/join/:email', async(req, res) => {
     const { headers, ip } = req;
     const userAgent = headers['user-agent'];

@@ -25,7 +25,7 @@ async function emailSender() {
             where
                 email = emails.email and
                 template_name = '${templateName}'
-    )`)).limit(1);
+    ) and opt_out = false`)).limit(1);
 
     if (!emailRows.length) {
         logger.info('all good my friend, you can go now.');
@@ -36,7 +36,9 @@ async function emailSender() {
     logger.info(`sending ${templateName} for ${email}`);
 
     try {
-        await sendEmail(email, subject, templateName);
+        const unsubscribeUrl = `https://umpordez.com/leave/${email}`;
+
+        await sendEmail(email, subject, templateName, { unsubscribeUrl });
         await knex('email_sent').insert({
             email,
             subject,
