@@ -93,7 +93,7 @@ let lastHeaderHeight;
 function renderStarsHeader() {
     const canvas = domqs('canvas');
     const newWidth = canvas.clientWidth;
-    const newHeight = Math.max(window.innerHeight / 2, 500);
+    const newHeight = Math.max(window.innerHeight / 2, 700);
 
     if (lastHeaderWidth === newWidth && lastHeaderHeight === newHeight) {
         return;
@@ -199,6 +199,25 @@ function tryBindForm() {
     });
 }
 
+function bindBigDays() {
+    domqs('button').addEventListener('click', () => {
+        window.location.href = 'https://p.bravapay.io/5786d398';
+    });
+
+    domqs('button').style.display = 'none';
+    fetch('/has-watched').then((res) => res.text()).then((has) => {
+        if (has == 1) {
+            domqs('button').style.display = 'block';
+            return;
+        }
+
+        setTimeout(() => {
+            fetch('/watch').catch(console.error);
+            domqs('button').style.display = 'block';
+        }, 60 * 1000); // 60sec
+    }).catch(console.error);
+}
+
 window.onload = function() {
     if (isBodyStyled()) {
         renderStarsHeader();
@@ -208,6 +227,27 @@ window.onload = function() {
     }
 
     tryBindFooterLink();
-    tryBindForm();
+    bindBigDays();
 }
-window.onresize = debounce(renderStarsHeader, 250);
+
+function getWideHeightBasedOnWidth(width, ratio = 1.47) {
+	return Math.round(width / Math.sqrt(Math.pow(ratio, 2) + 1));
+}
+
+function resizeIframe() {
+	const iframeWidth = Math.min(800, window.innerWidth - 60);
+	const iframeHeight = getWideHeightBasedOnWidth(iframeWidth);
+	const iframeElement = domqs('iframe');
+
+	iframeElement.width = `${iframeWidth}px`;
+	iframeElement.height = `${iframeHeight}px`;
+}
+
+resizeIframe();
+
+function onResize() {
+	renderStarsHeader();
+	resizeIframe();
+}
+
+window.onresize = debounce(onResize, 250);

@@ -16,6 +16,10 @@ function fatalHandler(err) {
 }
 
 const htmls = {
+    presentation: fs.readFileSync(
+        path.resolve(__dirname, 'public/presentation.html')
+    ),
+
     index: fs.readFileSync(path.resolve(__dirname, 'public/index.html')),
     done: fs.readFileSync(path.resolve(__dirname, 'public/done.html'))
 };
@@ -54,7 +58,31 @@ app.get = function(route) {
     return _get.apply(this, arguments);
 };
 
+const ipsThatWatchedFilepath = path.resolve(__dirname, 'ips-that-watched.json');
+
+function getIpsThatWatched() {
+    try {
+        const watches = fs.readFileSync(ipsThatWatchedFilepath)
+        return JSON.parse(watches);
+    } catch (ex) {
+        return [];
+    }
+}
+
+function saveIpsThatWatched() {
+    fs.writeFileSync(ipsThatWatchedFilepath, JSON.stringify(ipsThatWatched));
+}
+
+function debounceSaveIpsThatWatched() {
+    this.timer = clearTimeout(this.timer);
+
+    this.timer = setTimeout(() => {
+        saveIpsThatWatched();
+    }, 1000);
+}
+
 const signupsByIp = {};
+const ipsThatWatched = getIpsThatWatched();
 
 // MAY use subscription.id instead of raw email? people can be bad here?
 // :thinking:
@@ -64,6 +92,19 @@ app.get('/leave/:email', async(req, res) => {
     // no return check, no validation, just an update
     await knex('emails').update({ opt_out: true }).where({ email });
     res.send('thank you for staying so long. see you around!');
+});
+
+app.get('/has-watched', (req, res) => {
+    res.send(ipsThatWatched.includes(req.ip) ? '1' : '0');
+});
+
+app.get('/watch', (req, res) => {
+    if (!ipsThatWatched.includes(req.ip)) {
+        ipsThatWatched.push(req.ip);
+        debounceSaveIpsThatWatched();
+    }
+
+    return res.end();
 });
 
 app.get('/join/:email', async(req, res) => {
@@ -168,11 +209,11 @@ app.get('/favicon.png', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public/favicon.png'));
 });
 
-app.get('/index', (req, res) => { res.end(htmls.index); });
-app.get('/index.html', (req, res) => { res.end(htmls.index); });
-app.get('/:id/subscribed', (req, res) => { res.end(htmls.done); });
+app.get('/index', (req, res) => { res.end(htmls.presentation); });
+app.get('/index.html', (req, res) => { res.end(htmls.presentation); });
+app.get('/:id/subscribed', (req, res) => { res.end(htmls.presentation); });
 
-app.get('/', (req, res) => { res.end(htmls.index); });
+app.get('/', (req, res) => { res.end(htmls.presentation); });
 
 app.get = _get;
 app.post = _post;
