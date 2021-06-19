@@ -16,10 +16,6 @@ function fatalHandler(err) {
 }
 
 const htmls = {
-    presentation: fs.readFileSync(
-        path.resolve(__dirname, 'public/presentation.html')
-    ),
-
     index: fs.readFileSync(path.resolve(__dirname, 'public/index.html')),
     done: fs.readFileSync(path.resolve(__dirname, 'public/done.html'))
 };
@@ -209,11 +205,11 @@ app.get('/favicon.png', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public/favicon.png'));
 });
 
-app.get('/index', (req, res) => { res.end(htmls.presentation); });
-app.get('/index.html', (req, res) => { res.end(htmls.presentation); });
-app.get('/:id/subscribed', (req, res) => { res.end(htmls.presentation); });
+app.get('/index', (req, res) => { res.end(htmls.index); });
+app.get('/index.html', (req, res) => { res.end(htmls.index); });
+app.get('/:id/subscribed', (req, res) => { res.end(htmls.index); });
 
-app.get('/', (req, res) => { res.end(htmls.presentation); });
+app.get('/', (req, res) => { res.end(htmls.index); });
 
 app.get = _get;
 app.post = _post;
