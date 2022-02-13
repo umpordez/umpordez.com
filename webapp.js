@@ -137,7 +137,7 @@ app.get('/join/:email', async(req, res) => {
     }
 
     try {
-        await sendEmail(email, 'Abra esse e-mail', 'signup', { id });
+        await sendEmail(email, 'open', 'signup', { id });
     } catch (ex) {
         logger.error(ex);
     }
