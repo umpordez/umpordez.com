@@ -207,7 +207,7 @@ app.get('/favicon.png', (req, res) => {
 
 app.get('/index', (req, res) => { res.end(htmls.index); });
 app.get('/index.html', (req, res) => { res.end(htmls.index); });
-app.get('/:id/subscribed', (req, res) => { res.end(htmls.index); });
+app.get('/:id/subscribed', (req, res) => { res.end(htmls.done); });
 
 app.get('/', (req, res) => { res.end(htmls.index); });
 
