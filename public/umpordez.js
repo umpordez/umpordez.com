@@ -23,126 +23,6 @@ function isBodyStyled() {
     return domqs('body').classList.contains('styled');
 }
 
-class Star {
-    constructor(canvas, starRadius = 3) {
-        this.coordinates = {
-            x: starRadius + (Math.random() * canvas.width),
-            y: starRadius + (Math.random() * canvas.height)
-        };
-
-        this.maxRadius = starRadius * Math.random();
-        this.radius = 0.5;
-
-        this.remainingLife = this.life;
-        this.random = Math.random();
-        this.life = 30 + Math.random() * 10;
-        this.speed = {
-            x: -3 + Math.random() * 6,
-            y: -3 + Math.random() * 6
-        };
-
-        this.context = canvas.getContext('2d');
-    }
-
-    applyStarColor(random = this.random) {
-        const { context } = this;
-
-        if (random <= 0.5) {
-            context.fillStyle = 'rgba(255, 255, 255, 1)';
-            context.shadowColor = 'rgba(255, 255, 255, 0.5)';
-            context.shadowBlur = 3;
-        } else if (random > 0.75) {
-            context.fillStyle = 'rgba(255, 254, 196, 1)';
-            context.shadowColor = 'rgba(255, 254, 196, 0.5)';
-            context.shadowBlur = 4;
-        } else {
-            context.fillStyle = 'rgba(192, 247, 255, 1)';
-            context.shadowColor = 'rgba(192, 247, 255, 0.5)';
-            context.shadowBlur = 7;
-        }
-    }
-
-    draw(isMoving) {
-        const { maxRadius, context, remainingLife } = this;
-        if (remainingLife <= 0 || this.radius >= maxRadius) {
-            return false;
-        }
-
-        context.beginPath();
-
-        const { x, y } = this.coordinates;
-        const radius = !isMoving ? this.maxRadius : this.radius;
-
-        context.arc(x, y, radius, 0, Math.PI * 2);
-
-        this.applyStarColor();
-        context.fill();
-
-        this.remainingLife--;
-        this.radius += 0.25;
-        this.coordinates.x += this.speed.x;
-        this.coordinates.y += this.speed.y;
-
-        return true;
-    }
-}
-
-let lastHeaderWidth;
-let lastHeaderHeight;
-
-function renderStarsHeader() {
-    const canvas = domqs('canvas');
-    const newWidth = canvas.clientWidth;
-    const newHeight = Math.max(window.innerHeight / 2, 700);
-
-    if (lastHeaderWidth === newWidth && lastHeaderHeight === newHeight) {
-        return;
-    }
-
-    const context = canvas.getContext('2d');
-    canvas.width = newWidth;
-    canvas.height = newHeight;
-
-    lastHeaderWidth = newWidth;
-    lastHeaderHeight = newHeight;
-
-    domqs('body > header').style.height = `${canvas.height}px`;
-    context.rect(0, 0, canvas.width, canvas.height);
-
-    const bgRadiusX = randomNumber(100, canvas.width);
-    const bgRadiusY = randomNumber(100, canvas.height);
-
-    const bgGradient = context.createRadialGradient(
-        bgRadiusX,
-        bgRadiusY,
-        randomNumber(10, 100),
-        bgRadiusX,
-        bgRadiusY,
-        randomNumber(500, 1000),
-    );
-
-    bgGradient.addColorStop(0, '#a6179f');
-    bgGradient.addColorStop(1, '#000000');
-
-    context.fillStyle = bgGradient;
-    context.fill();
-
-    for (let i = 0; i <= Math.ceil(Math.random() * 5); ++i) {
-        const star = new Star(canvas, 7);
-        while (star.draw(true)) { }
-    }
-
-    for (let i = 0; i < 600; ++i) {
-        new Star(canvas, 1).draw();
-    }
-
-    for (let i = 0; i < 100; ++i) {
-        for (let n = 0; n <= 3; ++n) {
-            new Star(canvas, n).draw();
-        }
-    }
-}
-
 function tryBindFooterLink() {
     if (!domqs('body > footer main > a')) { return; }
 
@@ -154,8 +34,6 @@ function tryBindFooterLink() {
         const isStyled = isBodyStyled();
         ev.currentTarget.innerHTML = isStyled ? 'lost hope' :
             'a new hope';
-
-        isStyled && renderStarsHeader();
     });
 }
 
@@ -199,55 +77,18 @@ function tryBindForm() {
     });
 }
 
-function bindBigDays() {
-    domqs('button').addEventListener('click', () => {
-        window.location.href = 'https://p.bravapay.io/5786d398';
-    });
-
-    domqs('button').style.display = 'none';
-    fetch('/has-watched').then((res) => res.text()).then((has) => {
-        if (has == 1) {
-            domqs('button').style.display = 'block';
-            return;
-        }
-
-        setTimeout(() => {
-            fetch('/watch').catch(console.error);
-            domqs('button').style.display = 'block';
-        }, 60 * 1000); // 60sec
-    }).catch(console.error);
-}
-
 window.onload = function() {
     if (isBodyStyled()) {
-        renderStarsHeader();
-
         const inputElement = domqs('input');
         inputElement && inputElement.focus();
     }
 
     tryBindFooterLink();
-    bindBigDays();
+    tryBindForm();
 }
-
-function getWideHeightBasedOnWidth(width, ratio = 1.47) {
-	return Math.round(width / Math.sqrt(Math.pow(ratio, 2) + 1));
-}
-
-function resizeIframe() {
-	const iframeWidth = Math.min(800, window.innerWidth - 60);
-	const iframeHeight = getWideHeightBasedOnWidth(iframeWidth);
-	const iframeElement = domqs('iframe');
-
-	iframeElement.width = `${iframeWidth}px`;
-	iframeElement.height = `${iframeHeight}px`;
-}
-
-resizeIframe();
 
 function onResize() {
-	renderStarsHeader();
-	resizeIframe();
+
 }
 
 window.onresize = debounce(onResize, 250);

@@ -111,7 +111,7 @@ app.get('/join/:email', async(req, res) => {
     if (!signupsByIp[ip]) { signupsByIp[ip] = 0; }
 
     signupsByIp[ip]++;
-    if (signupsByIp[ip] > 20) {
+    if (signupsByIp[ip] > 10) {
         res.status(500).end('ei, ou você está com dificuldades em receber o ' +
             'nosso e-mail de cadastro, ou está na maldade. >)\n' +
             'de qualquer forma, mande um e-mail manual para deividyz@gmail.com'
