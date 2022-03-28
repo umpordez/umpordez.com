@@ -230,3 +230,5 @@ body.styled > footer main > a:active { color: tomato; }
     }
 }
 
+
+form { width: 100%; }

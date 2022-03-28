@@ -29,6 +29,128 @@ function logResponse(req, res, id, ev) {
         `${ev}: ${req.url} #${res.statusCode}`);
 }
 
+const kennyRequestsByIp = {};
+
+app.use('/kenny', (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.header('Access-Control-Expose-Headers', 'Content-Type, Authorization');
+
+    if (req.method === 'OPTIONS') { return res.sendStatus(200); }
+
+    if (!kennyRequestsByIp[req.ip]) { kennyRequestsByIp[req.ip] = 0; }
+    kennyRequestsByIp[req.ip]++;
+
+    logger.info('Receiving kenny request :)');
+    logger.info(req.headers);
+    logger.info(req.body);
+
+    const totalReqs = kennyRequestsByIp[req.ip];
+
+    if (totalReqs < 5) {
+        res.header('kenny', 'is-dead');
+        res.end('omg, they killed kenny');
+        return;
+    }
+
+    if (totalReqs < 8) {
+        res.header('kenny', 'is-dead');
+        res.end('YOU BASTARDS');
+        return;
+    }
+
+    if (totalReqs < 8) {
+        res.end('what is an error?');
+        return;
+    }
+
+    if (totalReqs < 9) {
+        res.end('what is the meaning of life?');
+        return;
+    }
+
+    if (totalReqs < 10) {
+        res.end('what are you doing here?');
+        return;
+    }
+
+    if (totalReqs < 20) {
+        res.end('nahhhhh');
+        return;
+    }
+
+    if (totalReqs < 21) {
+        res.end('are you trying to nuke me?');
+        return;
+    }
+
+    if (totalReqs < 22) {
+        res.end(`i know your ip is ${req.ip}`);
+        return;
+    }
+
+    if (totalReqs < 25) {
+        res.end('are you having fun?');
+        return;
+    }
+
+    if (totalReqs < 100) {
+        res.header('space', 'is-empy');
+        res.end('null.');
+        return;
+    }
+
+
+    if (totalReqs < 101) {
+        res.end('you control your mind');
+        return;
+    }
+
+    if (totalReqs < 102) {
+        res.end('you control your body');
+        return;
+    }
+
+    if (totalReqs < 103) {
+        res.end('you control your spirit');
+        return;
+    }
+
+    if (totalReqs < 104) {
+        res.end('you are a free mind');
+        return;
+    }
+
+    if (totalReqs < 105) {
+        res.end('I do not chase, I attract');
+        return;
+    }
+    if (totalReqs < 106) {
+        res.end('what belongs to me, will simply find me');
+        return;
+    }
+
+    if (totalReqs < 107) {
+        res.end('I like BMTH');
+        return;
+    }
+
+
+    if (totalReqs < 108) {
+        res.end('https://www.youtube.com/watch?v=SDxS10O3uqo');
+        return;
+    }
+
+    if (totalReqs < 111) {
+        res.end('https://www.mit.edu/~xela/tao.html');
+        return;
+    }
+
+    res.end('running out of coffe, have to go...');
+});
+
+
 app.use((req, res, next) => {
     const { ip, method, url } = req;
 
@@ -130,7 +252,7 @@ app.get('/join/:email', async(req, res) => {
         id = subscription.id;
         logger.info(`{subscription} subscribed ${email}`);
 
-        res.json({ url: `/${id}/subscribed` });
+        res.json({ url: `/you-are-nice/subscribed` });
     } catch (ex) {
         logger.error(ex);
         res.status(500).end('foi mal, mas algo deu errado. :/');
@@ -164,6 +286,8 @@ app.all('/confirm/:id.:format?', async(req, res) => {
     if (req.params.format === 'png') {
         return res.sendFile(path.resolve(__dirname, 'public/umdez.png'));
     }
+
+    res.header('Content-Type', 'text/html');
 
     res.end(`
         <!doctype html>
@@ -205,11 +329,23 @@ app.get('/favicon.png', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public/favicon.png'));
 });
 
-app.get('/index', (req, res) => { res.end(htmls.index); });
-app.get('/index.html', (req, res) => { res.end(htmls.index); });
-app.get('/:id/subscribed', (req, res) => { res.end(htmls.done); });
+app.get('/index', (req, res) => {
+    res.header('Content-Type', 'text/html');
+    res.end(htmls.index);
+});
+app.get('/index.html', (req, res) => {
+    res.header('Content-Type', 'text/html');
+    res.end(htmls.index);
+});
+app.get('/:id/subscribed', (req, res) => {
+    res.header('Content-Type', 'text/html');
+    res.end(htmls.done);
+});
 
-app.get('/', (req, res) => { res.end(htmls.index); });
+app.get('/', (req, res) => {
+    res.header('Content-Type', 'text/html');
+    res.end(htmls.index);
+});
 
 app.get = _get;
 app.post = _post;
