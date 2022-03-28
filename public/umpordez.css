@@ -29,6 +29,7 @@ body.styled {
     color: #444;
     font-size: 16px;
 
+    background: #000;
     --main-hightlight-color: red;
     --main-bg-color: red;
 }
@@ -75,27 +76,15 @@ body.styled > footer hr {
 }
 
 body.styled > header h1 {
-    font-family: 'Starjhol';
+    font-family: Verdana;
     font-size: 5em;
-    color: #FFE81F;
+    color: #ED6A3B;
     font-weight: normal;
     margin: 0;
+    font-weight: bold;
 
 }
 
-body.styled > header h1 span:first-child {
-    color: #d81111;
-}
-
-body.styled > header h1 span:nth-child(2) {
-    color: #333;
-    z-index: -1;
-}
-
-body.styled > header h1 span:nth-child(3) {
-    color: #d89911;
-    z-index: -1;
-}
 
 body.styled > header h2 {
     margin: 0;
@@ -199,7 +188,7 @@ body.styled small { color: #d81111; }
 
 body.styled > footer main > hr { border-color: #000; }
 body.styled > footer main > a {
-    color: #000;
+    color: #444;
     display: block;
     width: max-content;
     margin: auto;
@@ -232,3 +221,4 @@ body.styled > footer main > a:active { color: tomato; }
 
 
 form { width: 100%; }
+form p { padding-top: .5rem; }

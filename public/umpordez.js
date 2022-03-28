@@ -32,8 +32,8 @@ function tryBindFooterLink() {
         bodyElement.classList.toggle('styled');
 
         const isStyled = isBodyStyled();
-        ev.currentTarget.innerHTML = isStyled ? 'lost hope' :
-            'a new hope';
+        ev.currentTarget.innerHTML = isStyled ? 'dont like styles' :
+            'styles, I like';
     });
 }
 
