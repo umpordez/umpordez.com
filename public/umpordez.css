@@ -67,6 +67,10 @@ body.styled > header section .texts {
     justify-content: center;
 }
 
+body.styled > header section .texts p {
+    text-align: center;
+}
+
 body.styled hr {
     border: 1px solid #F4F2F0;
 }
@@ -124,7 +128,18 @@ body.styled > header input:active {
                 0 0 6px red;
 }
 
-body.styled > header button {
+body.styled .buy-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+body.styled .buy-buttons button {
+    margin: 1rem;
+}
+
+body.styled button {
     font-family: 'Oxygen Mono', monospace;
     padding: .5em;
     font-size: 1em;
@@ -136,8 +151,8 @@ body.styled > header button {
     font-weight: bold;
 }
 
-body.styled > header button:hover,
-body.styled > header button:active {
+body.styled button:hover,
+body.styled button:active {
     cursor: pointer;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1),
                 0 0 6px red;

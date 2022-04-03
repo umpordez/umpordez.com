@@ -85,10 +85,41 @@ window.onload = function() {
 
     tryBindFooterLink();
     tryBindForm();
+
+    document
+        .querySelector('.buy-buttons #year')
+        .addEventListener('click', (ev) => {
+            ev.preventDefault();
+            window.location.href = 'https://p.bravapay.io/060b67f8';
+        });
+
+    document
+        .querySelector('.buy-buttons #years')
+        .addEventListener('click', (ev) => {
+            ev.preventDefault();
+            window.location.href = 'https://p.bravapay.io/f7083d85';
+        });
 }
 
-function onResize() {
 
+function getWideHeightBasedOnWidth(width, ratio = 1.47) {
+    return Math.round(width / Math.sqrt(Math.pow(ratio, 2) + 1));
+}
+
+function resizeIframe() {
+    const iframeWidth = Math.min(800, window.innerWidth - 60);
+
+    const iframeHeight = getWideHeightBasedOnWidth(iframeWidth);
+    const iframeElement = domqs('iframe');
+
+    iframeElement.width = `${iframeWidth}px`;
+    iframeElement.height = `${iframeHeight}px`;
+}
+
+resizeIframe();
+
+function onResize() {
+    resizeIframe();
 }
 
 window.onresize = debounce(onResize, 250);

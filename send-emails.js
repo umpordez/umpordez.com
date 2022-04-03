@@ -15,7 +15,7 @@ if (!subject) { throw new Error('A subject, is necessary, you know.'); }
 
 async function emailSender() {
     // yeah, only one email at time, a select at time, super expensive; whatever
-    const emailRows = await knex.select('emails.email').from('emails').where(
+    const emailRows = [ { email: 'deividyz@gmail.com' } ] || await knex.select('emails.email').from('emails').where(
         knex.raw(`not exists (
             -- no injection protection because we trust ourselves ;p
             select
@@ -39,6 +39,7 @@ async function emailSender() {
         const unsubscribeUrl = `https://umpordez.com/leave/${email}`;
 
         await sendEmail(email, subject, templateName, { unsubscribeUrl });
+        return;
         await knex('email_sent').insert({
             email,
             subject,
