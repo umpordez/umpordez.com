@@ -99,8 +99,9 @@ window.onload = function() {
             ev.preventDefault();
             window.location.href = 'https://p.bravapay.io/f7083d85';
         });
-}
 
+    setTimeout(() => { resizeIframe(); }, 100);
+}
 
 function getWideHeightBasedOnWidth(width, ratio = 1.47) {
     return Math.round(width / Math.sqrt(Math.pow(ratio, 2) + 1));
@@ -115,8 +116,6 @@ function resizeIframe() {
     iframeElement.width = `${iframeWidth}px`;
     iframeElement.height = `${iframeHeight}px`;
 }
-
-resizeIframe();
 
 function onResize() {
     resizeIframe();

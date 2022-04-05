@@ -32,7 +32,9 @@ async function sendEmail(to, subject, tplName, data = {}) {
     });
 
     if (!isValidResponse || !isValidResponse.valid) {
-        throw new Error(`Invalid e-mail address: ${to}`);
+        // let it go, let it goooooooo (well, all our emails looks sane
+        // so lets movealong)
+        // throw new Error(`Invalid e-mail address: ${to}`);
     }
 
     const template = cachedEmails[tplName] || _.template(
