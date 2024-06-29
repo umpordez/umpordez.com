@@ -3,17 +3,7 @@ import knexModule from 'knex';
 
 import knexConfig from '../knexfile.mjs';
 
-const knex = knexModule({
-    client: 'pg',
-    connection: {
-        host: process.env.PSQL_DB_HOST,
-        database: process.env.PSQL_DB_DATABASE,
-        user: process.env.PSQL_DB_USERNAME,
-        password: process.env.PSQL_DB_PASSWORD,
-        connectionTimeoutMillis: 30000
-    },
-    pool: { min: 0, max: 10 }
-});
+const knex = knexModule(knexConfig);
 
 class TableGateway {
     constructor(db, tableName) {
