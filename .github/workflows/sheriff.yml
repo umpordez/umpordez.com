@@ -1,0 +1,69 @@
+name: sheriff
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  sheriff:
+    runs-on: ubuntu-latest
+
+    env:
+      PSQL_DB_HOST: localhost
+      PSQL_DB_USERNAME: postgres
+      PSQL_DB_PASSWORD: postgres
+      PSQL_DB_DATABASE: sheriff
+      HTTP_PORT: 5000
+
+    services:
+      postgres:
+        image: postgres:latest
+
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: sheriff
+
+        ports:
+          - 5432:5432
+
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: npm
+          cache-dependency-path: ./package-lock.json
+
+      - name: install deps nodejs
+        working-directory: ./
+        run: |
+          npm install
+          npm install -g knex eslint
+
+      - name: install deps web
+        working-directory: ./ui/web
+        run: |
+          npm install
+
+      - name: eslint nodejs
+        working-directory: ./
+        run: npm run-script lint
+
+      - name: runs migrations
+        working-directory: ./
+        run: knex migrate:latest
+
+      - name: runs tests
+        working-directory: ./
+        run: npm test

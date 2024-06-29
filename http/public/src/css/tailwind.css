@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'reey';
+    src: url('../fonts/reey-regular-webfont.woff2') format('woff2'), url('../fonts/reey-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply inline-block rounded-2xl bg-primary py-4 px-7 text-center text-sm font-extrabold uppercase text-black transition  hover:scale-105 hover:bg-secondary hover:text-white;
+    }
+    .heading {
+        @apply mb-10 lg:mb-14;
+    }
+    .heading h6 {
+        @apply mb-3 text-lg font-extrabold text-primary sm:mb-4;
+    }
+    .heading h4 {
+        @apply text-2xl font-extrabold text-black dark:text-white sm:text-3xl lg:text-[40px] lg:!leading-[50px];
+    }
+    .home-filter .filter.active button {
+        @apply text-secondary;
+    }
+
+    .project.hidden {
+        animation: hide 1s ease 0s 1 normal forwards;
+        transform-origin: center;
+    }
+    .project.block {
+        animation: show 1s ease 0s 1 normal forwards;
+        transform-origin: center;
+    }
+
+    @keyframes hide {
+        0% {
+            transform: scale(1);
+            visibility: visible;
+        }
+        100% {
+            transform: scale(0);
+            visibility: hidden;
+        }
+    }
+    @keyframes show {
+        0% {
+            transform: scale(0);
+            visibility: hidden;
+        }
+        100% {
+            transform: scale(1);
+            visibility: visible;
+        }
+    }
+
+    .dark .light-mode-btn {
+        @apply block;
+    }
+    .dark .dark-mode-btn {
+        @apply hidden;
+    }
+
+    header .menus {
+        @apply fixed top-0 z-[52] h-screen w-full max-w-sm gap-9 bg-white transition-all duration-500 ltr:-right-full rtl:-left-full dark:bg-gray-dark lg:static lg:h-auto lg:max-w-none lg:bg-transparent dark:lg:bg-transparent;
+    }
+    header .menus > ul {
+        @apply relative flex  flex-col divide-y divide-gray/10  font-bold text-black  lg:flex-row lg:items-center lg:gap-11 lg:divide-y-0  lg:p-0 lg:text-white;
+    }
+    header .menus > ul li > a {
+        @apply flex items-center justify-between py-4 px-4 transition hover:text-secondary dark:text-white dark:hover:text-secondary lg:px-0 lg:py-10 hover:lg:scale-110;
+    }
+    header .menus > ul li > a.active {
+        @apply text-secondary lg:scale-110;
+    }
+    header .menus .submenu {
+        @apply invisible z-50 mt-5 hidden grid-cols-1 gap-x-4 rounded-lg py-3 text-sm font-medium text-black opacity-0 transition-all dark:text-white lg:absolute lg:top-full lg:grid lg:min-w-max rtl:lg:translate-x-1/4 ltr:lg:-translate-x-1/4 lg:bg-[#F0F4F7] lg:shadow-lg lg:dark:bg-gray-dark rtl:xl:-right-1/2 ltr:xl:-left-1/2;
+    }
+    .submenu {
+        @apply group-hover:visible group-hover:mt-0 group-hover:grid group-hover:opacity-100;
+    }
+    header .menus .submenu a {
+        @apply block py-2.5 px-8 transition hover:text-secondary lg:px-5 hover:lg:scale-105;
+    }
+    header .menus .submenu a.active {
+        @apply text-secondary lg:scale-105;
+    }
+
+    .text-stroke {
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #222a36;
+    }
+}
+
+header .menus.open-menus {
+    @apply overflow-y-auto ltr:right-0 rtl:left-0;
+}
+
+.sticky-header {
+    @apply bg-black shadow-lg;
+}
+
+.fancybox__content > .carousel__button.is-close {
+    @apply rtl:left-0;
+}
+
+.ac.is-active .ac-trigger .trigger-icon {
+    @apply !border-black !text-black dark:!border-white dark:!text-white;
+}
+
+.ac.is-active .ac-trigger .trigger-icon svg path {
+    @apply first:hidden;
+}

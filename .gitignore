@@ -1,0 +1,16 @@
+.DS_STORE
+*.apk
+*.aab
+logs
+.sass-cache
+node_modules
+.env
+.vscode
+*.pid
+cache
+tags
+*.log
+dump.rdb
+misc/*.txt
+misc/*.bin
+misc/report.json

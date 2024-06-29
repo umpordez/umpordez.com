@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <%- include('partials/head.ejs') %>
+    <body class="overflow-x-hidden">
+        <%- include('partials/screen-loader.ejs') %>
+        <div
+            class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
+        >
+            <%- include('partials/header.ejs') %>
+
+
+            <%- include('partials/footer.ejs') %>
+        </div>
+
+        <%- include('partials/return-to-top-button.ejs') %>
+
+        <script src="/lib/swiper-bundle.min.js"></script>
+        <script src="/lib/aos.min.js"></script>
+        <script type='module' src="/src/js/arquitetura-web-apps.js"></script>
+    </body>
+</html>
