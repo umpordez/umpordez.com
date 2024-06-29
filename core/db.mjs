@@ -1,6 +1,8 @@
 import V from 'argument-validator';
 import knexModule from 'knex';
 
+import knexConfig from '../knexfile.mjs';
+
 const knex = knexModule({
     client: 'pg',
     connection: {

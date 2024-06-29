@@ -51,11 +51,6 @@ jobs:
           npm install
           npm install -g knex eslint
 
-      - name: install deps web
-        working-directory: ./ui/web
-        run: |
-          npm install
-
       - name: eslint nodejs
         working-directory: ./
         run: npm run-script lint
