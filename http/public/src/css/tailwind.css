@@ -114,3 +114,5 @@ header .menus.open-menus {
 .ac.is-active .ac-trigger .trigger-icon svg path {
     @apply first:hidden;
 }
+
+.bg-black input { color: #222; }

@@ -8,6 +8,33 @@
         >
             <%- include('partials/header.ejs') %>
 
+            <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
+                <section class="bg-gradient-to-t from-white/70 to-transparent py-14 dark:bg-none md:py-[100px]">
+                    <div class="container pt-[20px]">
+                        <div class="grid gap-x-[30px] gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+                            <% for (const post of posts) { %>
+                            <div data-aos="fade-up" data-aos-duration="1000">
+                                <div
+                                    class="relative rounded-3xl border border-transparent bg-white transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:bg-gray-dark"
+                                >
+                                    <a href="/post/<%= post.link %>" class="absolute top-0 h-full w-full ltr:left-0 rtl:right-0"></a>
+                                    <img src="<%= post.image_url %>" alt="blog" class="h-52 w-full rounded-t-3xl object-cover" />
+                                    <div class="p-5 text-sm font-bold">
+                                        <h6 class="font-extrabold text-secondary dark:text-secondary"><%= post.category %></h6>
+                                        <h5 class="my-[10px] block text-lg font-extrabold leading-[23px] text-black line-clamp-2 dark:text-white">
+                                            <%= post.title %>
+                                        </h5>
+                                        <p class="line-clamp-4">
+                                            <%= post.short_description %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
             <%- include('partials/footer.ejs') %>
         </div>

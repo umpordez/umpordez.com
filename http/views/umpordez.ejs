@@ -8,6 +8,63 @@
         >
             <%- include('partials/header.ejs') %>
 
+            <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
+                <section class="bg-black bg-[url(/assets/images/banner-bg.png)] bg-cover bg-top bg-no-repeat pt-[82px] lg:pt-[106px]">
+                    <div class="container lg:pt-7">
+                        <div class="relative">
+                            <div class="pt-14 pb-8 text-center text-white lg:w-3/5 lg:py-20 ltr:lg:text-left rtl:lg:text-right">
+                                <h2 class="text-3xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
+                                    <span class="text-secondary">Se torne</span>
+                                    <span class="text-primary">um programador 10x</span>
+                                </h2>
+                                <p class="my-8 text-lg lg:w-3/4">
+                                    A base e todos os conceitos, comunidade e muito mais para você se tornar um programador 10x, mesmo que nunca tenha programado. (for real)
+                                    <br />
+                                    Se cadastre para saber desse lançamento:
+                                </p>
+                                <form method="post" class="relative mt-14 js-newsletter-form" data-course="umpordez">
+                                    <div class="absolute top-1/2 -translate-y-1/2 ltr:pl-4 rtl:pr-4">
+                                        <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M24 10.4091C24 14.8446 24 17.0623 22.6527 18.4403C21.3054 19.8182 19.1369 19.8182 14.8 19.8182H10.2C5.86308 19.8182 3.69462 19.8182 2.34731 18.4403C1 17.0623 1 14.8446 1 10.4091C1 5.9736 1 3.75586 2.34731 2.37793C3.69462 1 5.86308 1 10.2 1H14.8C19.1369 1 21.3054 1 22.6527 2.37793C23.4038 3.14616 23.7362 4.17543 23.8833 5.70455"
+                                                stroke="#08111F"
+                                                stroke-width="2"
+                                                stroke-linecap="square"
+                                            />
+                                            <path
+                                                d="M19.3999 5.70508L16.9172 7.82104C14.8051 9.62115 13.749 10.5212 12.4999 10.5212C11.7532 10.5212 11.0755 10.1996 10.1999 9.55627M5.59991 5.70508L6.63491 6.58718L7.66991 7.46928"
+                                                stroke="#08111F"
+                                                stroke-width="2"
+                                                stroke-linecap="square"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <input
+                                        type="email"
+                                        placeholder="e-mail"
+                                        class="w-full rounded-xl py-4 font-semibold outline-0 ltr:pl-14 ltr:pr-32 rtl:pr-14 rtl:pl-32 lg:py-6 lg:text-lg"
+                                    />
+                                    <button
+                                        type="submit"
+                                        class="absolute top-1/2 -translate-y-1/2 rounded-md bg-secondary px-3 py-1.5 font-bold text-white transition hover:bg-primary ltr:right-4 rtl:left-4 lg:py-2 lg:text-lg"
+                                    >
+                                    aguardar
+                                    </button>
+                                </form>
+                            </div>
+                            <div
+                                class="top-[70px] w-full pb-7 ltr:right-0 rtl:left-0 rtl:right-auto lg:absolute lg:max-w-[630px] lg:pb-0 xl:ltr:-right-52 xl:rtl:-left-52"
+                                data-aos="fade-left"
+                                data-aos-duration="1000"
+                            >
+                                <img src="/assets/images/banner-img.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <%- include('partials/about-me.ejs') %>
+            </div>
 
             <%- include('partials/footer.ejs') %>
         </div>
@@ -16,6 +73,6 @@
 
         <script src="/lib/swiper-bundle.min.js"></script>
         <script src="/lib/aos.min.js"></script>
-        <script type='module' src="/src/js/umpordez.js"></script>
+        <script type='module' src="/src/js/arquitetura-web-apps.js"></script>
     </body>
 </html>

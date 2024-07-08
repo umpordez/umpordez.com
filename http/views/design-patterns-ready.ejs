@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <%- include('partials/head.ejs') %>
+    <body class="overflow-x-hidden">
+        <%- include('partials/screen-loader.ejs') %>
+        <div
+            class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
+        >
+            <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
+                <div class="overflow-hidden bg-black pt-[82px] sm:-mx-[250px] sm:rounded-b-[50%] lg:-mx-[150px] lg:pt-[106px]">
+                    <div class="relative">
+                        <img src="/assets/images/banner-lefticon.png" alt="banner-lefticon" class="absolute left-0 top-20 sm:left-[250px] lg:left-[150px]" />
+                        <img
+                            src="/assets/images/banner-rightIcon.png"
+                            alt="banner-rightIcon"
+                            class="absolute right-0 -top-4 sm:right-[250px] lg:right-[150px]"
+                        />
+                        <div class="container">
+                            <div class="relative">
+                                <div class="bg-[url(/assets/images/banner-bg-icon.png)] bg-cover bg-center bg-no-repeat">
+                                    <div class="relative bg-[url(../images/world-map.png)] bg-cover bg-top bg-no-repeat py-7 lg:pb-60">
+                                        <div class="relative z-[1] mx-auto text-center text-white sm:w-3/4">
+                                            <div
+                                            class="h-[200px] md:h-[350px] lg:h-[430px] xl:h-[500px] mb-6"
+                                            style="background-color: black; text-align: center;">
+                                            <iframe
+                                                id="bunny-stream-embed"
+                                                frameborder="0"
+                                                title="Cadastro de Produto"
+                                                src="https://iframe.mediadelivery.net/embed/194218/bb38d926-d089-457f-8bec-f8d10a3d2601?token=6b3b040d54f30c0db83ad8ded3dfe163fe6465940dfebedfbdc5620aa79b2f2e&amp;expires=1719849121"
+                                                style="width: 100%; height: 100%"
+                                                allow="autoplay;picture-in-picture;"
+                                                allowfullscreen="true"></iframe>
+                            
+                                        </div>
+
+                                            <h2 class="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
+                                                Saiba como
+                                                <span
+                                                    class="relative text-secondary after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:rounded after:bg-gradient-to-r after:from-secondary after:to-transparent"
+                                                    >programar</span
+                                                >
+                                                em qualquer 
+                                                <span
+                                                    class="relative text-primary after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:rounded after:bg-gradient-to-r after:from-primary after:to-transparent"
+                                                    >situação</span
+                                                >
+                                            </h2>
+                                            <p class="my-8 mx-auto text-lg lg:w-3/4">
+                                                Conhecimento com exemplos do mundo real para te ajudar a entender na prática como os Design Patterns mais usados do mundo funcionam.
+                                            </p>
+                                            <a href="https://umpordez.isei.app/oferta/design-patterns" " class="btn mx-auto mt-2 block w-fit bg-white">Quero Participar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%- include('partials/design-patterns-small.ejs', {
+                    button: `
+                        <a 
+                            href="https://umpordez.isei.app/oferta/design-patterns" 
+                            class="btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">Quero Participar</a>
+                    `
+                }) %>
+
+                <section class="py-14 md:py-20">
+                    <div class="container">
+                        <div class="grid-cols-3 lg:grid">
+                            <div class="relative mb-8 flex justify-center gap-5 lg:mb-0 lg:block">
+                                <img
+                                    src="/assets/images/green-top-arrow.svg"
+                                    alt=""
+                                    class="absolute top-32 ltr:right-0 ltr:rotate-180 rtl:left-0 rtl:rotate-90"
+                                />
+                                <img
+                                    src="/assets/images/inner-box.svg"
+                                    alt=""
+                                    class="absolute -top-5 z-[2] ltr:-left-5 rtl:-right-5 rtl:rotate-y-180"
+                                />
+                                <div class="relative z-[1] sm:h-[300px] sm:w-[270px]" data-aos="fade-up" data-aos-duration="1000">
+                                    <div class="h-full overflow-hidden rounded-2xl rtl:rotate-y-180">
+                                        <img src="/assets/images/benifit-person-1.jpg" alt="" class="h-full w-full object-cover" />
+                                    </div>
+                                </div>
+                                <div
+                                    class="relative z-[1] sm:h-[300px] sm:w-[270px] lg:-mt-14 lg:ltr:ml-auto lg:rtl:mr-auto"
+                                    data-aos="fade-up"
+                                    data-aos-duration="1000"
+                                >
+                                    <div class="h-full overflow-hidden rounded-2xl rtl:rotate-y-180">
+                                        <img src="/assets/images/benifit-person-2.jpg" alt="" class="h-full w-full object-cover" />
+                                    </div>
+                                </div>
+                                <img
+                                    src="/assets/images/bg-benifits.png"
+                                    alt=""
+                                    class="absolute top-20 hidden ltr:left-8 rtl:right-8 rtl:rotate-y-180 lg:block"
+                                />
+                            </div>
+                            <div class="col-span-2 lg:ltr:pl-20 lg:rtl:pr-20">
+                                <div class="heading mb-0 text-center ltr:lg:text-right rtl:lg:text-left">
+                                    <h6>Our benefits</h6>
+                                    <h4>Our Learning platform has reached 1m+ students.</h4>
+                                </div>
+                                <div class="my-10 grid gap-10 text-lg font-semibold ltr:text-right rtl:text-left sm:grid-cols-2 md:my-14">
+                                    <div class="flex gap-6">
+                                        <div class="flex-1">
+                                            <h4 class="mb-5 text-[22px] font-bold text-primary">Expert mentors</h4>
+                                            <p>You can easily contact with Higley experienced mentors.</p>
+                                        </div>
+                                        <div class="h-14 w-14 flex-none">
+                                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/[0.06]">
+                                                <img
+                                                    src="assets/images/team-work.svg"
+                                                    alt=""
+                                                    class="drop-shadow-[0_2px_6px_rgba(71,189,255,0.32)]"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-6">
+                                        <div class="flex-1">
+                                            <h4 class="mb-5 text-[22px] font-bold text-secondary">Course certificate</h4>
+                                            <p>You can get a course certificate after completing course.</p>
+                                        </div>
+                                        <div class="h-14 w-14 flex-none">
+                                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/[0.06]">
+                                                <img
+                                                    src="assets/images/accountability.svg"
+                                                    alt=""
+                                                    class="drop-shadow-[0_5px_14px_rgba(180,118,229,0.29)]"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-6">
+                                        <div class="flex-1">
+                                            <h4 class="mb-5 text-[22px] font-bold text-secondary">Learning videos</h4>
+                                            <p>you can get all access to learning course videos.</p>
+                                        </div>
+                                        <div class="h-14 w-14 flex-none">
+                                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/[0.06]">
+                                                <img
+                                                    src="assets/images/video-icon.svg"
+                                                    class="drop-shadow-[0_5px_14px_rgba(180,118,229,0.29)]"
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-6">
+                                        <div class="flex-1">
+                                            <h4 class="mb-5 text-[22px] font-bold text-primary">Live sessions</h4>
+                                            <p>1 weekly live session with our course mentor.</p>
+                                        </div>
+                                        <div class="h-14 w-14 flex-none">
+                                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/[0.06]">
+                                                <img
+                                                    src="assets/images/hotspot-icon.svg"
+                                                    alt=""
+                                                    class="drop-shadow-[0_2px_6px_rgba(71,189,255,0.32)]"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center ltr:lg:text-right rtl:lg:text-left">
+                                    <a href="javascript:" class="btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">Get started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div id="benifit-video" style="display: none" class="w-[960px] max-w-full bg-black p-4 dark:bg-gray-dark">
+                    <div class="aspect-video">
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/D0UnqGm_miA"
+                            title="How We Work"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+
+                <section class="relative bg-black py-14 dark:bg-transparent lg:py-20">
+                    <div class="absolute top-0 ltr:right-0 rtl:left-0 rtl:-rotate-180">
+                        <svg width="758" height="741" viewBox="0 0 758 741" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.03">
+                                <ellipse
+                                    opacity="0.1"
+                                    cx="752"
+                                    cy="370.646"
+                                    rx="750"
+                                    ry="749.646"
+                                    stroke="white"
+                                    stroke-width="3"
+                                    stroke-miterlimit="4.62023"
+                                    stroke-linecap="round"
+                                    stroke-dasharray="35 50 15 15"
+                                />
+                                <path
+                                    opacity="0.1"
+                                    d="M1443.13 370.646C1443.13 752.153 1133.7 1061.43 752 1061.43C370.296 1061.43 60.8655 752.153 60.8655 370.646C60.8655 -10.8606 370.296 -320.134 752 -320.134C1133.7 -320.134 1443.13 -10.8606 1443.13 370.646Z"
+                                    stroke="white"
+                                    stroke-width="3"
+                                />
+                                <ellipse
+                                    opacity="0.2"
+                                    cx="752"
+                                    cy="370.646"
+                                    rx="634.561"
+                                    ry="634.207"
+                                    stroke="white"
+                                    stroke-width="3"
+                                    stroke-miterlimit="4.62023"
+                                    stroke-linecap="round"
+                                    stroke-dasharray="35 50 15 15"
+                                />
+                                <path
+                                    opacity="0.3"
+                                    d="M1328.4 370.646C1328.4 688.789 1070.34 946.696 752 946.696C433.66 946.696 175.596 688.789 175.596 370.646C175.596 52.5037 433.66 -205.403 752 -205.403C1070.34 -205.403 1328.4 52.5037 1328.4 370.646Z"
+                                    stroke="white"
+                                    stroke-width="3"
+                                />
+                                <ellipse
+                                    opacity="0.4"
+                                    cx="752"
+                                    cy="370.646"
+                                    rx="519.83"
+                                    ry="519.476"
+                                    stroke="white"
+                                    stroke-width="3"
+                                    stroke-miterlimit="4.62023"
+                                    stroke-linecap="round"
+                                    stroke-dasharray="35 50 15 15"
+                                />
+                                <path
+                                    opacity="0.5"
+                                    d="M1211.55 370.646C1211.55 624.251 1005.8 829.84 752 829.84C498.197 829.84 292.452 624.251 292.452 370.646C292.452 117.041 498.197 -88.5479 752 -88.5479C1005.8 -88.5479 1211.55 117.041 1211.55 370.646Z"
+                                    stroke="white"
+                                    stroke-width="3"
+                                />
+                                <path
+                                    opacity="0.6"
+                                    d="M1155.6 370.646C1155.6 593.351 974.903 773.891 752 773.891C529.097 773.891 348.401 593.351 348.401 370.646C348.401 147.942 529.097 -32.5986 752 -32.5986C974.903 -32.5986 1155.6 147.942 1155.6 370.646Z"
+                                    stroke="white"
+                                    stroke-width="3"
+                                />
+                                <ellipse
+                                    opacity="0.7"
+                                    cx="752"
+                                    cy="370.646"
+                                    rx="350.567"
+                                    ry="350.212"
+                                    stroke="white"
+                                    stroke-width="3"
+                                    stroke-miterlimit="4.62023"
+                                    stroke-linecap="round"
+                                    stroke-dasharray="35 50 15 15"
+                                />
+                                <path
+                                    opacity="0.8"
+                                    d="M1040.16 370.647C1040.16 529.596 911.148 658.453 752 658.453C592.852 658.453 463.84 529.596 463.84 370.647C463.84 211.698 592.852 82.8408 752 82.8408C911.148 82.8408 1040.16 211.698 1040.16 370.647Z"
+                                    stroke="white"
+                                    stroke-width="3"
+                                />
+                                <ellipse
+                                    opacity="0.9"
+                                    cx="752"
+                                    cy="370.646"
+                                    rx="223.088"
+                                    ry="222.734"
+                                    stroke="white"
+                                    stroke-width="3"
+                                    stroke-miterlimit="4.62023"
+                                    stroke-linecap="round"
+                                    stroke-dasharray="35 50 15 15"
+                                />
+                                <path
+                                    d="M909.848 370.646C909.848 457.624 839.18 528.14 752 528.14C664.82 528.14 594.152 457.624 594.152 370.646C594.152 283.667 664.82 213.151 752 213.151C839.18 213.151 909.848 283.667 909.848 370.646Z"
+                                    stroke="white"
+                                    stroke-width="3"
+                                />
+                                <ellipse
+                                    cx="752"
+                                    cy="370.646"
+                                    rx="106.941"
+                                    ry="106.586"
+                                    stroke="white"
+                                    stroke-width="3"
+                                    stroke-miterlimit="4.62023"
+                                    stroke-linecap="round"
+                                    stroke-dasharray="35 50 15 15"
+                                />
+                            </g>
+                        </svg>
+                    </div>
+                </section>
+
+                <section class="bg-gradient-to-t from-white/[55%] to-transparent py-14 dark:bg-white/[0.02] dark:from-transparent lg:py-20">
+                    <div class="container">
+                        <div class="heading text-center">
+                            <h6>FAQs</h6>
+                            <h4>Frequently Asked Questions</h4>
+                            <p class="mt-5 text-lg font-bold">Have questions? We’re help you.</p>
+                        </div>
+                        <div class="accordion-container mx-auto lg:w-[730px]">
+                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent">
+                                <h2 class="ac-header">
+                                    <button
+                                        type="button"
+                                        class="ac-trigger relative !flex w-full items-center justify-between gap-2 !py-2.5 !px-0 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white"
+                                    >
+                                        <div>How long is this site live?</div>
+                                        <div class="trigger-icon grid h-6 w-6 place-content-center rounded-full border-2 border-gray text-gray transition">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
+                                                    fill="currentColor"
+                                                />
+                                                <path
+                                                    d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
+                                                    fill="currentColor"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div class="ac-panel lg:w-4/5">
+                                    <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent">
+                                <h2 class="ac-header">
+                                    <button
+                                        type="button"
+                                        class="ac-trigger relative !flex w-full items-center justify-between gap-2 !py-2.5 !px-0 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white"
+                                    >
+                                        <div class="flex-1">Can i change my plan later?</div>
+                                        <div
+                                            class="trigger-icon grid h-6 w-6 flex-none place-content-center rounded-full border-2 border-gray text-gray transition"
+                                        >
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
+                                                    fill="currentColor"
+                                                />
+                                                <path
+                                                    d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
+                                                    fill="currentColor"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div class="ac-panel lg:w-4/5">
+                                    <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent">
+                                <h2 class="ac-header">
+                                    <button
+                                        type="button"
+                                        class="ac-trigger relative !flex w-full items-center justify-between gap-2 !py-2.5 !px-0 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white"
+                                    >
+                                        <div class="flex-1">What is course? can i meet mentors in course?</div>
+                                        <div
+                                            class="trigger-icon grid h-6 w-6 flex-none place-content-center rounded-full border-2 border-gray text-gray transition"
+                                        >
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
+                                                    fill="currentColor"
+                                                />
+                                                <path
+                                                    d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
+                                                    fill="currentColor"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div class="ac-panel lg:w-4/5">
+                                    <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
+                                        Course is an digital learning platform that provides various categories of courses ranging from design, business,
+                                        IT, finance and many more.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent">
+                                <h2 class="ac-header">
+                                    <button
+                                        type="button"
+                                        class="ac-trigger relative !flex w-full items-center justify-between gap-2 !py-2.5 !px-0 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white"
+                                    >
+                                        <div class="flex-1">What are the topics in course?</div>
+                                        <div
+                                            class="trigger-icon grid h-6 w-6 flex-none place-content-center rounded-full border-2 border-gray text-gray transition"
+                                        >
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
+                                                    fill="currentColor"
+                                                />
+                                                <path
+                                                    d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
+                                                    fill="currentColor"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div class="ac-panel lg:w-4/5">
+                                    <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent">
+                                <h2 class="ac-header">
+                                    <button
+                                        type="button"
+                                        class="ac-trigger relative !flex w-full items-center justify-between gap-2 !py-2.5 !px-0 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white"
+                                    >
+                                        <div class="flex-1">Can I skip any course in between?</div>
+                                        <div
+                                            class="trigger-icon grid h-6 w-6 flex-none place-content-center rounded-full border-2 border-gray text-gray transition"
+                                        >
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
+                                                    fill="currentColor"
+                                                />
+                                                <path
+                                                    d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
+                                                    fill="currentColor"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div class="ac-panel lg:w-4/5">
+                                    <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent">
+                                <h2 class="ac-header">
+                                    <button
+                                        type="button"
+                                        class="ac-trigger relative !flex w-full items-center justify-between gap-2 !py-2.5 !px-0 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white"
+                                    >
+                                        <div class="flex-1">How many course category in this website?</div>
+                                        <div
+                                            class="trigger-icon grid h-6 w-6 flex-none place-content-center rounded-full border-2 border-gray text-gray transition"
+                                        >
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
+                                                    fill="currentColor"
+                                                />
+                                                <path
+                                                    d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
+                                                    fill="currentColor"
+                                                />
+                                            </svg>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div class="ac-panel lg:w-4/5">
+                                    <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-[100px]">
+                        <%- include('partials/about-me.ejs') %>
+                    </div>
+                </section>
+            </div>
+
+            <%- include('partials/footer.ejs') %>
+        </div>
+
+        <%- include('partials/return-to-top-button.ejs') %>
+
+        <script src="/lib/swiper-bundle.min.js"></script>
+        <script src="/lib/aos.min.js"></script>
+        <script src="/lib/accordion.min.js"></script>
+        <script type='module' src="/src/js/design-patterns.js"></script>
+    </body>
+</html>

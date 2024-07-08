@@ -8,6 +8,262 @@
         >
             <%- include('partials/header.ejs') %>
 
+            <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
+                <div class="bg-[url(/assets/images/inner-page-hero-bg.png)] bg-cover bg-bottom bg-no-repeat pt-[82px] lg:pt-[106px]">
+                    <div class="relative">
+                        <div class="container">
+                            <div class="items-center justify-between py-10 md:flex md:h-[400px] md:py-0">
+                                <div class="heading relative mb-0 text-center ltr:md:text-left rtl:md:text-right">
+                                    <h6>umpordez</h6>
+                                    <h4 class="!text-white">Making ligeiros</h4>
+                                </div>
+                                <div
+                                    data-aos="fade-left" data-aos-duration="1000"
+                                    class="relative mt-6 md:mt-0 w-[400px] h-[200px]" >
+                                    <% for (const i of Array.from({ length: 42 })) { %>
+                                        <img
+                                            style="
+                                                width: <%= Math.ceil(Math.random() * 150) %>px;
+                                                top: <%= Math.ceil(Math.random() * 150) - 30 %>px;
+                                                right: <%= Math.ceil(Math.random() * 340) - 50 %>px;"
+                                            class="absolute"
+                                            src="https://avatars.githubusercontent.com/u/1174445?v=4" />
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="relative pt-14 lg:pb-48 lg:pt-[100px]">
+                    <div class="container relative z-[1]">
+                            <div class="heading mb-5 text-center ltr:lg:text-left rtl:lg:text-right">
+                                <h6>quem é ligeiro?</h6>
+                                <h4>Deividy Metheler Zachetti</h4>
+                            </div>
+                            <div class="prose max-w-full dark:prose-invert">
+                            <p>
+                                nasci em 08 de maio de 1990, tive o meu primeiro contato
+                                com programação com o mIRC por volta dos anos dois mil~
+                                (rip brasnet), na época eu não sabia usar o google e nem
+                                sabia se existia tutorial, aprendi a programar como
+                                autodidata de verdade, sem ler explicações, ver videos, nada.
+                                meu único tutorial foi "clica aqui, ai tem uns código,
+                                modifica que vai aparecer ali, boa sorte!",
+                                foram meses de erro e acerto.
+                            </p>
+                            <p>
+                                mesmo sem nunca ter lido uma explicação sobre como
+                                funcionava dialogs no mIRC eu consegui desenvolver alguns
+                                scripts (inclusive um muito legal chamado Darkness
+                                Script :P) e o script era tão bom que o pessoal usava e
+                                nem ligava que depois de alguns dias eles perdiam a senha
+                                (ok, nem sempre fui bonzinho :X).
+                                <br />
+                                eu até escrevi alguns tutoriais de como criar dialogs
+                                para o antigo webmasters (se não me engano), cheguei a
+                                fazer até um jogo de truco usando sockets no mIRC (mesmo
+                                sem nunca ter lido/estudado a respeito)
+                            </p>
+                            <p>
+                                aprendi de formas conturbadas e foi apanhando de linked
+                                lists e recursão que decidi dar um step back e ler, li
+                                muita coisa sobre muito assunto, e entendi de onde vem
+                                a fonte do conhecimento que as pessoas ensinam nas
+                                faculdades, por escolha própria decidi não cursar
+                                faculdade, mas focar no que eles ensinam lá, nos livros
+                                que os professores leem para aplicar, foi o que fiz para
+                                adquirir esse tipo de conhecimento.
+                            </p>
+            
+                            <p>
+                                mas, isso tudo é só um "part-time" da minha caminhada,
+                                sempre desenvolvi aplicações personalizadas, desde
+                                meus 16~ anos eu trabalho profissionalmente com
+                                programação, meu primeiro emprego foi de programador PHP,
+                                entrei na empresa após mandar um currículo e mostrar
+                                que eu sabia fazer um site.
+                            </p>
+            
+                            <p>
+                                esse primeiro emprego meio que moldou a minha vida, era uma
+                                pequena empresa coincidentemente na rua de baixo de onde eu morava,
+                                trabalhavam mais 4 programadores lá e desenvolvíamos sites,
+                                sistemas personalizados e lojas virtuais,
+                                usando basicamente PHP.
+                            </p>
+            
+                            <p>
+                                aprendi rapidamente o que o pessoal fazia e logo já
+                                estava fazendo um sistema de gerenciamento de
+                                condomínios, loja virtual, atendendo cliente e
+                                arrumando bug com o cliente no telefone, não demorou
+                                mais que 2 anos pra ficar na empresa só eu e o dono dela,
+                                o Denis, um cara muito gente boa que tem o dom de vender
+                                de tudo, literalmente vendia de tudo; cheguei a fazer
+                                sistema de leilão reverso (namosca.bizzzzzzzz),
+                                gerador de boletos, sistema de gerenciamento de múltiplos
+                                sites, sistema de gerenciamento de lojas, de condomínio,
+                                sistema de clientes, e-mail marketing, orkut de dogs...
+                                eu desenvolvi <strong>muita</strong> coisa, eu pegava
+                                um projeto de manhã e no fim do dia já tinha algo no ar
+                                para o pessoal ver, sempre fiz isso assim, sem medo de por no ar e
+                                "quebrar" as coisas (talvez pelo meu ensino hardcore?),
+                                e foi aí que começou a nascer o conhecido ligeiro e o
+                                que está se tornando umpordez.
+                            </p>
+                            <p>
+                                trabalhamos 4 anos juntos até que eu decidi abrir a minha
+                                propria empresa e empreender, fundei a Soluções na Web
+                                com a minha esposa onde vendíamos sites (R$ 300),
+                                lojas virtuais (R$ 500) e sistemas personalizados (R$ 700+),
+                                nosso processo era um tanto quanto "braçal" se comparado
+                                a hj em dia; faziamos um layout no photoshop,
+                                mandávamos para o cliente aprovar, eu escrevia _todo o
+                                html e css_ depois fazia _todo o server_, as vezes usava
+                                framework, as vezes não, descobri no campo de batalha
+                                que essas brigas "frameworks" / "linguagens"
+                                pouco importam no mundo real.
+                            </p>
+                            <p>
+                                desenvolvi muitas apps personalizadas e desenvolvi
+                                skills das quais me tornaram o ligeiro, um programador
+                                que resolve bugs e desenvolve soluções 10 vezes mais rápido,
+                                hoje escolho os projetos dos quais quero ajudar, mas
+                                tenho tantas ideias legais e tantas pessoas que precisam
+                                da minha ajuda da qual eu não tenho outra solução a não
+                                ser passar esse conhecimento ancestral, que foi lapidado
+                                durante tantos anos no campo de batalha.
+                            </p>
+                            <p>
+                                só ano passado, nos últimos 4-5 meses eu desenvolvi
+                                100% sozinho e em part-time algumas startups que estão
+                                crescendo bem, incluindo o <a href='https://isei.com.br'>iSei.com.br</a>,
+                                digo em part-time, pois atualmente eu presto contrato para uma
+                                startup americana full time(participo de um time de rockstars \m/)
+                                e mesmo com esse contrato consegui em pouco tempo desenvolver
+                                duas startups _gigantes e complexas_ (side project wins)
+                            </p>
+            
+                            <p>
+                                eu estou aqui, escrevendo isso agora, pois teve uma
+                                coisa que me chamou a atenção durante o
+                                desenvolvimento dessas startups; eu tive a oportunidade
+                                de trabalhar com alguns "devs br" que fazem os
+                                cursos da moda e foi uma experiência um tanto quanto
+                                dolorosa ver o nível de conhecimento dos programadores
+                                brasileiros, o que me espantou foi que eu trabalhei com
+                                uns 4~5 "devs" e eles falavam a mesma língua estranha,
+                                foi ai que eu soube que a minha missão seria algo maior,
+                                algo que mesmo não sendo a minha área eu teria
+                                que me aventurar.
+                            </p>
+                            <p>
+                                quem quer aprender programação atualmente vem sido
+                                bombardeado com cursos e mais cursos que ensinam 999
+                                linguagens, frameworks e todo tipo de maluquice
+                                como se fosse isso que um programador faz, como se a vida
+                                de um programador se resumisse a fazer "apps escaláveis
+                                ou clones do uber".
+                                <br />
+                                <strong>programação não é isso e não pode
+                                    ser vista dessa forma.</strong>
+                            </p>
+            
+                            <p>
+                                eu preciso de pessoas para me ajudar nos projetos dos
+                                quais eu gerencio, mas é extremamente difícil encontrar
+                                programadores decentes por aqui, até mesmo com grandes
+                                orçamentos, startups gigantes sofrem durante meses ou
+                                até anos para encontrar alguém que se encaixe.
+                                <br />
+                                programadores estão perdidos em uma onda de discussões
+                                eternas entre "esse" vs "aquele" e esqueceram o que
+                                realmente importa, o que nós, mediadores da
+                                matrix realmente fazemos.
+                            </p>
+            
+                            <p>
+                                eu estou aqui para restabelecer essa ordem e mostrar
+                                que programação pode ser algo divertido e acima
+                                de tudo _simples e ao mesmo tempo <span>mágico</span>_.
+                            </p>
+            
+                            <p>
+                                p.s.: esse site tem o código fonte aberto em:<br />
+                                <a href='https://github.com/umpordez/umpordez.com'>github.com/umpordez/umpordez.com</a>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </section>
+
+                <section class="relative py-14 lg:py-[100px] xl:-mt-[100px] mb-[50px]">
+                    <div class="absolute top-0 z-[1] h-full w-full bg-white ltr:left-0 rtl:right-0 dark:bg-black xl:w-[85%] xl:rounded-r-[32px]"></div>
+                    <div
+                        class="absolute -top-3 hidden h-full w-full rounded-r-[32px] bg-white/50 ltr:left-3 rtl:right-3 dark:bg-gray-dark xl:inline-block xl:w-[85%]"
+                    ></div>
+                    <div class="container relative z-[2] ltr:xl:pr-40 rtl:xl:pl-40">
+                        <div class="lg:w-2/3">
+                            <div class="heading mb-5 text-center ltr:lg:text-left rtl:lg:text-right">
+                                <h6>Tenha confiança em seu código</h6>
+                                <h4>Conheça nossos 3 pilares de aprendizado</h4>
+                            </div>
+                            <p class="pb-10 text-center text-lg font-semibold leading-[30px] ltr:lg:text-left rtl:lg:text-right">
+                                Para se tornar um programador 10x, temos que *sempre* executar esses passos/pilares, everyday.
+                            </p>
+                        </div>
+                        <div class="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
+                            <div data-aos="fade-up" data-aos-duration="1000">
+                                <div
+                                    class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent"
+                                >
+                                    <span class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white"
+                                        >01</span
+                                    >
+                                    <div>
+                                        <h6 class="mb-1 font-bold text-secondary">Leitura</h6>
+                                        <p class="text-sm font-semibold text-black dark:text-gray">
+                                            O estudo de códigos reais é o primeiro passo para dominar uma técnologia.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-aos="fade-up" data-aos-duration="1000">
+                                <div
+                                    class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent"
+                                >
+                                    <span class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white"
+                                        >02</span
+                                    >
+                                    <div>
+                                        <h6 class="mb-1 font-bold text-secondary">Escrita</h6>
+                                        <p class="text-sm font-semibold text-black dark:text-gray">
+                                            Escrever para entender na prática como conceitos primordiais funcionam.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-aos="fade-up" data-aos-duration="1000">
+                                <div
+                                    class="flex items-start gap-[10px] rounded-[10px] border border-transparent bg-secondary/10 py-6 px-5 transition hover:border-secondary hover:bg-transparent"
+                                >
+                                    <span class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full bg-secondary text-lg text-white"
+                                        >03</span
+                                    >
+                                    <div>
+                                        <h6 class="mb-1 font-bold text-secondary">Refatoração</h6>
+                                        <p class="text-sm font-semibold text-black dark:text-gray">
+                                            Orgânica e constante, crie o hábito de refatorar o seu código diariamente.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
 
             <%- include('partials/footer.ejs') %>
         </div>

@@ -1,0 +1,70 @@
+<h2>function hoisted () {}</h2>
+<p>
+    Basicamente, toda definição em JavaScript é "hoisted" no topo de
+    seu escopo. O que quer dizer que quando usamos um
+    <code>var foo = "bar"</code> o compilador JavaScript
+    vai mover o <code>var foo;</code> no topo da função e
+    a definição do <code>foo = "bar"</code> ira ficar
+    onde foi definida.
+</p>
+
+<p>Considere o seguinte código:</p>
+
+<pre class="text-gray-300"><code>fnExpression(); // => throw TypError!
+var fnExpression = function() {
+    return "Im a expression assigned to a variable";
+}
+fnExpression(); // => "Im a expression assigned to a variable"
+
+fnStatement(); // => "Im a statement with name"
+
+fuction fnStatement() {
+    return "Im a statement with name";
+}
+
+fnStatement(); // => "Im a statement with name"
+
+var scope = "global";
+function fn() {
+    return scope;
+    var scope = "local";
+}
+fn(); // => undefined</code></pre>
+
+<p>
+    Importante ressaltarmos também que uma <strong>expressão</strong> é
+    diferente de um <strong>statement</strong>, basicamente, no exemplo acima,
+    uma expressão é uma declaração com <code>var fnExpression = function () {...}</code>,
+    enquanto um statement é <code>fuction fnStatement() { ... }</code>).
+    Expressōes são "hoisted" no topo de seu escopo, mas não a sua inicialização,
+    logo no exemplo de <code>var fnExpression = function () {...}</code>,
+    a <code>var fnExpression</code> vai para o topo do escopo mas não
+    a sua inicialização, daí quando tentamos usar a função tomamos um
+    <code>TypeError</code>, por outro lado, statements são
+    hoisted por inteiro e por isso o uso da <code>fnStatement()</code>
+    funciona antes de sua definição.
+</p>
+
+<p>Para ter uma visualização melhor, é assim que esse código fica do ponto de vista do compilador:</p>
+
+<pre class="text-gray-300"><code>var fnExpression, scope;
+function fnStatement() {
+    return "Im a statement with name";
+}
+function fn() {
+    var scope;
+    return scope;
+    scope = "local";
+}
+
+fnExpression();
+fnExpression = function() {
+    return "Im a expression assigned to a variable";
+}
+fnExpression();
+
+fnStatement();
+fnStatement();
+
+scope = "global";
+fn();</code></pre>

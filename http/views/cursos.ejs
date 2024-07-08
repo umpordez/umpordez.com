@@ -8,6 +8,61 @@
         >
             <%- include('partials/header.ejs') %>
 
+            <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
+                <div class="overflow-hidden bg-black pt-[82px] sm:-mx-[250px] sm:rounded-b-[50%] lg:-mx-[150px] lg:pt-[106px]">
+                    <div class="relative">
+                        <img src="/assets/images/banner-lefticon.png" alt="banner-lefticon" class="absolute left-0 top-20 sm:left-[250px] lg:left-[150px]" />
+                        <img
+                            src="/assets/images/banner-rightIcon.png"
+                            alt="banner-rightIcon"
+                            class="absolute right-0 -top-4 sm:right-[250px] lg:right-[150px]"
+                        />
+                        <div class="container">
+                            <div class="relative">
+                                <img
+                                    src="/assets/images/online-courses/vim.svg"
+                                    alt=""
+                                    class="w-[100px] absolute top-56 ltr:-left-24 rtl:-right-24"
+                                    data-aos="fade-up"
+                                    data-aos-duration="1000"
+                                />
+                                <img
+                                    src="/assets/images/online-courses/books.svg"
+                                    alt=""
+                                    class="w-[100px] absolute top-20 ltr:-right-24 rtl:-left-24 sm:ltr:-right-14 sm:rtl:-left-14"
+                                    data-aos="fade-up"
+                                    data-aos-duration="1000"
+                                />
+                                <div class="bg-[url(../images/online-courses/banner-bg-icon.png)] bg-cover bg-center bg-no-repeat">
+                                    <div class="relative bg-[url(../images/world-map.png)] bg-cover bg-top bg-no-repeat py-4 lg:pt-20 xl:pt-32">
+                                        <div class="relative z-[1] mx-auto text-center text-white sm:w-3/4">
+                                            <h2 class="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
+                                                Ensinamentos da <span
+                                                    class="relative text-secondary after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:rounded after:bg-gradient-to-r after:from-secondary after:to-transparent"
+                                                    >base</span
+                                                >
+                                                para te tornar o
+                                                <span
+                                                    class="relative text-primary after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:rounded after:bg-gradient-to-r after:from-primary after:to-transparent"
+                                                    >melhor</span>
+                                            </h2>
+                                            <p class="my-8 mx-auto text-lg lg:w-3/4">
+                                                Nossos cursos são focados em passar a base "milenar" da programação, com isso acreditamos que não há issue que você não consiga resolver.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <%- include('partials/design-patterns-small.ejs', {
+                    button: `<a href="/design-patterns" class="btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">MAIS</a>`
+                }) %>
+                <%- include('partials/about-me.ejs') %>
+            </div>
+
 
             <%- include('partials/footer.ejs') %>
         </div>

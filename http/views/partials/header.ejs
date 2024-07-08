@@ -1,12 +1,12 @@
 <header id="top-header" class="sticky top-0 z-50 bg-black/90 transition duration-300">
     <div class="container">
         <div class="flex items-center justify-between py-5 lg:py-0">
-            <a href="index.html"><img src="assets/images/logo.png" alt="logo" class="h-10" /></a>
+            <a href="/"><img src="/assets/images/logo.png" alt="logo" class="h-10" /></a>
             <div class="flex items-center">
-                <div onclick="toggleMenu()" class="overlay fixed inset-0 z-[51] hidden bg-black/60 lg:hidden"></div>
+                <div class="js-toggle-menu overlay fixed inset-0 z-[51] hidden bg-black/60 lg:hidden"></div>
                 <div class="menus">
                     <div class="border-b border-gray/10 ltr:text-right rtl:text-left lg:hidden">
-                        <button onclick="toggleMenu()" type="button" class="p-4">
+                        <button type="button" class="js-toggle-menu p-4">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -39,7 +39,13 @@
                             <div class="submenu">
                                 <a
                                     class="<%= page.url === '/design-patterns' ? 'active' : '' %>"
-                                    href="/design-patterns">Design Patterns</a>
+                                    href="/design-patterns">Design Patterns
+                                   <span
+                                        class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
+                                    >
+                                        Em Breve 
+                                    </span>
+                                </a>
 
                                 <a
                                     class="<%= page.url === '/arquitetura-web-apps' ? 'active' : '' %>"
@@ -66,8 +72,8 @@
                         </li>
                         <li>
                             <a
-                                class="<%= page.url === '/manifesto' ? 'active' : '' %>"
-                                href="/manifesto">Manifesto</a>
+                                class="<%= page.url === '/tao' ? 'active' : '' %>"
+                                href="/tao">Tao</a>
                         </li>
                         <li>
                             <a
@@ -86,7 +92,7 @@
                         </li>
                     </ul>
                 </div>
-                <ul class="flex items-center gap-5 ltr:pr-5 rtl:pl-5 ltr:lg:pl-5 ltr:lg:pr-0 rtl:lg:pr-5 rtl:lg:pl-0">
+                <ul class="flex items-center">
                     <li>
                         <button
                             type="button"
@@ -117,7 +123,7 @@
                         </button>
                     </li>
                 </ul>
-                <button type="button" class="flex h-10 w-10 items-center justify-center rounded-full bg-primary lg:hidden" onclick="toggleMenu()">
+                <button type="button" class="flex h-10 w-10 items-center justify-center rounded-full bg-primary lg:hidden js-toggle-menu">
                     <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
                         <path
                             d="M2 15H11C11.552 15 12 15.447 12 16C12 16.553 11.552 17 11 17H2C1.448 17 1 16.553 1 16C1 15.447 1.448 15 2 15Z"
