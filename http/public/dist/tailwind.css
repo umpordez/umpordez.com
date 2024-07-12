@@ -1752,6 +1752,10 @@ header .menus .submenu a.active {
   margin-left: 0.5rem;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -1782,10 +1786,6 @@ header .menus .submenu a.active {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.ml-3 {
-  margin-left: 0.75rem;
 }
 
 .line-clamp-2 {
@@ -1873,10 +1873,6 @@ header .menus .submenu a.active {
   height: 100vh;
 }
 
-.h-\[60px\] {
-  height: 60px;
-}
-
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1920,10 +1916,6 @@ header .menus .submenu a.active {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[80px\] {
-  width: 80px;
 }
 
 .min-w-\[50px\] {
@@ -2001,10 +1993,6 @@ header .menus .submenu a.active {
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.flex-row {
-  flex-direction: row;
 }
 
 .flex-col {

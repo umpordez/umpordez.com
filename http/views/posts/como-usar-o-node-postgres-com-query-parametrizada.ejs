@@ -1,0 +1,98 @@
+<p>
+    Digamos que você não tem um orm, ou simplesmente não quer usar um e
+    decidiu usar o mais próximo possível do nativo. Nesse caso, o mínimo que
+    podemos fazer é usar queries parametrizadas.
+</p>
+<p>
+    Queries parametrizadas (ou consultas
+    parametrizadas, ou parameterized queries, ou ainda prepared statement)
+    são basicamente consultas que escrevemos para o banco de dados com
+    certos códigos para o módulo de acesso ao db pré compilar e nos
+    proteger de algum código malicioso, ou algum tipo de
+    <a href='https://www.w3schools.com/sql/sql_injection.asp'>SQL Injection</a>. <br />
+    Pense em parameterized queries como simplesmente variáveis que
+    você passa para o seu componente de acesso ao banco de dados e
+    ele garante o tipo e protege contra algum escape maldoso.
+</p>
+
+<br />
+<p>
+    Com o <code>node-postgres</code>, temos duas formas de fazer isso:
+</p>
+<p>
+    &nbsp;- 1) Usando apenas <code>COLUMN = $N</code>
+    (onde N é a posição desse argumento em
+    <code>.query(STMT, args1, arg2...)</code>).
+    <br />
+    &nbsp;- 2) Passando o <code>COLUMN = $N::TYPE</code>
+    (onde type pode ser text, int, datetime, etc.)
+</p>
+<br />
+<p>
+    Aqui vamos desenvolver uma classe que irá cuidar de gerar a segunda forma de
+    query pra gente, será algo bem simples e o problema que ela vai resolver é o
+    de termos que lembrar sempre a posição do parâmetro e seu tipo,
+    facilitando nossa escrita de statements.
+</p>
+<p>
+    Sem mais delongas, eis a nossa criança:
+</p>
+<pre><code>class DbArgs {
+    constructor () {
+    this._args = [ ];
+    }
+
+    add (value, type) {
+    const argIndex = this._args.length + 1;
+    const fullType = `$${argIndex}::${type}`;
+
+    this._args.push({ argIndex, type, value, fullType });
+    return fullType;
+    }
+
+    toArray () {
+    // values only!
+    return this._args.map((arg) => arg.value);
+    }
+}</code></pre>
+
+<p>
+    Essa pequena classe simplesmente guarda nossos parâmetros em um array e
+    retorna o text desejado, pronto para usarmos em nosso statemet,
+    de forma que podemos escrever nosso código assim:
+</p>
+
+<pre><code>const args = new DbArgs();
+    const stmt = `
+    SELECT
+    text
+    FROM
+    blog_post
+    WHERE
+    name = ${args.add('%parameterized-query%', 'text')} AND
+    int_test = ${args.add(1, 'int')} AND
+    date = ${args.add(new Date().getTime(), 'timestamp')};
+    `;
+    const res = client.query(stmt, args.toArray());</code></pre>
+<p>
+    Esse código gera o seguinte statement:
+</p>
+
+<pre><code>SELECT
+    text
+    FROM
+    blog_post
+    WHERE
+    name = $1::text AND
+    int_test = $2::int AND
+    date = $3::timestamp;</code></pre>
+
+<p>
+    E o <code>args.toArray()</code>, retorna:
+</p>
+
+<pre><code>[ '%parameterized-query%', 1, 1518470278513 ]</code></pre>
+
+
+<p>
+    Bem mais simples que ter que ficar cuidando de ordem e tipo de argumentos, né? :)</p>

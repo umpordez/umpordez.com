@@ -35,17 +35,29 @@ export const up = async (knex) => {
             'javascript-hoisting',
             'JavaScript Hoisting',
             'JavaScript',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1920px-Unofficial_JavaScript_logo_2.svg.png',
+            '/assets/images/posts/javascript.png',
             'Toda definição em JavaScript é "hoisted" no topo de seu escopo. Mas o que isso significa',
             'Deividy Metheler Zachetti',
             'https://avatars.githubusercontent.com/u/1174445?v=4',
             '2018-02-04'
         ),
+
+        (
+            'como-usar-o-node-postgres-com-query-parametrizada',
+            'Como usar o node-postgres com query parametrizada',
+            'node.js & postgres',
+            '/assets/images/posts/node-postgres.png',
+            'Digamos que você não tem um orm, ou simplesmente não quer usar um e decidiu usar o mais próximo possível do nativo.',
+            'Deividy Metheler Zachetti',
+            'https://avatars.githubusercontent.com/u/1174445?v=4',
+            '2018-02-12'
+        ),
+
         (
             '3-formas-de-passar-configs-para-uma-app-em-nodejs',
             '3 formas de passar configurações para uma app em Node.js',
             'node.js',
-            'https://icon-library.com/images/node-js-icon/node-js-icon-15.jpg',
+            '/assets/images/posts/nodejs.png',
             'Descubra 3 formas de passar config para Node.js, a terceira é a que eu uso',
             'Deividy Metheler Zachetti',
             'https://avatars.githubusercontent.com/u/1174445?v=4',
