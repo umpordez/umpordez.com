@@ -1,0 +1,122 @@
+<p>
+    NodeJS é uma camada em cima de uma virtual machine chamada V8
+    (cool name, huh?), então antes de entendermos o que é o NodeJS vamos
+    entender um pouco sobre a historia do V8.
+</p>
+
+<p>
+    No inicio da web, por volta de 1995, nasceu o JavaScript, ele foi criado
+    em apenas 10 dias pelo Brendan Eich, programador do Netscape na época,
+    só começou a ser padronizado 2~ anos depois (o nascimento do ECMAScript).
+    <br />
+    Seu primeiro nome foi Mocha, depois LiveScript e só então se tornou o JavaScript.
+</p>
+
+
+<br />
+<p>
+    O primeiro compilador JavaScript se chamava SpiderMonkey (existe até hoje!),
+    foi desenvolvido para o navegador Netscape, e era um simples interpretador que
+    lia e executava códigos JavaScript, durante um bom tempo JavaScript foi praticamente um
+    filho bastardo, ninguém deu muita atenção e basicamente servia apenas para enviar formulários e abrir popups. (haha .)
+    <br />
+    Cerca de dez anos depois de seu nascimento o Google lançou o Google Maps, powered por
+    JavaScript, na época, como JavaScript era terra de ninguém, sofreu a funcionar em varios
+    browsers, e muitos artigos sobre padrões de compilar JavaScript surgiram, o
+    processo de compilar era super simples, e a partir daí começaram a olhar com outros
+    olhos para o nosso JS.
+</p>
+<br />
+
+<p>
+    Só em 2008 o Google lançou sua arma open-source, chamada Chrome V8 (ou só V8 pros chegado),
+    a idéia era padronizar um compilador JS e "bombar" o seu novo browser.
+    <br />
+    O V8 funciona com varias threads internas, como por ex a main thread que
+    basicamente lê um código, manda para outra thread que compila o seu código e
+    quando ele estiver pronto volta para main thread e executa.
+    <br />
+    Essa thread que compila o código basicamente aplica varias optimizações,
+    existem pelo menos dois processos de compilação que rodam em paralelo
+    (Full-Codegen e Crankshaft) e produz algo pronto para ser executado em machine code,
+    além disso tem pelo menos mais duas threads rodando, que são a de garbage
+    collector e dead code elimination.
+    <br />
+    (Como o V8 cuida de processar e transformar o código vou deixar para outro post...)
+</p>
+
+<br />
+
+<p>
+    Resumidamente, o V8 processa códigos JavaScript. Pelo seguinte processo:
+    ele começa a processar o seu código, manda para outra thread compilar,
+    e a thread principal fica aberta para novos processamentos até ter sua
+    resposta de volta, e só quando seu código termina de compilar ela volta
+    a processar ele.
+</p>
+<br />
+
+<p>
+    OK, faz sentido... e o NodeJS?
+    <br />
+    Calma, calma! Vamos chegar lá... temos que falar um pouco sobre a libev (ou libevent) e o Microsoft IOCP.
+    <br />
+    Esse vai ser bem rápido, pois não tenho muita historia pra eles :P
+    <br />
+    Basicamente, essas duas libraries fornecem uma API para executar
+    funções quando determinados eventos ou timeouts acontecerem, libev para UNIX e IOCP para Windows.
+</p>
+
+<br />
+<p>
+    Huum.. to começando a entender, o V8 processa o JavaScript e a libev/IOCP chamam meus callbacks no Node quando terminar?
+    <br />
+    Quase isso! A libev/IOCP estão meio que deprecated theses days, delas
+    nasceu a libuv que é o que o NodeJS usa no momento.
+</p>
+<br />
+
+<p>
+    Continuando... em 2009 Ryan Dahl juntou essas duas tecnologias para criar o NodeJS.
+    <br />
+    Basicamente, o V8 processa o JS, transforma em machine code, a libuv
+    manda executar e anexa um callback a isso, quando pronto, chama esse callback que retorna pra userland.
+    <br />
+    Esse vai e volta é o chamado Event Loop, ou IO não bloqueante do NodeJS.
+    Quando escrevemos um código ou script para NodeJS o event loop pega esse código,
+    processa ele, manda para a libuv e vai atrás de mais códigos para mandar pro v8 e
+    para a libuv, e assim vai.
+</p>
+
+<br />
+
+<p>
+    Mas peraí, ouvi dizer que NodeJS é single thread...
+    <br />
+    Isso! Você está correto (em partes). Pois, NodeJS mantém uma única
+    thread aberta para o seu codigo, um EventLoop na libuv (não é o NodeJS de fato que tem o event loop, ele cria e gerencia um na libuv).
+</p>
+    <br />
+
+<p>
+    Achei essa imagem que representa bem esse flow:
+</p>
+
+
+<div style='text-align: center'>
+    <img src='/assets/images/posts/event-loop.png' alt='Event loop NodeJS' style='width: 100%; max-width: 800px' />
+</div>
+
+<br />
+
+<p>Refs:</p>
+<ul class='refs-list'>
+    <li><a href='http://www.mediacurrent.com/blog/brief-history-google-v8-engine'>Brief history google v8</a></li>
+    <li><a href='https://nikhilm.github.io/uvbook/introduction.html'>libuv introduction</a></li>
+    <li><a href='https://en.wikipedia.org/wiki/ECMAScript'>Wikipedia ECMAScript</a></li>
+    <li><a href='https://en.wikipedia.org/wiki/Chrome_V8'>Wikipedia Chrome V8</a></li>
+    <li><a href='http://rickgaribay.net/archive/2012/01/28/node-is-not-single-threaded.aspx'>NodeJS is not single threaded</a></li>
+    <li><a href='https://nodesource.com/blog/understanding-the-nodejs-event-loop/'>Pequeno post sobre NodeJS Event loop</a></li>
+    <li><a href='https://www.youtube.com/watch?v=ztspvPYybIY'>Nascimento do NodeJS</a></li>
+    <li><a href='https://nodejs.org/en/about/'>NodeJS about</a></li>
+</ui>

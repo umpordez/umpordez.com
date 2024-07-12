@@ -1,0 +1,53 @@
+<h2>JavaScript Scope Chain</h2>
+<p>
+    O único jeito de criar escopo em JavaScript é definindo uma função,
+    basicamente, sempre que uma função é definida ela cria um novo escopo,
+    esse escopo tem uma ligação com o escopo de onde a função foi definida (confusing?)
+    e isso é o que conhecemos como Scope Chain, ou cadeia de escopo.
+</p>
+
+<p>
+    Por definição <strong>toda</strong> função em JavaScript é um closure,
+    pois são objetos, e tem uma cadeia de escopo associada a elas.
+</p>
+
+<p>Agora, um pouco de prática pra clarear a mente:</p>
+
+<pre><code>var scope = 'global';
+
+function fnOuter () {
+    console.log(scope); // > undefined
+    var scope = 'outer';
+
+    return function () {
+        console.log(scope); // > outer
+        scope = 'inner';
+
+        return scope;
+    }();
+}
+
+console.log(scope); // > global;
+console.log(fnOuter()); // > 'inner';
+console.log(scope); // > global;</code></pre>
+
+<p>Notou algo bem loco por aí?</p>
+<p>
+    O <code>console.log(scope);</code> no começo da
+    <code>fnOuter()</code> retorna
+    <code>undefined</code> isso é devido as declarações no
+    JavaScript serem todas hoisted (tem um post <a href='/post/2018-02-04-javascript-hoisting.html'>aqui</a> com mais
+    info), então quando definimos uma nova
+    <code>var</code> nossa variable é 'hoisted' no
+    topo da função e inicializado com
+    <code>undefined</code>. Cool, huh?
+</p>
+<p>
+    Outro detalhe interessante é que como declaramos uma nova variável, a
+    mudança do <code>scope = 'inner'</code> tem efeito
+    apenas na variável da função <code>fnOuter()</code> e
+    não mudamos o scope global, usar o mesmo nome de uma função paí ou global
+    <strong>não</strong> é recomendado (não faça isso em seus projetos!) e é
+    conhecido como <strong>variable shadowing</strong>.
+    Usamos aqui apenas para exemplificar a idéia de escopo.
+</p>

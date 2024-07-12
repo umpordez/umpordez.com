@@ -41,6 +41,26 @@ export const up = async (knex) => {
             'https://avatars.githubusercontent.com/u/1174445?v=4',
             '2018-02-04'
         ),
+        (
+            'javascript-scope-chain',
+            'JavaScript Scope Chain',
+            'JavaScript',
+            '/assets/images/posts/javascript.png',
+            'O único jeito de criar escopo em JavaScript é definindo uma função',
+            'Deividy Metheler Zachetti',
+            'https://avatars.githubusercontent.com/u/1174445?v=4',
+            '2018-02-05'
+        ),
+       (
+            'javascript-wrapper-objects',
+            'JavaScript Wrapper Objects',
+            'JavaScript',
+            '/assets/images/posts/javascript.png',
+            'Tudo em JavaScript, com exceção de null e undefined, é um objeto, até mesmo os valores primitivos (String, Number or Boolean) herdam de Object.prototype',
+            'Deividy Metheler Zachetti',
+            'https://avatars.githubusercontent.com/u/1174445?v=4',
+            '2018-02-05'
+        ),
 
         (
             'como-usar-o-node-postgres-com-query-parametrizada',
@@ -51,6 +71,16 @@ export const up = async (knex) => {
             'Deividy Metheler Zachetti',
             'https://avatars.githubusercontent.com/u/1174445?v=4',
             '2018-02-12'
+        ),
+       (
+            'funcionamento-interno-nodejs',
+            'Funcionamento interno do NodeJS',
+            'node.js',
+            '/assets/images/posts/cover-event-loop.png',
+            'NodeJS é uma camada em cima de uma virtual machine chamada V8.',
+            'Deividy Metheler Zachetti',
+            'https://avatars.githubusercontent.com/u/1174445?v=4',
+            '2018-02-06'
         ),
 
         (
