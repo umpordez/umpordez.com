@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <%- include('partials/head.ejs') %>
+    <body class="overflow-x-hidden">
+        <%- include('partials/screen-loader.ejs') %>
+        <div
+            class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
+        >
+            <%- include('partials/header.ejs') %>
+
+            <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
+                <div class="overflow-hidden bg-black pt-[82px] sm:-mx-[250px] sm:rounded-b-[50%] lg:-mx-[150px] lg:pt-[106px]">
+                    <div class="relative">
+                        <img src="/assets/images/banner-lefticon.png" alt="banner-lefticon" class="absolute left-0 top-20 sm:left-[250px] lg:left-[150px]" />
+                        <img
+                            src="/assets/images/banner-rightIcon.png"
+                            alt="banner-rightIcon"
+                            class="absolute right-0 -top-4 sm:right-[250px] lg:right-[150px]"
+                        />
+                        <div class="container">
+                            <div class="relative bg-[url(/assets/images/world-map.png)] bg-cover bg-top bg-no-repeat pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36">
+                                <div class="relative z-[1] text-center text-white lg:w-3/5 ltr:lg:text-left rtl:lg:text-right xl:w-1/2">
+                                    <h2 class="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
+                                        <!--
+                                        Programe <span class="italic text-primary">10x</span> mais <span class="italic text-secondary">rápido</span> 
+                                        -->
+                                        Seja <span class="italic text-primary">um</span> que vale por <span class="italic text-secondary">dez</span> 
+                                    </h2>
+                                    <p class="my-8 text-lg lg:w-[90%]">
+
+                                        Domine os fundamentos e a base do que é utilizado diariamente pelos melhores programadores do mundo.
+                                    </p>
+                                    <a href="/cursos" class="btn mx-auto mt-2 block w-fit bg-white lg:mx-0 lg:rtl:ml-auto">veja nossos cursos</a>
+                                </div>
+                                <div
+                                    class="bottom-0 mx-auto w-auto ltr:right-0 rtl:left-0 md:w-[540px] lg:absolute xl:w-[650px]">
+                                    <img src="/assets/images/home-banner-icon.svg" alt="home-banner-icon" class="rtl:rotate-y-180" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="bg-[url(/assets/images/service-bg.png)] bg-cover bg-center bg-no-repeat pt-14 dark:bg-none lg:pt-[100px]">
+                    <div class="container">
+                        <div class="heading text-center">
+                            <h6>Tenha confiança em seu código</h6>
+                            <h4>Conheça nossos 3 pilares de aprendizado</h4>
+                        </div>
+                        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                            <div data-aos="fade-up" data-aos-duration="1000">
+                                <div
+                                    class="group rounded-3xl border-2 border-white bg-white p-6 shadow-[-20px_30px_70px_rgba(219,222,225,0.4)] transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-transparent dark:!shadow-none dark:hover:bg-secondary"
+                                >
+                                    <div
+                                        class="flex h-14 w-14 items-center justify-center rounded-full bg-secondary shadow-[0px_15px_30px_rgba(180,118,229,0.4)] transition group-hover:bg-black"
+                                    >
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            class="text-black transition group-hover:text-white dark:text-white"
+                                            width="28"
+                                            height="28"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                                <g stroke-width="0"></g>
+                                                <g stroke-linecap="round" stroke-linejoin="round"></g>
+                                                <g>
+                                                    <path
+                                                        d="M4 19V6.2C4 5.0799 4 4.51984 4.21799 4.09202C4.40973 3.71569 4.71569 3.40973 5.09202 3.21799C5.51984 3 6.0799 3 7.2 3H16.8C17.9201 3 18.4802 3 18.908 3.21799C19.2843 3.40973 19.5903 3.71569 19.782 4.09202C20 4.51984 20 5.0799 20 6.2V17H6C4.89543 17 4 17.8954 4 19ZM4 19C4 20.1046 4.89543 21 6 21H20M9 7H15M9 11H15M19 17V21"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                    </path>
+                                                </g>
+                                            </svg>
+
+                                    </div>
+                                    <a
+                                        href="services-detail.html"
+                                        class="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black"
+                                        >Leitura</a
+                                    >
+                                    <p class="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
+                                        O estudo de códigos reais é o primeiro passo para dominar uma técnologia.
+                                    </p>
+                                </div>
+                            </div>
+                            <div data-aos="fade-up" data-aos-duration="1000">
+                                <div
+                                    class="group rounded-3xl border-2 border-white bg-white p-6 shadow-[-20px_30px_70px_rgba(219,222,225,0.4)] transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-transparent dark:!shadow-none dark:hover:bg-secondary"
+                                >
+                                    <div
+                                        class="flex h-14 w-14 items-center justify-center rounded-full bg-secondary shadow-[0px_15px_30px_rgba(180,118,229,0.4)] transition group-hover:bg-black"
+                                    >
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                opacity="0.5"
+                                                d="M10.1658 20C10.5862 20 10.9617 19.7371 11.1054 19.342L15.8374 6.34204C16.0749 5.68981 15.5919 5 14.8978 5H13.8341C13.4137 5 13.0382 5.26292 12.8945 5.65796L8.16245 18.658C7.92504 19.3102 8.40804 20 9.10214 20H10.1658Z"
+                                                fill="white"
+                                            />
+                                            <path
+                                                d="M17.9889 17.0964C18.3794 17.4871 19.0127 17.4873 19.4034 17.0966L23.2929 13.2071C23.6834 12.8166 23.6834 12.1834 23.2929 11.7929L19.4036 7.90359C19.0129 7.51287 18.3793 7.5131 17.9889 7.90409L17.2814 8.61254C16.8913 9.00328 16.8916 9.63632 17.2823 10.0266L19.0501 11.7927C19.441 12.1832 19.441 12.8168 19.0502 13.2074L17.2822 14.9746C16.8916 15.365 16.8914 15.9981 17.2818 16.3888L17.9889 17.0964ZM4.94994 13.2073C4.55904 12.8167 4.55896 12.1832 4.94977 11.7925L6.71781 10.0253C7.10839 9.63494 7.10858 9.00184 6.71823 8.61121L6.01111 7.90359C5.62062 7.51283 4.98726 7.51272 4.59664 7.90334L0.707106 11.7929C0.316582 12.1834 0.316582 12.8166 0.707107 13.2071L4.59639 17.0964C4.98711 17.4871 5.62066 17.4869 6.01111 17.0959L6.71856 16.3874C7.10874 15.9967 7.10837 15.3637 6.71773 14.9734L4.94994 13.2073Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <a
+                                        href="services-detail.html"
+                                        class="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black"
+                                        >Escrita</a
+                                    >
+                                    <p class="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
+                                        Precisamos escrever códigos para entender na prática como conceitos primordiais funcionam.
+                                    </p>
+                                </div>
+                            </div>
+                            <div data-aos="fade-up" data-aos-duration="1000">
+                                <div
+                                    class="group rounded-3xl border-2 border-white bg-white p-6 shadow-[-20px_30px_70px_rgba(219,222,225,0.4)] transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-transparent dark:!shadow-none dark:hover:bg-secondary"
+                                >
+                                    <div
+                                        class="flex h-14 w-14 items-center justify-center rounded-full bg-secondary shadow-[0px_15px_30px_rgba(180,118,229,0.4)] transition group-hover:bg-black"
+                                    >
+                                        <svg
+                                            width="28"
+                                            height="28"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            class="text-black transition group-hover:text-white dark:text-white"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                                <g stroke-width="0"></g>
+                                                <g stroke-linecap="round" stroke-linejoin="round"></g>
+                                                <g>
+                                                    <g>
+                                                        <path
+                                                            d="M13.9998 8H18.9998V3M18.7091 16.3569C17.7772 17.7918 16.4099 18.8902 14.8079 19.4907C13.2059 20.0913 11.4534 20.1624 9.80791 19.6937C8.16246 19.225 6.71091 18.2413 5.66582 16.8867C4.62073 15.5321 4.03759 13.878 4.00176 12.1675C3.96593 10.4569 4.47903 8.78001 5.46648 7.38281C6.45392 5.98561 7.86334 4.942 9.48772 4.40479C11.1121 3.86757 12.8661 3.86499 14.4919 4.39795C16.1177 4.93091 17.5298 5.97095 18.5209 7.36556"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                    </div>
+                                    <a
+                                        href="services-detail.html"
+                                        class="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black"
+                                        >Refatoração</a
+                                    >
+                                    <p class="mb-10 text-lg font-semibold transition line-clamp-3 dark:group-hover:text-black">
+                                        Orgânica e constante, crie o hábito de refatorar o seu código diariamente.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <section class="dark:!bg-none" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 54.69%)">
+                    <div
+                            class="relative my-14 mx-auto border-[10px] border-transparent bg-black py-14 dark:border-black dark:bg-gray-dark lg:my-[100px] lg:py-[100px] xl:max-w-[1440px] xl:rounded-3xl"
+                    >
+                        <div class="container">
+                            <div class="items-end gap-4 lg:flex xl:gap-0">
+                                <div class="lg:w-1/2">
+                                    <div class="heading mb-16 text-center ltr:lg:text-left rtl:lg:text-right">
+                                        <h6>O que nos torna especial?</h6>
+                                        <h4 class="leading-normal !text-white lg:!leading-[50px]">A base para escrever códigos pragmáticos.</h4>
+                                    </div>
+                                    <div class="grid gap-x-7 gap-y-12 sm:grid-cols-2" data-aos="fade-right" data-aos-duration="1000">
+                                        <div class="flex transition">
+                                            <div>
+                                                <svg width="30" height="30" viewBox="0 0 24 24" fill="#00fe35" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M9.25 4C9.25 2.48122 10.4812 1.25 12 1.25C13.5188 1.25 14.75 2.48122 14.75 4C14.75 5.51878 13.5188 6.75 12 6.75C10.4812 6.75 9.25 5.51878 9.25 4Z"
+                                                        fill="#00fe35" />
+                                                    <path
+                                                        d="M8.22309 11.5741L6.04779 10.849C5.42206 10.6404 5 10.0548 5 9.39526C5 8.41969 5.89953 7.69249 6.85345 7.89691L8.75102 8.30353C8.85654 8.32614 8.9093 8.33744 8.96161 8.34826C10.966 8.76286 13.034 8.76286 15.0384 8.34826C15.0907 8.33744 15.1435 8.32614 15.249 8.30353L17.1465 7.8969C18.1005 7.69249 19 8.41969 19 9.39526C19 10.0548 18.5779 10.6404 17.9522 10.849L15.7769 11.5741C15.514 11.6617 15.3826 11.7055 15.2837 11.7666C14.9471 11.9743 14.7646 12.361 14.8182 12.753C14.834 12.8681 14.8837 12.9974 14.9832 13.256L16.23 16.4977C16.6011 17.4626 15.8888 18.4997 14.8549 18.4997C14.3263 18.4997 13.8381 18.2165 13.5758 17.7574L12 14.9997L10.4242 17.7574C10.1619 18.2165 9.67373 18.4997 9.14506 18.4997C8.11118 18.4997 7.39889 17.4626 7.77003 16.4977L9.01682 13.256C9.11629 12.9974 9.16603 12.8681 9.18177 12.753C9.23536 12.361 9.05287 11.9743 8.71625 11.7666C8.61741 11.7055 8.48597 11.6617 8.22309 11.5741Z"
+                                                        fill="#00fe35" />
+                                                    <path
+                                                        d="M12 21.9998C17.5228 21.9998 22 19.9851 22 17.4998C22 15.778 19.8509 14.282 16.694 13.5254L17.63 15.959C18.379 17.9065 16.9415 19.9996 14.8549 19.9996C13.788 19.9996 12.8028 19.4279 12.2735 18.5015L12 18.0229L11.7265 18.5015C11.1972 19.4279 10.212 19.9996 9.14506 19.9996C7.05851 19.9996 5.62099 17.9065 6.37001 15.959L7.30603 13.5254C4.14907 14.282 2 15.778 2 17.4998C2 19.9851 6.47715 21.9998 12 21.9998Z"
+                                                        fill="#00fe35" />
+                                                </svg>
+                                            </div>
+                                            <div class="ltr:pl-3 rtl:pr-3">
+                                                <h4 class="mb-2 text-lg font-bold text-white">Skin in the Game</h4>
+                                                <p class="font-semibold">Aprenda com quem vive disso há mais de 20 anos.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex transition">
+                                            <div>
+                                                <svg width="30" height="30" viewBox="0 0 24 24" fill="#00fe35" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M6.27103 2.11151C5.46135 2.21816 5.03258 2.41324 4.72718 2.71244C4.42179 3.01165 4.22268 3.43172 4.11382 4.225C4.00176 5.04159 4 6.12387 4 7.67568V16.2442C4.38867 15.9781 4.82674 15.7756 5.29899 15.6517C5.82716 15.513 6.44305 15.5132 7.34563 15.5135L20 15.5135V7.67568C20 6.12387 19.9982 5.04159 19.8862 4.22499C19.7773 3.43172 19.5782 3.01165 19.2728 2.71244C18.9674 2.41324 18.5387 2.21816 17.729 2.11151C16.8955 2.00172 15.7908 2 14.2069 2H9.7931C8.2092 2 7.10452 2.00172 6.27103 2.11151ZM6.75862 6.59459C6.75862 6.1468 7.12914 5.78378 7.58621 5.78378H16.4138C16.8709 5.78378 17.2414 6.1468 17.2414 6.59459C17.2414 7.04239 16.8709 7.40541 16.4138 7.40541H7.58621C7.12914 7.40541 6.75862 7.04239 6.75862 6.59459ZM7.58621 9.56757C7.12914 9.56757 6.75862 9.93058 6.75862 10.3784C6.75862 10.8262 7.12914 11.1892 7.58621 11.1892H13.1034C13.5605 11.1892 13.931 10.8262 13.931 10.3784C13.931 9.93058 13.5605 9.56757 13.1034 9.56757H7.58621Z"
+                                                        fill="#00fe35" />
+                                                    <path
+                                                        d="M7.47341 17.1351H8.68965H13.1034H19.9991C19.9956 18.2657 19.9776 19.1088 19.8862 19.775C19.7773 20.5683 19.5782 20.9884 19.2728 21.2876C18.9674 21.5868 18.5387 21.7818 17.729 21.8885C16.8955 21.9983 15.7908 22 14.2069 22H9.7931C8.2092 22 7.10452 21.9983 6.27103 21.8885C5.46135 21.7818 5.03258 21.5868 4.72718 21.2876C4.42179 20.9884 4.22268 20.5683 4.11382 19.775C4.07259 19.4746 4.0463 19.1382 4.02952 18.7558C4.30088 18.0044 4.93365 17.4264 5.72738 17.218C6.01657 17.1421 6.39395 17.1351 7.47341 17.1351Z"
+                                                        fill="#00fe35" />
+                                                </svg>
+                                            </div>
+                                            <div class="ltr:pl-3 rtl:pr-3">
+                                                <h4 class="mb-2 text-lg font-bold text-white">Método L.E.R.</h4>
+                                                <p class="font-semibold">Esse ciclo vai te dar a confiança que você precisa.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex transition">
+                                            <div>
+                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_36_392)">
+                                                        <path
+                                                            opacity="0.5"
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M14.2364 27.9997V24.9966C12.4567 25.1078 11.1218 23.6617 11.1218 21.9935C11.1218 20.3249 12.4567 18.9904 14.2364 19.1015V16.0984H8.67477C8.89731 15.6535 9.3422 15.0973 9.3422 14.5412C9.3422 12.3167 6.00534 12.3167 6.00534 14.5412C6.00534 15.0975 6.33905 15.6535 6.56161 16.0984H1V27.1102C1 27.5551 1.44487 27.9999 1.88974 27.9999H14.2365L14.2364 27.9997Z"
+                                                            fill="#00fe35"
+                                                        />
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M28.6959 16.0981H25.2477C25.3588 17.8778 24.0242 19.3238 22.3557 19.3238C20.576 19.3238 19.2412 17.8778 19.3526 16.0981H15.4595V20.7698C15.0146 20.6586 14.4584 20.3249 14.0135 20.3249C11.9001 20.3249 11.9001 23.6618 14.0135 23.6618C14.4584 23.6618 15.0146 23.4392 15.4595 23.2169V27.9997H27.8063C28.2511 27.9997 28.696 27.5549 28.696 27.11V16.0982L28.6959 16.0981Z"
+                                                            fill="#00fe35"
+                                                        />
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M28.6731 14.9015V3.88974C28.6731 3.44487 28.2283 3 27.672 3H15.4367V5.89196C17.1052 5.66942 18.6624 7.00423 18.6624 8.78392C18.6624 10.5636 17.1052 11.8985 15.4367 11.6759V14.9016H20.9983C20.8871 15.3464 20.5534 15.9027 20.5534 16.3476C20.5534 18.5722 24.0017 18.5722 24.0017 16.3476C24.0017 15.9027 23.668 15.3465 23.4454 14.9016L28.6731 14.9015Z"
+                                                            fill="#00fe35"
+                                                        />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_36_392">
+                                                            <rect width="30" height="30" fill="white" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </div>
+                                            <div class="ltr:pl-3 rtl:pr-3">
+                                                <h4 class="mb-2 text-lg font-bold text-white">Base da programação</h4>
+                                                <p class="font-semibold">Não precisa de matemática avançada, mas precisa do básico.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex transition">
+                                            <div>
+                                                <svg width="30" height="30" viewBox="0 0 48 48" fill="#00fe35" xmlns="http://www.w3.org/2000/svg">
+                                                    <g>
+                                                        <path d="M41,6H7A2,2,0,0,0,5,8V32a2,2,0,0,0,2,2H41a2,2,0,0,0,2-2V8A2,2,0,0,0,41,6ZM21.4,24.6a1.9,1.9,0,0,1-.2,3,2,2,0,0,1-2.7-.3l-5.9-5.9a1.9,1.9,0,0,1,0-2.8l5.9-6a2.3,2.3,0,0,1,2.7-.3,2,2,0,0,1,.2,3.1L16.8,20Zm14-3.2-5.9,5.9a2,2,0,0,1-2.7.3,1.9,1.9,0,0,1-.2-3L31.2,20l-4.6-4.6a2,2,0,0,1,.2-3.1,2.3,2.3,0,0,1,2.7.3l5.9,6A1.9,1.9,0,0,1,35.4,21.4Z"/>
+                                                        <path d="M44,38H4a2,2,0,0,0,0,4H44a2,2,0,0,0,0-4Z"/>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <div class="ltr:pl-3 rtl:pr-3">
+                                                <h4 class="mb-2 text-lg font-bold text-white">Códigos reais</h4>
+                                                <p class="font-semibold">
+                                                    Exemplos e exercicios utilizando códigos direto de produção.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-1/2 mx-auto mt-10 ltr:right-5 rtl:left-5 md:w-[45%] lg:mt-0 xl:absolute xl:-translate-y-1/2">
+                                    <img src="/assets/images/box-img.png" alt="box-img" class="w-full rtl:rotate-y-180" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%- include('partials/about-me.ejs') %>
+                    <div class="container">
+                        <div class="relative z-10 lg:flex">
+                            <div class="heading text-center lg:mb-0 lg:w-1/3 ltr:lg:pr-10 ltr:lg:text-left rtl:lg:pl-10 rtl:lg:text-right">
+                                <h6>Manda um ping.</h6>
+                                <h4 class="sm:!leading-[50px]">Pong.</h4>
+                                <img src="/assets/images/form-img.png" alt="form-img" class="mx-auto" data-aos="fade-right" data-aos-duration="1000" />
+                            </div>
+                            <form
+                                action=""
+                                class="js-form-contact rounded-3xl bg-white px-4 py-12 dark:bg-[#101626] lg:w-2/3 lg:px-8">
+                                <div class="grid gap-10 sm:grid-cols-2">
+                                    <div class="relative">
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            class="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                        />
+                                        <label for="" class="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
+                                            >Nome</label
+                                        >
+                                        <svg
+                                            width="20"
+                                            height="22"
+                                            viewBox="0 0 20 22"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="absolute top-1/2 -translate-y-1/2 ltr:right-4 rtl:left-4 dark:text-white"
+                                        >
+                                            <path
+                                                d="M5.42855 5.57875C5.42855 8.10348 7.47525 10.1502 9.99998 10.1502C12.5247 10.1502 14.5714 8.10348 14.5714 5.57875C14.5714 3.05402 12.5247 1.00732 9.99998 1.00732"
+                                                stroke="currentColor"
+                                                stroke-width="1.8"
+                                                stroke-linecap="round"
+                                            />
+                                            <path
+                                                d="M2 16.9328C2 15.9495 2.61812 15.0724 3.5441 14.7417V14.7417C7.71891 13.2507 12.2811 13.2507 16.4559 14.7417V14.7417C17.3819 15.0724 18 15.9495 18 16.9328V18.7014C18 19.9185 16.922 20.8535 15.7172 20.6813L13.8184 20.4101C11.2856 20.0483 8.71435 20.0483 6.18162 20.4101L4.28284 20.6813C3.07798 20.8535 2 19.9185 2 18.7014V16.9328Z"
+                                                stroke="currentColor"
+                                                stroke-width="1.8"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="relative">
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            class="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                        />
+                                        <label for="" class="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
+                                            >Email</label
+                                        >
+                                        <svg
+                                            width="22"
+                                            height="21"
+                                            viewBox="0 0 22 21"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="absolute top-1/2 -translate-y-1/2 ltr:right-4 rtl:left-4 dark:text-white"
+                                        >
+                                            <path
+                                                d="M1 8.00732V7.00732C1 4.2459 3.23858 2.00732 6 2.00732H16C18.7614 2.00732 21 4.2459 21 7.00732V13.0073C21 15.7687 18.7614 18.0073 16 18.0073H6C3.23858 18.0073 1 15.7687 1 13.0073V12.0073"
+                                                stroke="currentColor"
+                                                stroke-width="1.8"
+                                                stroke-linecap="round"
+                                            />
+                                            <path
+                                                d="M5 7.00732L9.8 10.6073C10.5111 11.1407 11.4889 11.1407 12.2 10.6073L17 7.00732"
+                                                stroke="currentColor"
+                                                stroke-width="1.8"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="relative mt-10">
+                                    <textarea
+                                        type="text"
+                                        name="message"
+                                        rows="4"
+                                        class="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                    ></textarea>
+                                    <label for="" class="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
+                                        >Mensagem</label
+                                    >
+                                    <svg
+                                        width="22"
+                                        height="22"
+                                        viewBox="0 0 22 22"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="absolute top-[30px] -translate-y-1/2 ltr:right-4 rtl:left-4 dark:text-white"
+                                    >
+                                        <path
+                                            d="M1 11.467V18.9267C1 19.7652 1.96993 20.2314 2.6247 19.7076L5.45217 17.4456C5.8068 17.1619 6.24742 17.0073 6.70156 17.0073H16C18.7614 17.0073 21 14.7687 21 12.0073V6.00732C21 3.2459 18.7614 1.00732 16 1.00732H6C3.23858 1.00732 1 3.2459 1 6.00732V7.62225"
+                                            stroke="currentColor"
+                                            stroke-width="1.8"
+                                            stroke-linecap="round"
+                                        />
+                                        <circle cx="6.05005" cy="9.05713" r="1.25" fill="currentColor" />
+                                        <circle cx="11.05" cy="9.05713" r="1.25" fill="currentColor" />
+                                        <circle cx="16.05" cy="9.05713" r="1.25" fill="currentColor" />
+                                    </svg>
+                                </div>
+                                <div class="mt-10 text-center ltr:lg:text-right rtl:lg:text-left">
+                                    <button type="submit" class="btn bg-gray px-12 capitalize text-white dark:bg-white dark:text-black dark:hover:bg-secondary">
+                                        Enviar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                </section>
+            </div>
+
+            <%- include('partials/footer.ejs') %>
+        </div>
+
+        <%- include('partials/return-to-top-button.ejs') %>
+
+        <script src="/lib/swiper-bundle.min.js"></script>
+        <script src="/lib/aos.min.js"></script>
+        <script type='module' src="/src/js/home.js"></script>
+
+    </body>
+</html>

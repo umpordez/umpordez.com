@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <%- include('partials/head.ejs') %>
+    <body class="overflow-x-hidden">
+        <%- include('partials/screen-loader.ejs') %>
+        <div
+            class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
+        >
+            <%- include('partials/header.ejs') %>
+
+            <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
+                <div class="bg-[url(/assets/images/inner-page-hero-bg.png)] bg-cover bg-bottom bg-no-repeat pt-[82px] lg:pt-[106px]">
+                    <div class="relative">
+                        <div class="container">
+                            <div class="relative w-full py-14 md:my-14 md:inline-block md:py-0 lg:my-[128px]">
+                                <div class="heading relative mb-8 text-center lg:mb-0 lg:w-1/2 ltr:lg:text-left rtl:lg:text-right">
+                                    <h6><%= post.category %></h6>
+                                    <h4 class="!text-white"><%= post.title %></h4>
+                                    <ul class="items-center justify-center pt-6 sm:flex lg:justify-start">
+                                        <li class="flex items-center justify-center">
+                                            <img
+                                                src="/assets/images/ligeiro.png"
+                                                alt="ligeiro"
+                                                style="width: 50px;"/>
+                                            <span class="px-4 font-semibold sm:text-lg"><%= post.created_by_name %></span>
+                                        </li>
+                                        <li
+                                            class="relative px-4 font-semibold before:absolute before:top-1/2 before:-translate-y-1/2 before:rounded-full before:bg-gray ltr:before:left-0 rtl:before:right-0 sm:text-lg sm:before:h-1 sm:before:w-1"
+                                        >
+                                        <%= post.utc_created_on.toISOString().split('T')[0] %>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="top-0 mt-6 ltr:right-0 rtl:left-0 md:mt-0 lg:absolute" data-aos="fade-left" data-aos-duration="1000">
+                                    <img
+                                        src="<%= post.image_url %>"
+                                        alt="blog-detail-hero"
+                                        class="mx-auto h-80 rounded-[32px] object-cover sm:h-[400px] sm:w-[445px]"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="bg-gradient-to-t from-white to-transparent py-14 dark:bg-none md:py-[100px]">
+                    <div class="container">
+                        <div class="prose max-w-full dark:prose-invert">
+                            <%- include(`posts/${post.link}.ejs`) %>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <%- include('partials/footer.ejs') %>
+        </div>
+
+        <%- include('partials/return-to-top-button.ejs') %>
+
+        <script src="/lib/swiper-bundle.min.js"></script>
+        <script src="/lib/aos.min.js"></script>
+        <script type='module' src="/src/js/blog.js"></script>
+    </body>
+</html>
