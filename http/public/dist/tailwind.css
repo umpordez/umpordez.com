@@ -2578,6 +2578,10 @@ header .menus .submenu a.active {
   padding-top: 82px;
 }
 
+.pt-\[30px\] {
+  padding-top: 30px;
+}
+
 .text-center {
   text-align: center;
 }

@@ -1,0 +1,118 @@
+<h2>Melhorando a Legibilidade do Código com Design Patterns</h2>
+
+<p>Olá, pessoal! Hoje vamos explorar alguns Design Patterns e ver como eles podem ser aplicados em nossa rotina diária.
+    Mas primeiro, o que são Design Patterns?</p>
+<p>Design Patterns são padrões de código que se repetem ao longo da nossa vida. Eles não são exatamente um bloco de
+    código ou algo bem específico, mas sim uma receita a ser seguida. São muito importantes para remover a duplicidade
+    do nosso código e deixar o nosso código mais legível para outros humanos. Eles não melhoram o algoritmo em si, mas
+    melhoram a nossa legibilidade do código.</p>
+<p>Agora que sabemos o que são Design Patterns, vamos ver um exemplo simples e analisá-lo.</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Gateway</span>:</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(<span class="hljs-keyword">self</span>)</span></span>:
+    pass
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize_payment</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, payment)</span></span>:
+    pass
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Payment</span>:</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(<span class="hljs-keyword">self</span>)</span></span>:
+    pass
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pay_by_credit_card</span><span class="hljs-params">(<span class="hljs-keyword">self</span>)</span></span>:
+    gateway = Gateway()
+    gateway.initialize_payment(<span class="hljs-keyword">self</span>)
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pay_by_debit_card</span><span class="hljs-params">(<span class="hljs-keyword">self</span>)</span></span>:
+    gateway = Gateway()
+    gateway.initialize_payment(<span class="hljs-keyword">self</span>)
+</code></pre>
+<p>Podemos identificar alguns padrões de design nesse código? Vamos lá!</p>
+<ol>
+    <li>
+        <p>Programação orientada a objetos: Podemos ver que temos duas classes aqui, <code>Gateway</code> e
+            <code>Payment</code>.</p>
+    </li>
+    <li>
+        <p>Dependência injection: A classe <code>Payment</code> está recebendo outra classe, <code>Gateway</code>, no
+            método <code>initialize_payment</code>. Isso é chamado de dependência injection.</p>
+    </li>
+    <li>
+        <p>Código duplicado: Podemos ver que temos o mesmo código em ambos os métodos <code>pay_by_credit_card</code> e
+            <code>pay_by_debit_card</code>. Isso pode ser resolvido usando o padrão de design conhecido como Factory
+            Method.</p>
+    </li>
+</ol>
+<p>O Factory Method serve para fatorar um código e inicializar um pedaço do código para você. No nosso caso, podemos ter
+    uma função que inicializa as duas classes juntas, como mostrado abaixo:</p>
+<pre><code class="lang-python">def build_payment():
+  gateway = Gateway()
+  payment = Payment()
+  gateway.initialize_payment(payment)
+  <span class="hljs-keyword">return</span> payment
+
+payment = build_payment()
+payment.pay_by_credit_card()
+payment.pay_by_debit_card()
+</code></pre>
+<p>Agora, temos uma funçãozinha legal chamada <code>payByOrderId</code> que faz o mesmo que os métodos anteriores, mas
+    de forma mais legível:</p>
+<pre><code class="lang-python">def payByOrderId(payment, orderId):
+  payment.pay_by_credit_card()
+  payment.pay_by_debit_card()
+  # outras coisas que precisam ser feitas
+
+payment = build_payment()
+payByOrderId(payment, orderId)
+</code></pre>
+<p>E se surgir um novo gateway de pagamento? Não precisamos duplicar as classes, podemos usar um padrão chamado Abstract
+    Factory. Criamos uma classe base chamada <code>BasicGateway</code> com o método interno <code>getUrl</code> que
+    precisa ser implementado nas classes que extenderem essa classe base.</p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BasicGateway</span>:</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getUrl</span><span class="hljs-params">(<span class="hljs-keyword">self</span>)</span></span>:
+    raise NotImplementedError
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GatewayA</span>(<span class="hljs-title">BasicGateway</span>):</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getUrl</span><span class="hljs-params">(<span class="hljs-keyword">self</span>)</span></span>:
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'process.tmp.api.gatewayA'</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">GatewayB</span>(<span class="hljs-title">BasicGateway</span>):</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getUrl</span><span class="hljs-params">(<span class="hljs-keyword">self</span>)</span></span>:
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'process.tmp.api.gatewayB'</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">build_payment</span><span class="hljs-params">()</span></span>:
+  gateway = GatewayA() <span class="hljs-keyword">if</span> process.tmp.api == <span class="hljs-string">'gatewayA'</span> <span class="hljs-keyword">else</span> GatewayB()
+  payment = Payment()
+  gateway.initialize_payment(payment)
+  <span class="hljs-keyword">return</span> payment
+</code></pre>
+<p>E agora, temos um código mais legível e fácil de entender para quem está trabalhando com a gente. E isso é o que os
+    Design Patterns servem: nos ajudam a economizar código e deixar nosso código bem mais legível.</p>
+<p>Espero que tenham gostado desse vídeo! Não esqueçam de compartilhar com os amigos e se inscrever no canal. Tamo
+    junto!</p>
+<p>Referências:</p>
+<ul>
+    <li><a href="https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612">Design
+            Patterns: Elements of Reusable Object-Oriented Software</a></li>
+    <li><a href="https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124">Head First Design
+            Patterns</a></li>
+    <li><a href="https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672">Refactoring: Improving
+            the Design of Existing Code</a></li>
+</ul>
+
+<hr />
+
+<p>Esse blog post foi escrito utilizando AI ( especificamente <code>whisper-large</code> ) com o projeto <a
+        href='https://github.com/S4mpl3r/youtube2blog'>https://github.com/S4mpl3r/youtube2blog</a>.</p>
+<p>
+    O vídeo abaixo foi transcrito e utilizado como base para gerar o texto:</p>
+
+<div class="h-[200px] md:h-[350px] lg:h-[430px] xl:h-[500px] px-5 mb-6"
+    style="background-color: black; text-align: center;">
+    <iframe
+        id=""
+        frameborder="0"
+        title="como melhorar seu código em 10 minutos"
+        src="https://www.youtube.com/embed/CPNUQskQLlA?si=pYB9mdiem88YM5Tc"
+        style="width: 100%; height: 100%" allow="autoplay;picture-in-picture;"
+        allowfullscreen="true"></iframe>
+</div>
