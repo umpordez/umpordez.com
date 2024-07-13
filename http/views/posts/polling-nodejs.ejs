@@ -1,0 +1,83 @@
+<p>Olá, sou o Ligeiro e esse é o The Right Way, onde nós aprendemos sobre tecnologia da forma correta. Nesse post, nós vamos falar sobre polling em JavaScript e como implementá-lo da melhor forma possível.</p>
+<p>Mas antes de começarmos, o que é polling? Polling é uma estratégia de atualização em tempo real em que um cliente envia repetidamente solicitações para um servidor em intervalos regulares para obter os dados mais recentes. Isso é útil quando você está trabalhando com uma aplicação que não suporta WebSockets ou outros protocolos de comunicação em tempo real entre o browser e o servidor.</p>
+<p>Agora, vamos ver como podemos implementar polling em JavaScript. Primeiro, precisamos entender que polling consiste em ter um temporizador na nossa UI que envia uma solicitação para o servidor em intervalos regulares para obter os dados mais recentes. Vamos implementar isso em uma aplicação simples usando React.</p>
+<p>Vamos criar uma função assíncrona chamada <code>startPolling</code> que fará uma solicitação para obter os dados mais recentes e, em seguida, agendará uma nova solicitação usando <code>setTimeout</code>. Isso garante que as solicitações sejam enviadas após o retorno de cada solicitação anterior, em vez de enviar solicitações em paralelo usando <code>setInterval</code>.</p>
+<p>Agora, vamos ver como podemos parar o polling quando a nossa UI for desativada. Para fazer isso, podemos usar o comportamento pouco usado do <code>useEffect</code> do React, que é o retorno de uma função. Essa função será executada quando a nossa UI for desativada, ou seja, quando o componente for removido da UI. Podemos usar essa função para parar o temporizador usando <code>clearTimeout</code>.</p>
+<p>Por fim, vamos ver como podemos trocar os componentes usando um estado gerenciado. Vamos criar um novo componente chamado <code>ToggleComponent</code> que terá um link que, quando clicado, trocará o componente ativo entre o <code>MessageComponent</code> e o <code>OtherComponent</code>. Isso nos permitirá testar o comportamento do polling e do cleanup.</p>
+<p>E aqui está o código completo:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> React, { useEffect, useState } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+
+const MessageComponent = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  const [messages, setMessages] = useState([]);
+
+  const startPolling = async () =&gt; {
+    const response = await loadMessages();
+    setMessages(response.messages);
+    const timeout = setTimeout(startPolling, <span class="hljs-number">1000</span>);
+    <span class="hljs-keyword">return</span> () =&gt; clearTimeout(timeout);
+  };
+
+  useEffect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    startPolling();
+  }, []);
+
+  <span class="hljs-keyword">return</span> (
+    &lt;div&gt;
+      {messages.map(<span class="hljs-function"><span class="hljs-params">(message)</span> =&gt;</span> (
+        &lt;p key={message.id}&gt;{message.text}&lt;/p&gt;
+      ))}
+    &lt;/div&gt;
+  );
+};
+
+const OtherComponent = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> &lt;div&gt;Outro componente&lt;/div&gt;;
+
+const ToggleComponent = <span class="hljs-function"><span class="hljs-params">({ activeComponent })</span> =&gt;</span> {
+  const [toggle, setToggle] = useState(<span class="hljs-literal">false</span>);
+
+  const handleToggle = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    setToggle(<span class="hljs-function"><span class="hljs-params">(prevToggle)</span> =&gt;</span> !prevToggle);
+  };
+
+  <span class="hljs-keyword">return</span> (
+    &lt;div&gt;
+      &lt;a href=<span class="hljs-string">"#"</span> onClick={(ev) =&gt; {
+        ev.preventDefault();
+        setActiveComponent(<span class="hljs-function"><span class="hljs-params">(prevComponent)</span> =&gt;</span> (prevComponent === MessageComponent ? OtherComponent : MessageComponent));
+      }}&gt;Toggle&lt;/a&gt;
+      {activeComponent}
+    &lt;/div&gt;
+  );
+};
+
+const App = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  const [activeComponent, setActiveComponent] = useState(MessageComponent);
+
+  <span class="hljs-keyword">return</span> (
+    &lt;div&gt;
+      &lt;ToggleComponent activeComponent={activeComponent} /&gt;
+    &lt;/div&gt;
+  );
+};
+
+<span class="hljs-keyword">export</span> default App;
+</code></pre>
+
+
+<hr />
+
+<p>Esse blog post foi escrito utilizando AI ( especificamente <code>whisper-large</code> ) com o projeto <a
+        href='https://github.com/S4mpl3r/youtube2blog'>https://github.com/S4mpl3r/youtube2blog</a>.</p>
+<p>
+    O vídeo abaixo foi transcrito e utilizado como base para gerar o texto:</p>
+
+<div class="h-[200px] md:h-[350px] lg:h-[430px] xl:h-[500px] px-5 mb-6"
+    style="background-color: black; text-align: center;">
+    <iframe
+        id=""
+        frameborder="0"
+        title="como melhorar seu código em 10 minutos"
+        src="https://www.youtube.com/embed/tpMdzLOilUw?si=pYB9mdiem88YM5Tc"
+        style="width: 100%; height: 100%" allow="autoplay;picture-in-picture;"
+        allowfullscreen="true"></iframe>
+</div>

@@ -1,0 +1,54 @@
+<p>Olá, tudo bem? Sou o Ligeiro e hoje vamos falar sobre GitHub Actions e como rodar testes automaticamente em todos os commits do seu repositório.</p>
+<p>No vídeo, vamos usar o repositório Argument Validator como exemplo. Ele está um pouco desatualizado e usa Karma para rodar os testes, mas nós vamos dar uma refatorada nele e configurar os testes para serem executados automaticamente em cada commit.</p>
+<p>Primeiro, vamos remover tudo relacionado a Karma e Grunt do repositório. Em seguida, vamos instalar as dependências necessárias para rodar os testes usando Mocha. Para isso, basta executar o comando <code>npm install</code> no terminal.</p>
+<p>Agora, podemos rodar os testes usando o seguinte comando: <code>./node_modules/.bin/mocha spec</code>. No entanto, se você tiver muitos testes, será necessário passar um parâmetro para o comando acima, para que ele rode todos os testes. O parâmetro é <code>*.js</code>, então o comando ficaria: <code>./node_modules/.bin/mocha &#39;*.js&#39;</code>.</p>
+<p>Agora que sabemos como rodar os testes, vamos configurar o GitHub Actions para que eles sejam executados automaticamente em cada commit. Para isso, vamos criar um diretório chamado <code>.github</code> no repositório e, dentro dele, um diretório chamado <code>workflows</code>. Dentro do diretório <code>workflows</code>, vamos criar um arquivo chamado <code>test.yml</code>.</p>
+<p>No arquivo <code>test.yml</code>, vamos configurar o GitHub Actions para que ele execute os testes em cada push no branch <code>master</code>. Para isso, vamos usar as seguintes ações:</p>
+<ul>
+<li><code>actions/checkout@v2</code>: essa ação faz o checkout do repositório no GitHub Actions.</li>
+<li><code>actions/setup-node@v2</code>: essa ação configura a versão do Node.js a ser usada nos testes.</li>
+<li><code>npm install</code>: essa ação instala as dependências do projeto.</li>
+<li><code>npm run test</code>: essa ação roda os testes usando o comando que configuramos anteriormente.</li>
+</ul>
+<p>O arquivo <code>test.yml</code> ficaria assim:</p>
+<pre><code class="lang-yaml"><span class="hljs-attribute">name</span>: Test
+<span class="hljs-attribute">on</span>:
+  <span class="hljs-attribute">push</span>:
+    <span class="hljs-attribute">branches</span>:
+      - master
+<span class="hljs-attribute">jobs</span>:
+  <span class="hljs-attribute">test</span>:
+    <span class="hljs-attribute">runs-on</span>: ubuntu-latest
+    <span class="hljs-attribute">steps</span>:
+      - <span class="hljs-attribute">name</span>: Checkout
+        <span class="hljs-attribute">uses</span>: actions/checkout<span class="hljs-variable">@v2</span>
+      - <span class="hljs-attribute">name</span>: Setup Node
+        <span class="hljs-attribute">uses</span>: actions/setup-node<span class="hljs-variable">@v2</span>
+        <span class="hljs-attribute">with</span>:
+          <span class="hljs-attribute">node-version</span>: <span class="hljs-number">16</span>
+      - <span class="hljs-attribute">name</span>: Install Dependencies
+        <span class="hljs-attribute">run</span>: npm install
+      - <span class="hljs-attribute">name</span>: Run Tests
+        <span class="hljs-attribute">run</span>: npm run test
+</code></pre>
+<p>Agora, basta commitar o arquivo <code>test.yml</code> e pushar no repositório. Os testes serão executados automaticamente em cada push no branch <code>master</code>.</p>
+<p>Espero que tenham gostado deste tutorial sobre GitHub Actions e como rodar testes automaticamente em cada commit. Até a próxima!</p>
+
+
+<hr />
+
+<p>Esse blog post foi escrito utilizando AI ( especificamente <code>whisper-large</code> ) com o projeto <a
+        href='https://github.com/S4mpl3r/youtube2blog'>https://github.com/S4mpl3r/youtube2blog</a>.</p>
+<p>
+    O vídeo abaixo foi transcrito e utilizado como base para gerar o texto:</p>
+
+<div class="h-[200px] md:h-[350px] lg:h-[430px] xl:h-[500px] px-5 mb-6"
+    style="background-color: black; text-align: center;">
+    <iframe
+        id=""
+        frameborder="0"
+        title="como melhorar seu código em 10 minutos"
+        src="https://www.youtube.com/embed/GTAEWhfDbug?si=pYB9mdiem88YM5Tc"
+        style="width: 100%; height: 100%" allow="autoplay;picture-in-picture;"
+        allowfullscreen="true"></iframe>
+</div>
