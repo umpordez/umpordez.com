@@ -173,7 +173,7 @@ app.post('/email', express.json(), buildAjaxHandler(async (req, res) => {
         });
     } catch (ex) {
         console.error(ex);
-    } 
+    }
 }));
 
 app.post('/newsletter', express.json(), buildAjaxHandler(async (req, res) => {
