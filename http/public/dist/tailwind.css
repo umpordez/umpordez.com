@@ -2570,20 +2570,12 @@ header .menus .submenu a.active {
   padding-top: 1.5rem;
 }
 
-.pt-\[20px\] {
-  padding-top: 20px;
+.pt-\[35px\] {
+  padding-top: 35px;
 }
 
 .pt-\[82px\] {
   padding-top: 82px;
-}
-
-.pt-\[30px\] {
-  padding-top: 30px;
-}
-
-.pt-\[35px\] {
-  padding-top: 35px;
 }
 
 .text-center {

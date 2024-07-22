@@ -1,0 +1,35 @@
+<p>Olá, sou o Ligeiro e neste post vou explicar como configurar múltiplos sites usando NGINX.</p>
+<p>Começarei conectando no meu domínio usando o IP, que está hospedado em uma máquina Ubuntu na Amazon. Para melhorar a legibilidade, vou alterar o hostname da máquina usando o comando <code>sudo hostnamectl set-hostname &lt;nome-desejado&gt;</code>.</p>
+<p>Agora, vamos configurar o NGINX para servir sites diferentes para cada domínio. Primeiro, precisamos instalar o Node.js na máquina, para hospedar nossas aplicações. Baixaremos o binário do Linux na versão mais recente, usando o comando <code>wget &lt;link-do-arquivo&gt;</code>. Depois, descompactaremos e movemos o arquivo para uma pasta na raiz do sistema, como <code>/root/Node</code>.</p>
+<p>Para garantir que o Node esteja sempre disponível, adicionaremos o diretório binário do Node às variáveis de ambiente, editando o arquivo <code>/etc/environment</code> e adicionando a seguinte linha: <code>NODE_HOME=&lt;caminho-para-o-node&gt;</code>.</p>
+<p>Agora, criei uma aplicação de exemplo em Node.js, <code>app1.js</code>, que será executada na porta 5000. Para deixar a aplicação rodando em background, usaremos o comando <code>nohup node app1.js &amp;</code>.</p>
+<p>Para configurar o NGINX, precisamos criar um arquivo de configuração para cada site no diretório <code>/etc/nginx/sites-available/</code>. O arquivo deve conter a seguinte estrutura básica:</p>
+<pre><code>server {
+    listen 80;
+    server_name &lt;nome-do-seu-site&gt;;
+
+    location / {
+        proxy_pass http://localhost:&lt;porta-da-sua-aplicacao&gt;;
+    }
+}</code></pre><p>Após criar o arquivo, precisamos criar um link simbólico para ele no diretório <code>/etc/nginx/sites-enabled/</code> usando o comando <code>ln -s /etc/nginx/sites-available/&lt;seu-arquivo&gt; /etc/nginx/sites-enabled/</code>.</p>
+<p>Por fim, reinicie o serviço NGINX usando o comando <code>sudo systemctl restart nginx</code>.</p>
+<p>Repita o processo para cada site que deseja hospedar, alterando o nome do site e a porta da aplicação.</p>
+<p>Este é o processo básico para configurar o NGINX como proxy reverso para aplicativos Node.js. Espero que tenha gostado do tutorial e não esqueça de compartilhar e se inscrever no canal! Até a próxima.</p>
+
+<hr />
+
+<p>Esse blog post foi escrito utilizando AI ( especificamente <code>whisper-large</code> ) com o projeto <a
+        href='https://github.com/S4mpl3r/youtube2blog'>https://github.com/S4mpl3r/youtube2blog</a>.</p>
+<p>
+    O vídeo abaixo foi transcrito e utilizado como base para gerar o texto:</p>
+
+<div class="h-[200px] md:h-[350px] lg:h-[430px] xl:h-[500px] px-5 mb-6"
+    style="background-color: black; text-align: center;">
+    <iframe
+        id=""
+        frameborder="0"
+        title="como melhorar seu código em 10 minutos"
+        src="https://www.youtube.com/embed/ET2dPE15U9w?si=pYB9mdiem88YM5Tc"
+        style="width: 100%; height: 100%" allow="autoplay;picture-in-picture;"
+        allowfullscreen="true"></iframe>
+</div>

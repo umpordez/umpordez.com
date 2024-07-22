@@ -42,7 +42,7 @@ export const up = async (knex) => {
             'Primeiro, vamos remover tudo relacionado a Karma e Grunt do repositório. Em seguida, vamos instalar...',
             'Deividy Metheler Zachetti',
             'https://avatars.githubusercontent.com/u/1174445?v=4',
-            '2024-08-14'
+            '2023-08-14'
         );
     `);
 };
