@@ -1,0 +1,37 @@
+<p>Olá, hoje, vou escrever sobre como cuido dos logs em minhas aplicações, especialmente em ambien
+    tes Node.js.</p>
+    <p>A observabilidade é essencial em qualquer aplicação, e logs detalhados podem ajudar a diagnosticar problemas e a otimizar o desempenho. Em aplicações Node, geralmente, não há um
+     acess log pronto, como em NGINX, então costumo criar meu próprio log de request. Isso inclui o IP do cliente, o método, o endpoint, headers relevantes (como user ID e account ID
+    ), o código de status HTTP e o tempo de resposta.</p>
+    <p>Este log de request é útil para identificar quaisquer problemas de desempenho. Por exemplo, se um endpoint está levando muito tempo para responder, pode haver alguma coisa errad
+    a que precise ser corrigida.</p>
+    <p>Antes de nos aprofundarmos em logs, é importante entender que todo processo Unix tem dois &quot;outputs&quot;: o standard out e o standard error. Esses são dois canais de streaming na apl
+    icação. Quando usamos <code>console.log</code>, estamos enviando para o standard out, enquanto <code>console.error</code> envia para o standard error. Podemos redirecionar esses logs para arquivos es
+    pecíficos, o que é útil para separar logs normais de erros.</p>
+    <p>Por exemplo, podemos redirecionar o standard out para um arquivo e o standard error para outro. Isso é útil se quisermos manter logs de erros separados para facilitar a análise.</p>
+    <p>Tenho um log específico para erros fatais. Quando um erro fatal ocorre, um sinal de fumaça é gerado e um e-mail ou SMS é enviado para mim, alertando sobre o problema
+    . Isso é crucial, pois um erro fatal fará com que o processo da minha aplicação seja encerrado.</p>
+    <p>Por fim, tenho um log de eventos, onde registro eventos críticos da minha aplicação, como conexões com third parties. Isso me permite ter um histórico de eventos que possa ser ú
+    til para resolver problemas ou analisar o comportamento da aplicação.</p>
+    <p>Este é um resumo dos meus métodos de log em aplicações. Mantenho um standard out direcionado para um arquivo, estendo o <code>journactl</code> para pegar logs de erro, tenho um logger centrali
+    zado para pegar erros específicos, e um log específico para erros fatais que gera um sinal de fumaça. Além disso, tenho um log de eventos onde registro eventos críticos da minha
+     aplicação.</p>
+    <p>Espero que tenham gostado deste post! Se tiverem alguma dúvida ou sugestão, sintam-se à vontade para deixar um comentário. Até a próxima!</p>
+<hr />
+
+<p>Esse blog post foi escrito utilizando AI ( especificamente <code>whisper-large</code> ) com o projeto <a
+        href='https://github.com/S4mpl3r/youtube2blog'>https://github.com/S4mpl3r/youtube2blog</a>.</p>
+<p>
+    O vídeo abaixo foi transcrito e utilizado como base para gerar o texto:</p>
+
+<div class="h-[200px] md:h-[350px] lg:h-[430px] xl:h-[500px] px-5 mb-6"
+    style="background-color: black; text-align: center;">
+    <iframe
+        id=""
+        frameborder="0"
+        title="como melhorar seu código em 10 minutos"
+        src="https://www.youtube.com/embed/rCYIFFYm_b4"
+        style="width: 100%; height: 100%" allow="autoplay;picture-in-picture;"
+        allowfullscreen="true"></iframe>
+</div>
+    
