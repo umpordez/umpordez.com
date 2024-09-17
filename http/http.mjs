@@ -96,6 +96,10 @@ app.get('/design-patterns', buildHandler((req, res) => {
     res.render('design-patterns');
 }));
 
+app.get('/o-programador-iniciante', buildHandler((req, res) => {
+    res.render('o-programador-iniciante');
+}));
+
 app.get('/umpordez', buildHandler((req, res) => {
     res.render('umpordez');
 }));

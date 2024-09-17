@@ -3276,8 +3276,12 @@ header .menus.open-menus:where([dir="rtl"], [dir="rtl"] *) {
     display: flex;
   }
 
-  .sm\:h-\[300px\] {
-    height: 300px;
+  .sm\:h-\[200px\] {
+    height: 200px;
+  }
+
+  .sm\:h-\[250px\] {
+    height: 250px;
   }
 
   .sm\:h-\[400px\] {
@@ -3288,8 +3292,12 @@ header .menus.open-menus:where([dir="rtl"], [dir="rtl"] *) {
     width: 75%;
   }
 
-  .sm\:w-\[270px\] {
-    width: 270px;
+  .sm\:w-\[300px\] {
+    width: 300px;
+  }
+
+  .sm\:w-\[420px\] {
+    width: 420px;
   }
 
   .sm\:w-\[445px\] {
