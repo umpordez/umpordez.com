@@ -26,6 +26,23 @@ const configByUrl = {
         image: '/assets/images/logo.png',
         site: 'https://umpordez.com',
         creator: 'Deividy Metheler Zachetti'
+    },
+    'design-patterns': {
+        title: 'Melhor curso de Design Patterns por Ligeiro - umpordez [10x]',
+        description: 'Domine os 23 Patterns do famoso livro de Design Pattern, mais patterns do Martin Fowler e alguns patterns criados pelo ligeiro para o desenvolvimento de Web Apps em 2024. ',
+
+        image: 'https://umpordez.com/assets/images/design-patterns-book.png',
+        site: 'https://umpordez.com/design-patterns',
+        creator: 'Deividy Metheler Zachetti'
+    },
+
+    'o-programador-iniciante': {
+        title: 'Transforme seu Futuro com a Programação guiado pelo Ligeiro um programdor 10x - umpordez',
+        description: 'Junte-se à comunidade de jovens desenvolvedores e troque conhecimentos sobre programação e novas tecnologias. Participe de desafios e workshops que vão elevar suas habilidades. Inscreva-se e faça parte da mudança! ',
+
+        image: '/assets/images/logo.png',
+        site: 'https://umpordez.com/o-programador-iniciante',
+        creator: 'Deividy Metheler Zachetti'
     }
 };
 

@@ -1724,8 +1724,16 @@ header .menus .submenu a.active {
   margin-bottom: 0.5rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
 .mb-3 {
   margin-bottom: 0.75rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .mb-5 {
@@ -1778,10 +1786,6 @@ header .menus .submenu a.active {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mt-\[100px\] {
-  margin-top: 100px;
 }
 
 .mt-auto {
@@ -1932,6 +1936,14 @@ header .menus .submenu a.active {
 
 .max-w-lg {
   max-width: 32rem;
+}
+
+.max-w-screen-md {
+  max-width: 768px;
+}
+
+.max-w-screen-xl {
+  max-width: 1142px;
 }
 
 .max-w-sm {
@@ -2088,6 +2100,12 @@ header .menus .submenu a.active {
 
 .gap-y-12 {
   row-gap: 3rem;
+}
+
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
 .divide-y > :not([hidden]) ~ :not([hidden]) {
@@ -2534,6 +2552,11 @@ header .menus .submenu a.active {
   padding-bottom: 1.75rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .\!pb-5 {
   padding-bottom: 1.25rem !important;
 }
@@ -2697,6 +2720,10 @@ header .menus .submenu a.active {
 
 .leading-normal {
   line-height: 1.5;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
 }
 
 .\!text-black {
@@ -3318,6 +3345,11 @@ header .menus.open-menus:where([dir="rtl"], [dir="rtl"] *) {
     padding-right: 3.5rem;
   }
 
+  .sm\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
   .sm\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -3335,6 +3367,11 @@ header .menus.open-menus:where([dir="rtl"], [dir="rtl"] *) {
 
   .sm\:text-lg {
     font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
@@ -3371,6 +3408,10 @@ header .menus.open-menus:where([dir="rtl"], [dir="rtl"] *) {
     display: flex;
   }
 
+  .md\:grid {
+    display: grid;
+  }
+
   .md\:h-\[350px\] {
     height: 350px;
   }
@@ -3387,12 +3428,26 @@ header .menus.open-menus:where([dir="rtl"], [dir="rtl"] *) {
     width: 540px;
   }
 
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
 
+  .md\:gap-12 {
+    gap: 3rem;
+  }
+
   .md\:gap-24 {
     gap: 6rem;
+  }
+
+  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
   .md\:py-0 {
@@ -3467,6 +3522,10 @@ header .menus.open-menus:where([dir="rtl"], [dir="rtl"] *) {
 
   .lg\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .lg\:mb-16 {
+    margin-bottom: 4rem;
   }
 
   .lg\:mt-0 {
@@ -3605,6 +3664,11 @@ header .menus.open-menus:where([dir="rtl"], [dir="rtl"] *) {
   .lg\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+
+  .lg\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .lg\:px-8 {
