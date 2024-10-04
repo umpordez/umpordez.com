@@ -21,7 +21,11 @@
                     </div>
 
                     <ul>
-                        <li><a href="/" class="<%= page.url === '/' ? 'active' : '' %>">Home</a></li>
+                        <li><a
+                            href="/home"
+                            class="<%= page.url === '/home' ? 'active' : '' %>">Home</a>
+                        </li>
+
                         <li class="group relative">
                             <a href="/cursos" class="<%= page.url === '/cursos' ? 'active' : '' %>">
                                 Cursos
@@ -40,23 +44,7 @@
                             <div class="submenu">
                                 <a
                                     class="<%= page.url === '/design-patterns' ? 'active' : '' %>"
-                                    href="/design-patterns">Design Patterns
-                                </a>
-
-                                <a
-                                    class="<%= page.url === '/design-patterns' ? 'active' : '' %>"
-                                    href="/o-programador-iniciante">O Programador Iniciante
-                                </a>
-
-                                <a
-                                    class="<%= page.url === '/arquitetura-web-apps' ? 'active' : '' %>"
-                                    href="/arquitetura-web-apps">
-                                    Arquitetura de Web Apps
-                                    <span
-                                        class="ml-1 whitespace-nowrap rounded bg-gradient-to-r from-[#ef4444] to-[#f97316] px-1.5 py-0.5 text-[10px] font-bold uppercase text-white"
-                                    >
-                                        Em Breve 
-                                    </span>
+                                    href="/fundamentos-do-desenvolvedor">Fundamentos de um Desenvolvedor
                                 </a>
 
                                 <a

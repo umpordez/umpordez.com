@@ -18,11 +18,24 @@
                         <div class="container">
                             <div class="relative">
                                 <div class="bg-[url(/assets/images/banner-bg-icon.png)] bg-cover bg-center bg-no-repeat">
-                                    <div class="relative bg-[url(../images/world-map.png)] bg-cover bg-top bg-no-repeat py-7 lg:pb-60">
-                                        <div class="relative z-[1] mx-auto text-center text-white sm:w-3/4">
+                                    <div class="relative bg-[url(../images/world-map.png)] bg-cover bg-top bg-no-repeat py-7 lg:pb-20">
+                                        <div class="relative z-[1] mx-auto text-center text-white ">
+
+                                            <h2 class="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
+                                                Descubra os
+                                                <span
+                                                    class="relative text-secondary after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:rounded after:bg-gradient-to-r after:from-secondary after:to-transparent"
+                                                    >Fundamentos</span
+                                                >
+                                                de um
+                                                <span
+                                                    class="relative text-primary after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:rounded after:bg-gradient-to-r after:from-primary after:to-transparent"
+                                                    >Desenvolvedor</span
+                                                >
+                                            </h2>
                                             <!--
                                             <div
-                                            class="h-[200px] md:h-[350px] lg:h-[430px] xl:h-[500px] mb-6"
+                                            class="h-[200px] md:h-[350px] lg:h-[430px] xl:h-[500px] mt-6"
                                             style="background-color: black; text-align: center;">
                                             <iframe
                                                 id="bunny-stream-embed"
@@ -32,26 +45,13 @@
                                                 style="width: 100%; height: 100%"
                                                 allow="autoplay;picture-in-picture;"
                                                 allowfullscreen="true"></iframe>
+                                        -->
                             
                                         </div>
-                                    -->
-
-                                            <h2 class="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
-                                                Transforme seu  
-                                                <span
-                                                    class="relative text-secondary after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:rounded after:bg-gradient-to-r after:from-secondary after:to-transparent"
-                                                    >Futuro</span
-                                                >
-                                                com a  
-                                                <span
-                                                    class="relative text-primary after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:rounded after:bg-gradient-to-r after:from-primary after:to-transparent"
-                                                    >Programação</span
-                                                >
-                                            </h2>
-                                            <p class="my-8 mx-auto text-lg lg:w-3/4">
-                                                Junte-se à comunidade de jovens desenvolvedores e troque conhecimentos sobre programação e novas tecnologias. Participe de desafios e workshops que vão elevar suas habilidades. Inscreva-se e faça parte da mudança!
+                                            <p class="my-8 mx-auto text-lg ">
+                                                Conteúdos para o iniciante (que não faz idéia o que é programação) até para o mais avançado (com técnicas para iniciar projetos, separar tarefas e contribuir em projetos Open Source)
                                             </p>
-                                            <a href="https://umpordez.isei.app/oferta/o-programador-iniciante?cupom=launch" class="btn mx-auto mt-2 block w-fit bg-white">Quero Participar</a>
+                                            <a href="https://umpordez.isei.app/oferta/fundamentos-do-desenvolvedor?cupom=launch" class="btn mx-auto mt-2 block w-fit bg-white">Quero Participar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -65,8 +65,10 @@
                         <div class="max-w-screen-md mb-8 lg:mb-16">
                             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Manual do Desenvolvedor</h2>
                             <p class="text-gray-500 sm:text-xl dark:text-gray-400">
-                                Esse conteúdo foi pensado para introduzir uma pessoa no mundo da programação.<br />
-                                Nele explico coisas básicas desde como funciona programação, minha filosofia de trabalhar com códigos, como contribuir em projetos open source e muito mais!
+                                Esse conteúdo foi pensado para introduzir uma pessoa no mundo da programação, 
+                                trazer os meus conceitos, ensinar como eu inicio projetos, e como eu contribuo em projetos.
+                                <br /><br />
+                                Pode ser consumido por iniciantes (que não sabem nada de nada) até pelos programadores mais experientes (módulos mais avançados).<br />
                             </p>
                         </div>
                         <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
@@ -100,11 +102,23 @@
                                 <h3 class="mb-2 text-xl font-bold dark:text-white">Prototyping e Requirements</h3>
                                 <p class="text-gray-500 dark:text-gray-400">Como eu inicio proof of concepts, inicio projetos, como eu pego os requirements de um sistema e transformo em tasks</p>
                             </div>
+                        </div>                      
+                        <div class="w-100 text-center ltr:lg:text-right rtl:lg:text-left">
+                            <a 
+                                href="https://umpordez.isei.app/oferta/fundamentos-do-desenvolvedor?cupom=launch" 
+                                class="mt-6 btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">Quero Participar</a>
                         </div>
                     </div>
                   </section>
+                <%- include('partials/design-patterns-small.ejs', {
+                    button: `
+                        <a 
+                            href="https://umpordez.isei.app/oferta/fundamentos-do-desenvolvedor?cupom=launch" 
+                            class="btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">Quero Participar</a>
+                    `
+                }) %>
 
-                <section class="py-14 md:py-20 bg-black">
+                <section class="py-14 md:py-20">
                     <div class="container">
                         <div class="grid-cols-3 lg:grid">
                             <div class="relative mb-8 flex justify-center gap-5 lg:mb-0 lg:block">
@@ -141,7 +155,7 @@
                             <div class="col-span-2 lg:ltr:pl-20 lg:rtl:pr-20">
                                 <div class="heading mb-0 text-center ltr:lg:text-right rtl:lg:text-left">
                                     <h6>Bônus</h6>
-                                    <h4>Além desse curso incrível receba também</h4>
+                                    <h4>Além desses dois cursos receba também</h4>
                                 </div>
                                 <div class="my-10 grid gap-10 text-lg font-semibold ltr:text-right rtl:text-left sm:grid-cols-2 md:my-14">
                                     <div class="flex gap-6">
@@ -176,7 +190,7 @@
                                     </div>
                                     <div class="flex gap-6">
                                         <div class="flex-1">
-                                            <h4 class="mb-5 text-[22px] font-bold text-secondary">Curso bônus</h4>
+                                            <h4 class="mb-5 text-[22px] font-bold text-secondary">Curso de JavaScript</h4>
                                             <p>Curso bônus de JavaScript 911</p>
                                         </div>
                                         <div class="h-14 w-14 flex-none">
@@ -206,14 +220,14 @@
                                     </div>
                                 </div>
                                 <div class="text-center ltr:lg:text-right rtl:lg:text-left">
-                                    <a href="https://umpordez.isei.app/oferta/design-patterns?cupom=launch" class="btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">Quero Participar</a>
+                                    <a href="https://umpordez.isei.app/oferta/fundamentos-do-desenvolvedor?cupom=launch" class="btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">Quero Participar</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section class="relative">
+                <section class="relative bg-black py-14 dark:bg-transparent lg:py-20">
                     <div class="absolute top-0 ltr:right-0 rtl:left-0 rtl:-rotate-180">
                         <svg width="758" height="741" viewBox="0 0 758 741" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g opacity="0.03">
@@ -342,7 +356,7 @@
                                         type="button"
                                         class="ac-trigger relative !flex w-full items-center justify-between gap-2 !py-2.5 !px-0 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white"
                                     >
-                                        <div>Qual o nível desse curso?</div>
+                                        <div>Qual o nível desse projeto?</div>
                                         <div class="trigger-icon grid h-6 w-6 place-content-center rounded-full border-2 border-gray text-gray transition">
                                             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -359,7 +373,8 @@
                                 </h2>
                                 <div class="ac-panel lg:w-4/5">
                                     <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
-                                        Esse curso tem nível iniciante, pode ser consumido por aspirantes a programador e até mesmo programadores avançados pois contém dicas preciosas de contribuição em projetos e desenvolvimento de sistemas em geral.
+                                        Esse projeto atende *todos* os niveis, desde quem nunca nunca sequer programou na
+                                        vida, até alguém experiente em busca de ténicas para iniciar projeto ou algum conhecimento a mais de linguagens. 
                                     </p>
                                 </div>
                             </div>
@@ -419,7 +434,9 @@
                                 </h2>
                                 <div class="ac-panel lg:w-4/5">
                                     <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
-                                        Ao adquirir essa oportunidade você terá acesso ao curso O Programador Iniciante com mais de 35 video aulas que vão desde o básico até o mais avançando com técnicas de "taskiar" um projeto.
+                                        Ao adquirir essa oportunidade você terá acesso ao curso de Design Patterns que no momento contém mais de 23 patterns e serão adicionados mais ao longo do tempo.
+                                        <br />
+                                        Você terá acesso também ao Manual do Dev, um curso que ensina desde o que é programação até como contribuir em projetos Open Source na prática, além de técnicas para iniciar projetos
                                         <br />
                                         <br />
                                         Além disso você irá receber um curso intermediário de JavaScript <br />

@@ -27,6 +27,19 @@ const configByUrl = {
         site: 'https://umpordez.com',
         creator: 'Deividy Metheler Zachetti'
     },
+
+    'fundamentos-do-desenvolvedor': {
+        title: 'Descubra agora Os Fundamentos de um Desenvolvedor',
+        description: 'Conteúdos selecionados para desenvolver uma ' +
+            'base sólida na programação, conhecimento para o iniciante ' +
+            '(que não faz idéia o que é programação) até para o mais ' +
+            'avançado (com técnicas para iniciar projetos, ' +
+            'separar tarefas e contribuir em projetos Open Source)',
+
+        image: 'https://s3.sa-east-1.amazonaws.com/public.obonde/iseiv2/u/7130f128-5528-4c11-a4da-ea8f5aec2a83/dc6a3fcd-72c6-4a18-b2a6-793b82e8bba3-fundamentos.png',
+        site: 'https://umpordez.com/fundamentos-do-desenvolvedor',
+        creator: 'Deividy Metheler Zachetti'
+    },
     'design-patterns': {
         title: 'Melhor curso de Design Patterns por Ligeiro - umpordez [10x]',
         description: 'Domine os 23 Patterns do famoso livro de Design Pattern' +
@@ -92,8 +105,16 @@ function buildHandler(fn) {
     };
 }
 
-app.get('/', buildHandler((req, res) => {
+app.get('/home', buildHandler((req, res) => {
     res.render('home');
+}));
+
+app.get('/fundamentos-do-desenvolvedor', buildHandler((req, res) => {
+    res.render('fundamentos-do-desenvolvedor');
+}));
+
+app.get('/', buildHandler((req, res) => {
+    res.render('umpordez');
 }));
 
 app.get('/tao', buildHandler((req, res) => {
@@ -116,11 +137,11 @@ app.get('/blog', buildHandler(async (req, res) => {
 }));
 
 app.get('/design-patterns', buildHandler((req, res) => {
-    res.render('design-patterns');
+    res.render('umpordez');
 }));
 
 app.get('/o-programador-iniciante', buildHandler((req, res) => {
-    res.render('o-programador-iniciante');
+    res.render('umpordez');
 }));
 
 app.get('/umpordez', buildHandler((req, res) => {

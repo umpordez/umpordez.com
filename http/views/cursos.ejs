@@ -56,9 +56,59 @@
                         </div>
                     </div>
                 </div>
+                <section class="relative">
+                    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+                        <div class="max-w-screen-md mb-8 lg:mb-16">
+                            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Manual do Desenvolvedor</h2>
+                            <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+                                Esse conteúdo foi pensado para introduzir uma pessoa no mundo da programação, 
+                                trazer os meus conceitos, ensinar como eu inicio projetos, e como eu contribuo em projetos.
+                                <br /><br />
+                                Pode ser consumido por iniciantes (que não sabem nada de nada) até pelos programadores mais experientes (módulos mais avançados).<br />
+                            </p>
+                        </div>
+                        <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+                            <div>
+                                <h3 class="mb-2 text-xl font-bold dark:text-white">Baby Steps</h3>
+                                <p class="text-gray-500 dark:text-gray-400">
+                                    Esse módulo é focado em introduzir conceitos de como funciona um computador, um servidor, um site e minha visão do mundo de programação.
+                                </p>
+                            </div>
+                            <div>
+                                <h3 class="mb-2 text-xl font-bold dark:text-white"> Linguagens de programação</h3>
+                                <p class="text-gray-500 dark:text-gray-400">
+                                    Aqui explico algumas diferenças entre linguagens e dou exemplos em Pseudo Code, Assembly, C / C++, SQL, JavaScript
+                                </p>
+                            </div>
+                            <div>
+                                <h3 class="mb-2 text-xl font-bold dark:text-white">Contribuindo para um projeto</h3>
+                                <p class="text-gray-500 dark:text-gray-400">
+                                    Manual de como começar a contribuir, identação, dicas de bom senso, nomenclatura, Fork e Pull request na prática
+                                </p>
+                            </div>
+                            <div>
+                                <h3 class="mb-2 text-xl font-bold dark:text-white">User Interface (UI)</h3>
+                                <p class="text-gray-500 dark:text-gray-400">Como eu vejo a interface de usuário, exemplos de CLI e usabilidade.</p>
+                            </div>
+                            <div>
+                                <h3 class="mb-2 text-xl font-bold dark:text-white">Database / Servidor</h3>
+                                <p class="text-gray-500 dark:text-gray-400">O que mais importa na parte do server, segurança, servidores e um pouco de Serverless</p>
+                            </div>
+                            <div>
+                                <h3 class="mb-2 text-xl font-bold dark:text-white">Prototyping e Requirements</h3>
+                                <p class="text-gray-500 dark:text-gray-400">Como eu inicio proof of concepts, inicio projetos, como eu pego os requirements de um sistema e transformo em tasks</p>
+                            </div>
+                        </div>                      
+                        <div class="w-100 text-center ltr:lg:text-right rtl:lg:text-left">
+                            <a 
+                                href="https://umpordez.isei.app/oferta/fundamentos-do-desenvolvedor?cupom=launch" 
+                                class="mt-6 btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">Quero Participar</a>
+                        </div>
+                    </div>
+                  </section>
 
                 <%- include('partials/design-patterns-small.ejs', {
-                    button: `<a href="/design-patterns" class="btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">MAIS</a>`
+                    button: `<a href="/fundamentos-do-desenvolvedor" class="btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">MAIS</a>`
                 }) %>
                 <%- include('partials/about-me.ejs') %>
             </div>

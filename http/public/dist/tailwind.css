@@ -1661,6 +1661,10 @@ header .menus .submenu a.active {
   grid-column: span 2 / span 2;
 }
 
+.float-right {
+  float: right;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -1790,6 +1794,10 @@ header .menus .submenu a.active {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
 }
 
 .line-clamp-2 {
@@ -2601,12 +2609,12 @@ header .menus .submenu a.active {
   padding-top: 82px;
 }
 
-.pt-20 {
-  padding-top: 5rem;
-}
-
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .\!font-mulish {
@@ -3741,6 +3749,10 @@ header .menus.open-menus:where([dir="rtl"], [dir="rtl"] *) {
 
   .lg\:pt-\[106px\] {
     padding-top: 106px;
+  }
+
+  .lg\:pb-20 {
+    padding-bottom: 5rem;
   }
 
   .lg\:text-\[40px\] {
