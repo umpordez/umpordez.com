@@ -75,7 +75,7 @@ for (const $form of $formElements) {
 
         const email = Array
             .from($form.elements)
-            .find((e) => e.type === 'email')?.value || '';
+            .find((e) => e.name === 'email')?.value || '';
 
         if (!email) {
             return alert('Por favor, preencha o seu e-mail! :/');
@@ -97,7 +97,7 @@ for (const $form of $formElements) {
                 throw new Error('Uh oh! Tenta de novo, algo deu errado :/')
             }
 
-            alert('E-mail cadastrado! \\o/');
+            alert('Contato cadastrado, aguarde 06/01!!');
         } catch (ex) {
             console.error(ex);
             alert(ex.message);

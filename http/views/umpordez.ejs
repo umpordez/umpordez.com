@@ -6,25 +6,37 @@
         <div
             class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
         >
-            <%- include('partials/header.ejs') %>
 
-            <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
-                <section class="bg-black bg-[url(/assets/images/banner-bg.png)] bg-cover bg-top bg-no-repeat pt-[82px] lg:pt-[106px]">
-                    <div class="container lg:pt-7">
+            <div class="flex-grow overflow-x-hidden ">
+                <section class="bg-black bg-[url(/assets/images/banner-bg.png)] bg-cover bg-top bg-no-repeat pt-[52px]">
+                    <div class="container ">
                         <div class="relative">
-                            <div class="pt-14 pb-8 text-center text-white lg:w-3/5 lg:py-20 ltr:lg:text-left rtl:lg:text-right">
-                                <h2 class="text-3xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
-                                    <span class="text-secondary">Se torne</span>
-                                    <span class="text-primary">um programador 10x</span>
+                            <div class="pb-8 text-center text-white ltr:lg:text-left rtl:lg:text-right">
+                                <h2 class="text-3xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px] text-center">
+                                    <span class="text-secondary">umpordez</span>
+                                    <span class="text-primary">reboot</span>
                                 </h2>
-                                <p class="my-8 text-lg lg:w-3/4">
-				A base de um desenvolvedor pragmático, comunidade, desafios, foco, projetos, meditação... <br />TUDO, para te tornar O PROGRAMADOR 
-                                    que vale por 10 programadores comuns! (Mesmo que você nunca tenha tocado em um código na vida)
-				    <br />
-                                    <br />
-                                    Se cadastre para saber desse lançamento:
+
+                                <p class="my-8 text-lg text-center">
+                                    Vou te ensinar as técnicas para ter maior confiança em seu código, desenvolver mais rápido, aprender algo novo rapidamente ou até mesmo aprender a programar do zero.
                                 </p>
-                                <form method="post" class="relative mt-14 js-newsletter-form" data-course="umpordez">
+
+
+                                        <div
+                                            class="h-[200px] md:h-[350px] lg:h-[430px] xl:h-[500px] mt-6"
+                                            style="background-color: black; text-align: center;">
+                            <iframe
+                                                style="width: 100%; height: 100%"
+                                src="https://www.youtube.com/embed/pJ4JM8ooPTs?si=quyDCY9pUXVRQbzm"
+                                title="umpordez reboot"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen></iframe>
+                                        </div>
+                                    <p class='mt-12'>Preencha abaixo o seu e-mail ou WhatsApp:</p>
+                                <form method="post" class="mt-2 relative js-newsletter-form" data-course="umpordez">
+                                    <div>
                                     <div class="absolute top-1/2 -translate-y-1/2 ltr:pl-4 rtl:pr-4">
                                         <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -42,8 +54,9 @@
                                         </svg>
                                     </div>
                                     <input
-                                        type="email"
-                                        placeholder="e-mail"
+                                        type="text"
+                                        name='email'
+                                        placeholder="E-mail ou WhatsApp"
                                         class="w-full rounded-xl py-4 font-semibold outline-0 ltr:pl-14 ltr:pr-32 rtl:pr-14 rtl:pl-32 lg:py-6 lg:text-lg"
                                     />
                                     <button
@@ -52,14 +65,8 @@
                                     >
                                     aguardar
                                     </button>
+                                    </div>
                                 </form>
-                            </div>
-                            <div
-                                class="top-[70px] w-full pb-7 ltr:right-0 rtl:left-0 rtl:right-auto lg:absolute lg:max-w-[630px] lg:pb-0 xl:ltr:-right-52 xl:rtl:-left-52"
-                                data-aos="fade-left"
-                                data-aos-duration="1000"
-                            >
-                                <img src="/assets/images/banner-img.png" alt="" />
                             </div>
                         </div>
                     </div>
