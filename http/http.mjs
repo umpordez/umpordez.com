@@ -21,7 +21,7 @@ app.set('views', path.resolve(__dirname, './views/'));
 
 const configByUrl = {
     '': {
-        title: 'umpordez',
+        title: 'umpordez - Se torne um programador altamente produtivo em 2025',
         description: 'o caminho de um programador que vale por dez',
         image: '/assets/images/logo.png',
         site: 'https://umpordez.com',
@@ -43,8 +43,8 @@ const configByUrl = {
     'design-patterns': {
         title: 'Melhor curso de Design Patterns por Ligeiro - umpordez [10x]',
         description: 'Domine os 23 Patterns do famoso livro de Design Pattern' +
-        ', mais patterns do Martin Fowler e alguns patterns criados pelo ' +
-        'ligeiro para o desenvolvimento de Web Apps em 2024. ',
+            ', mais patterns do Martin Fowler e alguns patterns criados pelo ' +
+            'ligeiro para o desenvolvimento de Web Apps em 2024. ',
 
         image: 'https://umpordez.com/assets/images/design-patterns-book.png',
         site: 'https://umpordez.com/design-patterns',
@@ -185,7 +185,7 @@ app.post('/email', express.json(), buildAjaxHandler(async (req, res) => {
         <p>IP:<br />${req.ip}</p>
         ${Object
             .entries(req.body)
-            .map(([ key, value ]) => `<p>${key}:<br />${value}</p>`)
+            .map(([key, value]) => `<p>${key}:<br />${value}</p>`)
             .join('\n')}
 </div>`;
 
@@ -222,6 +222,30 @@ app.post('/email', express.json(), buildAjaxHandler(async (req, res) => {
     } catch (ex) {
         console.error(ex);
     }
+}));
+
+app.post('/umpordez', express.json(), buildAjaxHandler(async (req, res) => {
+    let { email, course } = req.body;
+
+    email = email.trim().toLowerCase();
+    course = course.trim().toLowerCase();
+
+    const emailInNewsletter = await knex('newsletter').where({
+        email
+    }).first();
+
+    const courses = emailInNewsletter?.courses || [];
+    if (!courses.includes(course)) {
+        courses.push(course);
+    }
+
+    await knex('newsletter').insert({
+        email,
+        phone: req.body.phone || '',
+        courses: JSON.stringify(courses)
+    }).onConflict('email').merge();
+
+    res.status(200).json({ ok: true });
 }));
 
 app.post('/newsletter', express.json(), buildAjaxHandler(async (req, res) => {

@@ -1,87 +1,486 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <%- include('partials/head.ejs') %>
+
     <body class="overflow-x-hidden">
+        <nav class="
+            bg-black
+            hidden
+            md:block
+            ">
+            <div class="
+                max-w-screen-xl
+                flex-wrap
+                items-center
+                justify-between
+                mx-auto
+                p-4
+
+                hidden
+                md:flex
+                ">
+                <h2 class='text-2xl font-extrabold text-white'>
+                    Se torne um programador<br />
+                    altamente produtivo em 2025
+                </h2>
+                <h3 class='text-2xl font-extrabold text-white'>
+                    27, 29 e 30 de Janeiro.
+                </h3>
+                <a
+                    href="#signup"
+                    class="
+                    btn
+                    bg-primary
+                    text-white
+                    hover:bg-primary
+                    sm:px-14 sm:py-5
+                    ">Inscreva-se</a>
+            </div>
+        </nav>
+
+
         <%- include('partials/screen-loader.ejs') %>
-        <div
-            class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
-        >
+        <div class="
+            flex
+            min-h-screen
+            flex-col
+            bg-white
+            bg-gradient-to-r
+            from-[#FCF1F4]
+            to-[#EDFBF9]
+            font-mulish
+            text-base
+            font-normal
+            text-gray
+            antialiased
+            dark:bg-[#101926]
+            dark:from-transparent
+            dark:to-transparent
 
-            <div class="flex-grow overflow-x-hidden ">
-                <section class="bg-black bg-[url(/assets/images/banner-bg.png)] bg-cover bg-top bg-no-repeat pt-[52px]">
-                    <div class="container ">
-                        <div class="relative">
-                            <div class="pb-8 text-center text-white ltr:lg:text-left rtl:lg:text-right">
-                                <h2 class="text-3xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px] text-center">
-                                    <span class="text-secondary">umpordez</span>
-                                    <span class="text-primary">reboot</span>
-                                </h2>
+            ">
 
-                                <p class="my-8 text-lg text-center">
-                                    Vou te ensinar as técnicas para ter maior confiança em seu código, desenvolver mais rápido, aprender algo novo rapidamente ou até mesmo aprender a programar do zero.
-                                </p>
+            <div class="
+                bg-no-repeat
+                bg-cover 
+                bg-center
+                ;md:bg-[url('/assets/images/service-video-bg.png')]
+                ">
+                <div class="
+                    container
+                    mt-4
 
+                    ">
+                    <div class="">
+                        <div class="heading mb-5">
+                            <h6>Descubra a maior <b>oportunidade</b></h6>
+                            <h4>Para você se tornar um programador altamente produtivo em 2025. <small>(mesmo sem ter programado)</small></h4>
+                            <p class='mt-3 text-xl'>Dias 27, 29 e 30 de Janeiro</p>
+                            <p class='mt-3'>Se inscreva para receber todas as informações do curso:</p>
 
-                                        <div
-                                            class="h-[200px] md:h-[350px] lg:h-[430px] xl:h-[500px] mt-6"
-                                            style="background-color: black; text-align: center;">
-                            <iframe
-                                                style="width: 100%; height: 100%"
-                                src="https://www.youtube.com/embed/pJ4JM8ooPTs?si=quyDCY9pUXVRQbzm"
-                                title="umpordez reboot"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen></iframe>
-                                        </div>
-                                    <p class='mt-12'>Preencha abaixo o seu e-mail ou WhatsApp:</p>
-                                <form method="post" class="mt-2 relative js-newsletter-form" data-course="umpordez">
-                                    <div>
-                                    <div class="absolute top-1/2 -translate-y-1/2 ltr:pl-4 rtl:pr-4">
-                                        <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M24 10.4091C24 14.8446 24 17.0623 22.6527 18.4403C21.3054 19.8182 19.1369 19.8182 14.8 19.8182H10.2C5.86308 19.8182 3.69462 19.8182 2.34731 18.4403C1 17.0623 1 14.8446 1 10.4091C1 5.9736 1 3.75586 2.34731 2.37793C3.69462 1 5.86308 1 10.2 1H14.8C19.1369 1 21.3054 1 22.6527 2.37793C23.4038 3.14616 23.7362 4.17543 23.8833 5.70455"
-                                                stroke="#08111F"
-                                                stroke-width="2"
-                                                stroke-linecap="square"
-                                            />
-                                            <path
-                                                d="M19.3999 5.70508L16.9172 7.82104C14.8051 9.62115 13.749 10.5212 12.4999 10.5212C11.7532 10.5212 11.0755 10.1996 10.1999 9.55627M5.59991 5.70508L6.63491 6.58718L7.66991 7.46928"
-                                                stroke="#08111F"
-                                                stroke-width="2"
-                                                stroke-linecap="square"
-                                            />
-                                        </svg>
-                                    </div>
+                            <div class='mt-8'>
+                                <form id="signup" class="relative">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="seumelhor@email.com"
+                                        class="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
+                                    />
+                                    <label for="" class="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
+                                    >Email</label
+                                    >
+                                    <svg
+                                        width="22"
+                                        height="21"
+                                        viewBox="0 0 22 21"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="absolute top-1/2 -translate-y-1/2 ltr:right-4 rtl:left-4 dark:text-white"
+                                    >
+                                        <path
+                                            d="M1 8.00732V7.00732C1 4.2459 3.23858 2.00732 6 2.00732H16C18.7614 2.00732 21 4.2459 21 7.00732V13.0073C21 15.7687 18.7614 18.0073 16 18.0073H6C3.23858 18.0073 1 15.7687 1 13.0073V12.0073"
+                                            stroke="currentColor"
+                                            stroke-width="1.8"
+                                            stroke-linecap="round"
+                                        />
+                                        <path
+                                            d="M5 7.00732L9.8 10.6073C10.5111 11.1407 11.4889 11.1407 12.2 10.6073L17 7.00732"
+                                            stroke="currentColor"
+                                            stroke-width="1.8"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+
+                                <div class="relative mt-8">
                                     <input
                                         type="text"
-                                        name='email'
-                                        placeholder="E-mail ou WhatsApp"
-                                        class="w-full rounded-xl py-4 font-semibold outline-0 ltr:pl-14 ltr:pr-32 rtl:pr-14 rtl:pl-32 lg:py-6 lg:text-lg"
+                                        name="phone"
+                                        placeholder="(19) 99999.99999"
+                                        class="w-full rounded-2xl border-2 border-gray/20 bg-transparent p-4 font-bold outline-none transition focus:border-secondary ltr:pr-12 rtl:pl-12"
                                     />
-                                    <button
-                                        type="submit"
-                                        class="absolute top-1/2 -translate-y-1/2 rounded-md bg-secondary px-3 py-1.5 font-bold text-white transition hover:bg-primary ltr:right-4 rtl:left-4 lg:py-2 lg:text-lg"
+                                    <label for="" class="absolute -top-3 bg-white px-2 font-bold ltr:left-6 rtl:right-6 dark:bg-[#101626] dark:text-white"
+                                    >WhatsApp (Opcional)</label
                                     >
-                                    aguardar
-                                    </button>
-                                    </div>
-                                </form>
-                            </div>
+
+                                    <?xml version="1.0" encoding="iso-8859-1"?>
+                                    <svg height="21" width="22" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                        viewBox="0 0 308 308" xml:space="preserve"
+
+                                        class="absolute fill-white top-1/2 -translate-y-1/2 ltr:right-4 rtl:left-4 dark:text-white"
+                                    >
+                                        <g id="XMLID_468_">
+                                            <path id="XMLID_469_" d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156
+                                                c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687
+                                                c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887
+                                                c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153
+                                                c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348
+                                                c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802
+                                                c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922
+                                                c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0
+                                                c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458
+                                                C233.168,179.508,230.845,178.393,227.904,176.981z"/>
+                                            <path id="XMLID_470_" d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716
+                                                c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396
+                                                c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z
+                                                M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188
+                                                l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677
+                                                c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867
+                                                C276.546,215.678,222.799,268.994,156.734,268.994z"/>
+                                        </g>
+                                    </svg>
+                                </div>
+
+                                <button
+                                    type='submit'
+                                    class="
+                                    mt-4
+                                    btn
+                                    bg-primary
+                                    text-white
+                                    hover:bg-primary
+                                    sm:px-14 sm:py-5
+                                    ">Liberar Acesso</button>
+                            </form>
                         </div>
                     </div>
-                </section>
-
-                <%- include('partials/about-me.ejs') %>
+                </div>
             </div>
 
-            <%- include('partials/footer.ejs') %>
-        </div>
+            <div class='my-6 bg-black p-3'>
+                <div class="container my-10">
+                    <h3 class='text-4xl text-center font-extrabold text-white'>
+                        Para quem é esse evento?!
+                    </h3>
 
-        <%- include('partials/return-to-top-button.ejs') %>
+                    <div class="
+                        md:grid
+                        grid-cols-3
+                        gap-4
+                        block
+                        mt-4
+                        ">
+                        <div class="
+                            mt-4
+                            p-4
+                            rounded-md
+                            shadow-md
+                            bg-white
+                            bg-gradient-to-r
+                            dark:bg-[#101926]
+                            dark:from-transparent
+                            dark:to-transparent
+                            ">
+                            <h2 class="text-xl font-extrabold text-white">
+                                Para quem quer aprender a programar
+                            </h2>
+                            <p class='mt-2 font-bold'>
+                                está cansado de trilhas infinitas e rinhas de linguagens de programação. Para quem quer aprender a programar com segurança.
+                            </p>
+                        </div>
+                        <div class="
+                            mt-4
+                            p-4
+                            rounded-md
+                            shadow-md
+                            bg-white
+                            bg-gradient-to-r
+                            dark:bg-[#101926]
+                            dark:from-transparent
+                            dark:to-transparent
+                            ">
+                            <h2 class="text-xl font-extrabold text-white">
+                                Para quem quer aumentar a sua produtividade
+                            </h2>
+                            <p class='mt-2 font-bold'>
+                                programar com qualidade, velocidade e se divertir, poder aprender novas tecnologias e se sentir confiante de seu trabalho.
+                            </p>
+                        </div>
 
-        <script src="/lib/swiper-bundle.min.js"></script>
-        <script src="/lib/aos.min.js"></script>
-        <script type='module' src="/src/js/arquitetura-web-apps.js"></script>
+                        <div class="
+                            mt-4
+                            p-4
+                            rounded-md
+                            shadow-md
+                            bg-white
+                            bg-gradient-to-r
+                            dark:bg-[#101926]
+                            dark:from-transparent
+                            dark:to-transparent
+                            ">
+                            <h2 class="text-xl font-extrabold text-white">
+                                Para quem quer controlar a inteligencia artificial
+                            </h2>
+                            <p class='mt-2 font-bold'>
+                                estamos a frente da inovação e você vai descobrir o que realmente representa ser um desenvolvedor
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="
+                container
+                my-6
+                ">
+                <div class="">
+                    <div class="heading mb-5">
+                        <h6>o que vou aprender no evento online</h6>
+                        <h4>umpordez: Se torne um programador altamente produtivo em 2025. <small>(mesmo sem ter programado)</small></h4>
+                    </div>
+
+                    <div class="
+                        p-4
+                        rounded-lg
+                        bg-black
+                        mb-3
+                        ">
+
+                        <p>Aula 1</p>
+                        <h2 class="text-xl font-extrabold text-white">
+                            A maior oportunidade para você se tornar um programador altamente produtivo em 2025.
+                        </h2>
+                        <div class="heading mt-4 mb-0">
+                            <h6>Dia 27 de Janeiro às 20:00h</h6>
+                        </div>
+                    </div>
+
+                    <div class="
+                        p-4
+                        rounded-lg
+                        bg-black
+                        mb-3
+                        ">
+
+                        <p>Aula 2</p>
+                        <h2 class="text-xl font-extrabold text-white">
+                            Como tirar proveito dessa oportunidade e se tornar o melhor programador que você pode ser, mesmo sem nunca ter programado.
+                        </h2>
+                        <div class="heading mt-4 mb-0">
+                            <h6>Dia 29 de Janeiro às 20:00h</h6>
+                        </div>
+                    </div>
+
+                    <div class="
+                        p-4
+                        rounded-lg
+                        bg-black
+                        mb-3
+                        ">
+
+
+                        <p>Aula 3</p>
+                        <h2 class="text-xl font-extrabold text-white">
+                            Os maiores erros que você vai cometer e armadilhas da inteligência artificial que você vai enfrentar ao tentar ser um programador altamente produtivo em 2025
+                        </h2>
+
+                        <div class="heading mt-4 mb-0">
+                            <h6>Dia 30 de Janeiro às 20:00h</h6>
+                        </div>
+                    </div>
+
+                    <a
+                        href="#signup"
+                        class="
+                        mt-4
+                        btn
+                        bg-secondary
+                        text-white
+                        hover:bg-primary
+                        sm:px-14 sm:py-5
+                        ">Quero Participar</a>
+                </div>
+            </div>
+            <div class='my-6 bg-black p-3'>
+                <div class="container my-10">
+                    <h3 class='text-4xl text-center font-extrabold text-white'>
+                        Tudo sobre o evento umpordez
+                    </h3>
+
+                    <div class="mt-10">
+                        <p class='text-lg'>
+                            Talvez você esteja entrando em 2025 com aquela sensação de que precisa ser mais produtivo ou que dessa vez precisa aprender a programar.
+                            <br />
+                            Mas, não sabe nem por onde começar.
+                            <br /><br />
+                            Já tentou de tudo, mas nada dá certo pra você? Ou talvez queira começar o ano diferente, programando em alta velocidade e talvez se tornando um programador que vale por dez comuns?
+                        </p>
+
+                        <p class='text-xl text-white'>
+                            <br />
+                            E se eu te dissesse que você pode aprender a ser 
+                            <b>altamente produtivo</b>, a ser um programador extremamente eficiente, 
+                            <b>mesmo que tenha tentado isso antes</b>? <br />
+                            Mesmo que você não tenha tempo livro ou que esteja começando do absoluto zero?
+                        </p>
+                        <p class='text-lg'>
+                            <br />
+                            Este evento não é sobre entrar no mercado de trabalho daqui 6 meses ou trilhas full stack.
+                            <br />
+                            É sobre  aplicar uma metodologia com resultados comprovados, que qualquer pessoa pode começar a utilizar, mesmo que:
+                        </p>
+                        <div class='
+                            rounded-lg
+                            p-3
+                            bg-[#101926]
+                            shadow-lg
+                            mt-3
+                            text-white
+                            text-xl
+                            '>Não saiba programar</div>
+
+                        <div class='
+                            rounded-lg
+                            p-3
+                            bg-[#101926]
+                            shadow-lg
+                            mt-3
+                            text-white
+                            text-xl
+                            '>Se sinta estagnado</div>
+
+                        <div class='
+                            rounded-lg
+                            p-3
+                            bg-[#101926]
+                            shadow-lg
+                            mt-3
+                            text-white
+                            text-xl
+                            '>Não acredita em seu potencial</div>
+                    </div>
+                </div>
+
+                <div class='my-6 bg-[#101926] p-3'>
+                    <div class="container my-10">
+                        <p class='text-xl text-center font-extrabold text-white'>
+                            Se você está cansado de estudar sem ver resultados ou quer descobrir como se tornar um programador altamente produtivo, este evento é pra você.
+                        </p>
+                        <br />
+                        <p class='text-xl text-center text-white'>
+                            2025 não precisa ser mais um ano comum. <br />
+                            Ele pode ser o ano em que você vai se tornar um programador que vale por dez comuns.
+                        </p>
+
+                        <div class='text-center mt-8'>
+
+                            <a
+                                href="#signup"
+                                class="
+                                m-auto
+                                btn
+                                bg-primary
+                                text-white
+                                hover:bg-primary
+                                sm:px-14 sm:py-5
+                                ">Quero Participar</a>
+                        </div>
+                    </div>
+                </div>
+                <%- include('partials/about-me.ejs') %>
+                <%- include('partials/footer.ejs') %>
+            </div>
+
+            <%- include('partials/return-to-top-button.ejs') %>
+
     </body>
+
+    <script type='text/template' id="afterDone">
+        <nav class="
+            bg-black
+            hidden
+            md:block
+            ">
+            <div class="
+                max-w-screen-xl
+                flex-wrap
+                items-center
+                justify-between
+                mx-auto
+                p-4
+
+                hidden
+                md:flex
+                ">
+                <h2 class='text-2xl font-extrabold text-white'>
+                    Se torne um programador<br />
+                    altamente produtivo em 2025
+                </h2>
+                <h3 class='text-2xl font-extrabold text-white'>
+                    27, 29 e 30 de Janeiro.
+                </h3>
+            </div>
+        </nav>
+
+
+        <div class="
+            flex
+            min-h-screen
+            flex-col
+            bg-white
+            bg-gradient-to-r
+            from-[#FCF1F4]
+            to-[#EDFBF9]
+            font-mulish
+            text-base
+            font-normal
+            text-gray
+            antialiased
+            dark:bg-[#101926]
+            dark:from-transparent
+            dark:to-transparent
+
+            ">
+
+            <div class="
+                bg-no-repeat
+                bg-cover 
+                bg-center
+                ;md:bg-[url('/assets/images/service-video-bg.png')]
+                ">
+                <div class="
+                    container
+                    mt-4
+
+                    ">
+                    <div class="">
+                        <div class="heading mb-5">
+                            <h6>Yaaaaaaay!!</h6>
+                            <h4>Seu cadastro está confirmado!!</h4>
+                        </div>
+
+                        <p>
+                            Te vejo nos dia 27, 29 e 30 de janeiro.
+                            <br />
+                            Se prepare, que o conteúdo será "brabo"!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+            <script src="/lib/swiper-bundle.min.js"></script>
+            <script src="/lib/aos.min.js"></script>
+            <script type='module' src="/src/js/umpordez.js"></script>
 </html>

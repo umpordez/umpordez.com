@@ -15,8 +15,6 @@ $form.addEventListener('submit', async (ev) => {
             return acc;
         }, {});
 
-    console.log(values)
-
     try {
         const res = await fetch('/email', {
             method: 'POST',
