@@ -35,7 +35,7 @@ $form.addEventListener('submit', async (ev) => {
             throw new Error('Uh oh! Tenta de novo, algo deu errado :/')
         }
 
-        document.querySelector('body').innerHTML = document.querySelector('#afterDone').innerHTML;
+        location.href = '/confirmado';
     } catch (ex) {
         console.error(ex);
         alert(ex.message);

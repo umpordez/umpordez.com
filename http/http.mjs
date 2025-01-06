@@ -111,6 +111,11 @@ app.get('/home', buildHandler((req, res) => {
     res.render('home');
 }));
 
+app.get('/confirmado', buildHandler((req, res) => {
+    res.render('confirmado');
+}));
+
+
 app.get('/fundamentos-do-desenvolvedor', buildHandler((req, res) => {
     res.render('fundamentos-do-desenvolvedor');
 }));

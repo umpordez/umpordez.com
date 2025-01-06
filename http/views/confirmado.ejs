@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <%- include('partials/head.ejs') %>
+
+    <%- include('partials/head.ejs') %>
+    <body class="overflow-x-hidden">
+        <%- include('partials/screen-loader.ejs') %>
+        <div
+            class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
+        >
+            <%- include('partials/header.ejs') %>
+        <nav class="
+            bg-black
+            hidden
+            md:block
+            ">
+            <div class="
+                max-w-screen-xl
+                flex-wrap
+                items-center
+                justify-between
+                mx-auto
+                p-4
+
+                hidden
+                md:flex
+                ">
+                <h2 class='text-2xl font-extrabold text-white'>
+                    Se torne um programador<br />
+                    altamente produtivo em 2025
+                </h2>
+                <h3 class='text-2xl font-extrabold text-white'>
+                    27, 29 e 30 de Janeiro.
+                </h3>
+            </div>
+        </nav>
+
+
+        <div class="
+            flex
+            min-h-screen
+            flex-col
+            bg-white
+            bg-gradient-to-r
+            from-[#FCF1F4]
+            to-[#EDFBF9]
+            font-mulish
+            text-base
+            font-normal
+            text-gray
+            antialiased
+            dark:bg-[#101926]
+            dark:from-transparent
+            dark:to-transparent
+
+            ">
+
+            <div class="
+                bg-no-repeat
+                bg-cover
+                bg-center
+                ;md:bg-[url('/assets/images/service-video-bg.png')]
+                ">
+                <div class="
+                    container
+                    mt-4
+
+                    ">
+                    <div class="">
+                        <div class="heading mb-5">
+                            <h6>Yaaaaaaay!!</h6>
+                            <h4>Seu cadastro está confirmado!!</h4>
+                        </div>
+
+                        <p class='text-xl text-white'>
+                            Te vejo nos dia 27, 29 e 30 de janeiro.
+                            <br /><br />
+                            Se prepare, que o conteúdo será "brabo"!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <%- include('partials/footer.ejs') %>
+        </div>
+
+        <%- include('partials/return-to-top-button.ejs') %>
+        <script src="/lib/swiper-bundle.min.js"></script>
+        <script src="/lib/aos.min.js"></script>
+        <script type='module' src="/src/js/sobre.js"></script>
+</html>
