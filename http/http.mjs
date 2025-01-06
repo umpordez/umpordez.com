@@ -228,7 +228,7 @@ app.post('/umpordez', express.json(), buildAjaxHandler(async (req, res) => {
     let { email, course } = req.body;
 
     email = email.trim().toLowerCase();
-    course = course.trim().toLowerCase();
+    course = (course || 'umpordez').trim().toLowerCase();
 
     const emailInNewsletter = await knex('newsletter').where({
         email
@@ -241,6 +241,7 @@ app.post('/umpordez', express.json(), buildAjaxHandler(async (req, res) => {
 
     await knex('newsletter').insert({
         email,
+        utc_created_on: 'now()',
         phone: req.body.phone || '',
         courses: JSON.stringify(courses)
     }).onConflict('email').merge();
