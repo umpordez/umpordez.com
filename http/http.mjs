@@ -239,12 +239,33 @@ app.post('/umpordez', express.json(), buildAjaxHandler(async (req, res) => {
         courses.push(course);
     }
 
+    const { phone } = req.body;
+
     await knex('newsletter').insert({
         email,
         utc_created_on: 'now()',
-        phone: req.body.phone || '',
+        phone: phone || '',
         courses: JSON.stringify(courses)
     }).onConflict('email').merge();
+
+    try {
+        await fetch(`${process.env.LISTMONK_URL}/api/subscribers`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `token ${process.env.LISTMONK_TOKEN}`
+            },
+            body: JSON.stringify({
+                email,
+                status: 'enabled',
+                name: '',
+                lists: [3],
+                attribs: { phone }
+            })
+        });
+    } catch (ex) {
+        logger.error(ex);
+    }
 
     res.status(200).json({ ok: true });
 }));
