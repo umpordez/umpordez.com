@@ -34,8 +34,10 @@ const configByUrl = {
             'base sólida na programação, conhecimento para o iniciante ' +
             '(que não faz idéia o que é programação) até para o mais ' +
             'avançado (com técnicas para iniciar projetos, ' +
-            'separar tarefas, contribuir em projetos Open Source, além de um curso inteiro de Design Patterns!)',
+            'separar tarefas, contribuir em projetos Open Source, além de ' +
+            'um curso inteiro de Design Patterns!)',
 
+        // eslint-disable-next-line
         image: 'https://s3.sa-east-1.amazonaws.com/public.obonde/iseiv2/u/7130f128-5528-4c11-a4da-ea8f5aec2a83/dc6a3fcd-72c6-4a18-b2a6-793b82e8bba3-fundamentos.png',
         site: 'https://umpordez.com/fundamentos-do-desenvolvedor',
         creator: 'Deividy Metheler Zachetti'
