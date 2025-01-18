@@ -41,3 +41,26 @@ $form.addEventListener('submit', async (ev) => {
         alert(ex.message);
     }
 });
+
+function scrollToTop() {
+    document
+        .documentElement
+        .scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+const elements = document.querySelectorAll('a');
+
+if (elements && elements.length) {
+    for (const el of elements) {
+        el.addEventListener('click', (ev) => {
+            if (!ev.target.href.includes('#')) { return; }
+
+            ev.preventDefault();
+            scrollToTop();
+
+            setTimeout(() => {
+                document.querySelector('input').focus();
+            }, 200);
+        });
+    }
+}

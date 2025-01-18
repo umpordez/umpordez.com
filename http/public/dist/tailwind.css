@@ -1665,6 +1665,11 @@ header .menus .submenu a.active {
   margin: auto;
 }
 
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -1703,6 +1708,11 @@ header .menus .submenu a.active {
 .my-\[10px\] {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .-mt-\[82px\] {
@@ -1771,6 +1781,10 @@ header .menus .submenu a.active {
 
 .ml-3 {
   margin-left: 0.75rem;
+}
+
+.ml-auto {
+  margin-left: auto;
 }
 
 .mt-10 {
@@ -1914,6 +1928,10 @@ header .menus .submenu a.active {
   width: 100px;
 }
 
+.w-\[170px\] {
+  width: 170px;
+}
+
 .w-\[400px\] {
   width: 400px;
 }
@@ -1937,6 +1955,10 @@ header .menus .submenu a.active {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[180px\] {
+  width: 180px;
 }
 
 .min-w-\[50px\] {
@@ -2026,6 +2048,14 @@ header .menus .submenu a.active {
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -2243,6 +2273,11 @@ header .menus .submenu a.active {
   border-color: rgb(8 17 31 / 0.2);
 }
 
+.border-gold-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(253 250 196 / var(--tw-border-opacity));
+}
+
 .border-gray {
   --tw-border-opacity: 1;
   border-color: rgb(119 128 161 / var(--tw-border-opacity));
@@ -2256,6 +2291,16 @@ header .menus .submenu a.active {
   border-color: rgb(119 128 161 / 0.2);
 }
 
+.border-green-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(2 137 35 / var(--tw-border-opacity));
+}
+
+.border-orange-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(185 91 4 / var(--tw-border-opacity));
+}
+
 .border-transparent {
   border-color: transparent;
 }
@@ -2263,6 +2308,16 @@ header .menus .submenu a.active {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-orange-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 238 135 / var(--tw-border-opacity));
+}
+
+.border-orange-900 {
+  --tw-border-opacity: 1;
+  border-color: rgb(123 57 12 / var(--tw-border-opacity));
 }
 
 .bg-\[\#101926\] {
@@ -2288,9 +2343,24 @@ header .menus .submenu a.active {
   background-color: rgb(8 17 31 / 0.9);
 }
 
+.bg-gold-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 226 75 / var(--tw-bg-opacity));
+}
+
 .bg-gray {
   --tw-bg-opacity: 1;
   background-color: rgb(119 128 161 / var(--tw-bg-opacity));
+}
+
+.bg-green-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(12 91 34 / var(--tw-bg-opacity));
+}
+
+.bg-orange-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(123 57 12 / var(--tw-bg-opacity));
 }
 
 .bg-primary {
@@ -2330,6 +2400,16 @@ header .menus .submenu a.active {
 
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
+}
+
+.bg-orange-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 172 4 / var(--tw-bg-opacity));
+}
+
+.bg-orange-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 91 4 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\.\.\/images\/world-map\.png\)\] {
@@ -2433,6 +2513,10 @@ header .menus .submenu a.active {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .p-3 {
@@ -2695,6 +2779,11 @@ header .menus .submenu a.active {
   line-height: 1.75rem;
 }
 
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .\!font-bold {
   font-weight: 700 !important;
 }
@@ -2773,6 +2862,11 @@ header .menus .submenu a.active {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(8 17 31 / var(--tw-text-opacity));
+}
+
+.text-gold-900 {
+  --tw-text-opacity: 1;
+  color: rgb(111 66 20 / var(--tw-text-opacity));
 }
 
 .text-gray {
@@ -3462,6 +3556,10 @@ header .menus.open-menus:where([dir="rtl"], [dir="rtl"] *) {
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .md\:flex-row {

@@ -159,6 +159,10 @@ app.get('/arquitetura-web-apps', buildHandler((req, res) => {
     res.render('arquitetura-web-apps');
 }));
 
+app.get('/calendario', buildHandler((req, res) => {
+    res.render('calendario');
+}));
+
 app.get('/post/:link', buildHandler(async (req, res) => {
     const post = await knex('blog_posts').where({
         link: req.params.link
