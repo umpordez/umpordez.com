@@ -97,7 +97,7 @@ for (const $form of $formElements) {
                 throw new Error('Uh oh! Tenta de novo, algo deu errado :/')
             }
 
-            alert('Contato cadastrado, aguarde 06/01!!');
+            alert('Contato cadastrado, aguarde!!');
         } catch (ex) {
             console.error(ex);
             alert(ex.message);

@@ -6,527 +6,67 @@
         <div
             class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
         >
+            <%- include('partials/header.ejs') %>
+
             <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
-                <div class="overflow-hidden bg-black pt-[82px] sm:-mx-[250px] sm:rounded-b-[50%] lg:-mx-[150px] lg:pt-[106px]">
-                    <div class="relative">
-                        <img src="/assets/images/banner-lefticon.png" alt="banner-lefticon" class="absolute left-0 top-20 sm:left-[250px] lg:left-[150px]" />
-                        <img
-                            src="/assets/images/banner-rightIcon.png"
-                            alt="banner-rightIcon"
-                            class="absolute right-0 -top-4 sm:right-[250px] lg:right-[150px]"
-                        />
-                        <div class="container">
-                            <div class="relative">
-                                <div class="bg-[url(/assets/images/banner-bg-icon.png)] bg-cover bg-center bg-no-repeat">
-                                    <div class="relative bg-[url(../images/world-map.png)] bg-cover bg-top bg-no-repeat py-7 lg:pb-20">
-                                        <div class="relative z-[1] mx-auto text-center text-white ">
-
-                                            <h2 class="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
-                                                Se torne
-                                                <span
-                                                    class="relative text-secondary after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:rounded after:bg-gradient-to-r after:from-secondary after:to-transparent"
-                                                    >um programador</span
-                                                >
-                                                que vale
-                                                <span
-                                                    class="relative text-primary after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:rounded after:bg-gradient-to-r after:from-primary after:to-transparent"
-                                                    >por dez</span
-                                                >
-                                            </h2>
-                                            <div
-                                            class="h-[200px] md:h-[350px] lg:h-[430px] xl:h-[500px] mt-6"
-                                            style="background-color: black; text-align: center;">
-                                            <iframe
-                                                id="bunny-stream-embed"
-                                                frameborder="0"
-                                                title="umpordez"
-                                                src="https://www.youtube.com/embed/4bcuzmw62qA?si=7aSUEAh0QOM7waBB"
-                                                style="width: 100%; height: 100%"
-                                                allow="autoplay;picture-in-picture;"
-                                                allowfullscreen="true"></iframe>
-
-                                        </div>
-                                            <a
-                                                href="https://umpordez.isei.app/oferta/janeiro?cupom=ligeiro"
-                                                class="btn mx-auto mt-10 block w-fit bg-white">Quero Participar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <section class="relative">
-                    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-                        <div class="max-w-screen-md mb-8 lg:mb-16">
-                            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                                umpordez - treinamento personalizado
-                            </h2>
-                            <p class="text-gray-500 sm:text-xl dark:text-gray-400">
-O umpordez é um treinamento com aulas online ao vivo, personalizado para as suas necessidades.As turmas são abertas periodicamente e ao iniciar cada turma definimos os objetivos e necessidades de cada um.
-                                <br /><br />
-
-Iniciamos um projeto de desenvolvimento juntos, trabalhando no mesmo repositório e desenvolvendo juntos, irei te instruir e incentivar a contribuir e buscar entender códigos fontes, novos e legados.
-                            </p>
-                        </div>
-                        <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
-                            <div>
-                                <h3 class="mb-2 text-xl font-bold dark:text-white">2 aulas por semana</h3>
-                                <p class="text-gray-500 dark:text-gray-400">
-                                    Duas aulas práticas por semana, 
-                                    onde irei te acompanhar, passar exercicios e conceitos do mundo real com projetos reais.
+                <section class="bg-black bg-[url(/assets/images/banner-bg.png)] bg-cover bg-top bg-no-repeat pt-[82px] lg:pt-[106px]">
+                    <div class="container lg:pt-7">
+                        <div class="relative">
+                            <div class="pt-14 pb-8 text-center text-white lg:w-3/5 lg:py-20 ltr:lg:text-left rtl:lg:text-right">
+                                <h2 class="text-3xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
+                                    <span class="text-secondary">Se torne</span>
+                                    <span class="text-primary">um programador 10x</span>
+                                </h2>
+                                <p class="my-8 text-lg lg:w-3/4">
+				A base de um desenvolvedor pragmático, comunidade, desafios, foco, projetos, meditação... <br />TUDO, para te tornar O PROGRAMADOR 
+                                    que vale por 10 programadores comuns! (Mesmo que você nunca tenha tocado em um código na vida)
+				    <br />
+                                    <br />
+                                    Se cadastre para saber desse lançamento:
                                 </p>
-                            </div>
-                            <div>
-                                <h3 class="mb-2 text-xl font-bold dark:text-white">Clube do Livro</h3>
-                                <p class="text-gray-500 dark:text-gray-400">
-                                    Vamos ler um livro de programação juntos, criando um audibook comunitario. :)
-                                </p>
-                            </div>
-                            <div>
-                                <h3 class="mb-2 text-xl font-bold dark:text-white">Desenvolver uma Startup</h3>
-                                <p class="text-gray-500 dark:text-gray-400">
-                                    Vamos desenvolver a startup do clube do livro juntos, onde você não irá apenas acompanhar, mas contribuir e participar.
-                                </p>
-                            </div>
-                            <div>
-                                <h3 class="mb-2 text-xl font-bold dark:text-white">Curso umpordez (01/02)</h3>
-                                <p class="text-gray-500 dark:text-gray-400">
-                                    Filosofia umpordez, estratégias de hacking e debugging, aquecimento para os dedos e meditação.
-                                </p>
-                            </div>
-                            <div>
-                                <h3 class="mb-2 text-xl font-bold dark:text-white">Console BOSS (08/02)</h3>
-                                <p class="text-gray-500 dark:text-gray-400">
-                                    O manual para você se tornar o rei do console com comandos para tmux, vim e unix.
-                                </p>
-                            </div>
-                            <div>
-                                <h3 class="mb-2 text-xl font-bold dark:text-white">Node.JS ESM + JavaScript Moderno (22/02)</h3>
-                                <p class="text-gray-500 dark:text-gray-400">
-                                    Do básico ao avançado para você dominar de vez o mundo Node e JavaScript.
-                                </p>
-                            </div>
-                        </div>                      
-                        <div class="w-100 text-center ltr:lg:text-right rtl:lg:text-left">
-                            <a 
-                                href="https://umpordez.isei.app/oferta/janeiro?cupom=ligeiro" 
-                                class="mt-6 btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">Quero Participar</a>
-                        </div>
-                    </div>
-                  </section>
-
-<section class="bg-gradient-to-t from-white/[55%] to-transparent py-14 dark:bg-white/[0.02] dark:from-transparent lg:py-20">
-    <div class="container">
-        <div class="grid-cols-3 lg:grid">
-            <div class="col-span-2">
-                <div class="heading mb-0 text-center ltr:lg:text-left rtl:lg:text-right xl:w-3/4">
-                    <h6>Cursos bônus</h6>
-                    <h4>Console BOSS</h4>
-                    <p class="pt-5 text-lg font-semibold">
-                        Curso pensado para ser em formato de treinamento, com exercícios semanais, metas e objetivos para você não desistir e se tornar o melhor no console.
-                    </p>
-                </div>
-                <ul class="my-10 grid list-inside list-disc gap-3 text-lg font-semibold text-primary sm:grid-cols-2 lg:gap-3 xl:w-1/2">
-                    <li>Comandos básicos</li>
-                    <li>Movements</li>
-                    <li>VIM / VI</li>
-                    <li>TMUX</li>
-                    <li>Comandos UNIX</li>
-                    <li>Servidores Ubuntu</li>
-                </ul>
-                <div class="text-center ltr:lg:text-left rtl:lg:text-right">
-                    <a 
-                        href="https://umpordez.isei.app/oferta/janeiro?cupom=ligeiro" 
-                        class="btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">Quero Participar</a>
-                </div>
-            </div>
-            <div class="relative" data-aos="fade-up" data-aos-duration="1000">
-                <div class="relative z-[1] h-full overflow-hidden rounded-2xl rtl:rotate-y-180">
-                    <img
-                        src="/assets/images/console-boss.jpg"
-                        alt=""
-                        class="mx-auto h-full w-full object-cover lg:mx-0"
-                    />
-                </div>
-                <div class="absolute top-12 hidden ltr:-left-6 rtl:-right-6 rtl:rotate-y-180 xl:block">
-                    <svg width="113" height="116" viewBox="0 0 113 116" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M109.999 114.082C109.771 114.879 108.94 115.34 108.144 115.112C107.347 114.884 106.886 114.054 107.114 113.257L109.999 114.082ZM104.948 80.6183L103.835 81.6233L104.948 80.6183ZM74.4645 59.8268L75.0048 58.4275L74.4645 59.8268ZM63.4072 58.2054L62.3018 57.1914L63.4072 58.2054ZM65.1305 61.5691L64.2729 62.7997L65.1305 61.5691ZM95.332 61.6018L96.7102 62.1938L95.332 61.6018ZM77.4295 38.1504L76.6908 39.4559L77.4295 38.1504ZM0.531457 9.24108C0.137802 8.51216 0.409588 7.60213 1.13851 7.20847L13.017 0.793489C13.7459 0.399834 14.6559 0.671619 15.0496 1.40054C15.4432 2.12947 15.1715 3.03949 14.4425 3.43315L3.88389 9.13535L9.5861 19.694C9.97976 20.4229 9.70797 21.3329 8.97905 21.7266C8.25012 22.1203 7.3401 21.8485 6.94644 21.1195L0.531457 9.24108ZM107.114 113.257C110.256 102.275 111.577 90.2024 103.835 81.6233L106.062 79.6134C114.964 89.4771 113.158 103.039 109.999 114.082L107.114 113.257ZM103.835 81.6233C96.1067 73.0598 84.7268 65.3976 73.9241 61.2261L75.0048 58.4275C86.2241 62.7599 98.0033 70.6836 106.062 79.6134L103.835 81.6233ZM73.9241 61.2261C73.1384 60.9227 70.8791 60.0784 68.6301 59.5402C67.4983 59.2693 66.4426 59.0943 65.6106 59.0811C64.6656 59.066 64.4684 59.2676 64.5126 59.2193L62.3018 57.1914C63.2054 56.2064 64.6196 56.0649 65.6585 56.0814C66.8104 56.0998 68.111 56.3312 69.3283 56.6226C71.7776 57.2087 74.1876 58.112 75.0048 58.4275L73.9241 61.2261ZM64.5126 59.2193C64.5805 59.1453 64.6181 58.9967 64.6039 58.907C64.6021 58.8959 64.6237 59.002 64.7888 59.2249C65.1149 59.665 65.6585 60.1087 65.9882 60.3384L64.2729 62.7997C63.8317 62.4922 62.9853 61.8301 62.3783 61.0107C62.0768 60.6038 61.7461 60.0417 61.6407 59.3759C61.5229 58.6313 61.7056 57.8414 62.3018 57.1914L64.5126 59.2193ZM65.9882 60.3384C70.2185 63.2867 76.1275 66.4558 81.5637 67.3158C84.2643 67.743 86.7374 67.5828 88.8133 66.6532C90.8535 65.7395 92.6626 64.0155 93.9537 61.0097L96.7102 62.1938C95.1597 65.8032 92.8492 68.1329 90.0394 69.3912C87.2652 70.6335 84.1578 70.7635 81.0949 70.279C75.0041 69.3154 68.6539 65.853 64.2729 62.7997L65.9882 60.3384ZM93.9537 61.0097C95.9406 56.3843 93.8829 52.2226 89.9045 48.4124C85.9307 44.6067 80.4561 41.5866 76.6908 39.4559L78.1683 36.8449C81.8407 38.9231 87.6801 42.1283 91.9795 46.2458C96.2742 50.3588 99.4488 55.8184 96.7102 62.1938L93.9537 61.0097ZM76.6908 39.4559C53.1643 26.1425 27.3634 17.7132 1.42204 9.96557L2.28054 7.09103C28.2366 14.843 54.3227 23.351 78.1683 36.8449L76.6908 39.4559Z"
-                            fill="#00fe35"
-                        />
-                    </svg>
-                </div>
-                <div class="absolute -bottom-6 hidden ltr:-left-6 rtl:-right-6 rtl:rotate-y-180 xl:block">
-                    <svg width="88" height="62" viewBox="0 0 88 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M2.43604 1.802C2.43604 8.6056 3.98597 16.0902 5.5386 22.6889C6.54902 26.9832 8.10692 34.1247 10.4141 37.9247C25.0817 62.0831 61.0953 62.2326 86.2053 58.6455"
-                            stroke="#00fe35"
-                            stroke-width="3"
-                            stroke-linecap="round"
-                        />
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-                <section class="py-14 md:py-20">
-                    <div class="container">
-                        <div class="grid-cols-3 lg:grid">
-                            <div class="relative mb-8 flex justify-center gap-5 lg:mb-0 lg:block">
-                                <img
-                                    src="/assets/images/green-top-arrow.svg"
-                                    alt=""
-                                    class="absolute top-32 ltr:right-0 ltr:rotate-180 rtl:left-0 rtl:rotate-90"
-                                />
-                                <img
-                                    src="/assets/images/inner-box.svg"
-                                    alt=""
-                                    class="absolute -top-5 z-[2] ltr:-left-5 rtl:-right-5 rtl:rotate-y-180"
-                                />
-                                <div class="relative z-[1] sm:h-[250px] sm:w-[420px]" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="h-full overflow-hidden rounded-2xl rtl:rotate-y-180">
-                                        <img src="/assets/images/design-patterns-inside.png" alt="" class="h-full w-full object-cover" />
+                                <form method="post" class="relative mt-14 js-newsletter-form" data-course="umpordez">
+                                    <div class="absolute top-1/2 -translate-y-1/2 ltr:pl-4 rtl:pr-4">
+                                        <svg width="25" height="21" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M24 10.4091C24 14.8446 24 17.0623 22.6527 18.4403C21.3054 19.8182 19.1369 19.8182 14.8 19.8182H10.2C5.86308 19.8182 3.69462 19.8182 2.34731 18.4403C1 17.0623 1 14.8446 1 10.4091C1 5.9736 1 3.75586 2.34731 2.37793C3.69462 1 5.86308 1 10.2 1H14.8C19.1369 1 21.3054 1 22.6527 2.37793C23.4038 3.14616 23.7362 4.17543 23.8833 5.70455"
+                                                stroke="#08111F"
+                                                stroke-width="2"
+                                                stroke-linecap="square"
+                                            />
+                                            <path
+                                                d="M19.3999 5.70508L16.9172 7.82104C14.8051 9.62115 13.749 10.5212 12.4999 10.5212C11.7532 10.5212 11.0755 10.1996 10.1999 9.55627M5.59991 5.70508L6.63491 6.58718L7.66991 7.46928"
+                                                stroke="#08111F"
+                                                stroke-width="2"
+                                                stroke-linecap="square"
+                                            />
+                                        </svg>
                                     </div>
-                                </div>
-                                <div
-                                    class="relative z-[1] sm:h-[200px] sm:w-[300px] lg:-mt-14 lg:ltr:ml-auto lg:rtl:mr-auto"
-                                    data-aos="fade-up"
-                                    data-aos-duration="1000"
-                                >
-                                    <div class="h-full overflow-hidden rounded-2xl rtl:rotate-y-180">
-                                        <img src="/assets/images/bonus.png" alt="" class="h-full w-full object-cover" />
-                                    </div>
-                                </div>
-                                <img
-                                    src="/assets/images/bg-benifits.png"
-                                    alt=""
-                                    class="absolute top-20 hidden ltr:left-8 rtl:right-8 rtl:rotate-y-180 lg:block"
-                                />
+                                    <input
+                                        type="email"
+										name='email'
+                                        placeholder="e-mail"
+                                        class="w-full rounded-xl py-4 font-semibold outline-0 ltr:pl-14 ltr:pr-32 rtl:pr-14 rtl:pl-32 lg:py-6 lg:text-lg"
+                                    />
+                                    <button
+                                        type="submit"
+                                        class="absolute top-1/2 -translate-y-1/2 rounded-md bg-secondary px-3 py-1.5 font-bold text-white transition hover:bg-primary ltr:right-4 rtl:left-4 lg:py-2 lg:text-lg"
+                                    >
+                                    aguardar
+                                    </button>
+                                </form>
                             </div>
-                            <div class="col-span-2 lg:ltr:pl-20 lg:rtl:pr-20">
-                                <div class="heading mb-0 text-center ltr:lg:text-right rtl:lg:text-left">
-                                    <h6>Bônus</h6>
-                                    <h4>Além das aulas ao vivo receba também</h4>
-                                </div>
-                                <div class="my-10 grid gap-10 text-lg font-semibold ">
-                                    <div class="flex gap-6">
-                                        <div class="flex-1">
-                                            <h4 class="mb-5 text-[22px] font-bold text-primary">Comunidade Exclusiva</h4>
-                                            <p>Acesse o canal do umpordez  no nosso discord</p>
-                                        </div>
-                                        <div class="h-14 w-14 flex-none">
-                                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/[0.06]">
-                                                <img
-                                                    src="assets/images/team-work.svg"
-                                                    alt=""
-                                                    class="drop-shadow-[0_2px_6px_rgba(71,189,255,0.32)]"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-6">
-                                        <div class="flex-1">
-                                            <h4 class="mb-5 text-[22px] font-bold text-secondary">Todos os cursos</h4>
-                                            <p>Todos os cursos do ligeiro por dois anos</p>
-                                        </div>
-                                        <div class="h-14 w-14 flex-none">
-                                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/[0.06]">
-                                                <img
-                                                    src="assets/images/accountability.svg"
-                                                    alt=""
-                                                    class="drop-shadow-[0_5px_14px_rgba(180,118,229,0.29)]"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-6">
-                                        <div class="flex-1">
-                                            <h4 class="mb-5 text-[22px] font-bold text-secondary">Todos repositórios</h4>
-                                            <p>Acesso a todos os repositórios de lives e do umpordez por dois anos</p>
-                                        </div>
-                                        <div class="h-14 w-14 flex-none">
-                                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary/[0.06]">
-                                                <img
-                                                    src="assets/images/video-icon.svg"
-                                                    class="drop-shadow-[0_5px_14px_rgba(180,118,229,0.29)]"
-                                                    alt=""
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center ltr:lg:text-right rtl:lg:text-left">
-                                    <a href="https://umpordez.isei.app/oferta/fundamentos-do-desenvolvedor?cupom=launch" class="btn bg-secondary capitalize text-white hover:bg-primary sm:px-14 sm:py-5">Quero Participar</a>
-                                </div>
+                            <div
+                                class="top-[70px] w-full pb-7 ltr:right-0 rtl:left-0 rtl:right-auto lg:absolute lg:max-w-[630px] lg:pb-0 xl:ltr:-right-52 xl:rtl:-left-52"
+                                data-aos="fade-left"
+                                data-aos-duration="1000"
+                            >
+                                <img src="/assets/images/banner-img.png" alt="" />
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <section class="relative bg-black py-14 dark:bg-transparent lg:py-20">
-                    <div class="absolute top-0 ltr:right-0 rtl:left-0 rtl:-rotate-180">
-                        <svg width="758" height="741" viewBox="0 0 758 741" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g opacity="0.03">
-                                <ellipse
-                                    opacity="0.1"
-                                    cx="752"
-                                    cy="370.646"
-                                    rx="750"
-                                    ry="749.646"
-                                    stroke="white"
-                                    stroke-width="3"
-                                    stroke-miterlimit="4.62023"
-                                    stroke-linecap="round"
-                                    stroke-dasharray="35 50 15 15"
-                                />
-                                <path
-                                    opacity="0.1"
-                                    d="M1443.13 370.646C1443.13 752.153 1133.7 1061.43 752 1061.43C370.296 1061.43 60.8655 752.153 60.8655 370.646C60.8655 -10.8606 370.296 -320.134 752 -320.134C1133.7 -320.134 1443.13 -10.8606 1443.13 370.646Z"
-                                    stroke="white"
-                                    stroke-width="3"
-                                />
-                                <ellipse
-                                    opacity="0.2"
-                                    cx="752"
-                                    cy="370.646"
-                                    rx="634.561"
-                                    ry="634.207"
-                                    stroke="white"
-                                    stroke-width="3"
-                                    stroke-miterlimit="4.62023"
-                                    stroke-linecap="round"
-                                    stroke-dasharray="35 50 15 15"
-                                />
-                                <path
-                                    opacity="0.3"
-                                    d="M1328.4 370.646C1328.4 688.789 1070.34 946.696 752 946.696C433.66 946.696 175.596 688.789 175.596 370.646C175.596 52.5037 433.66 -205.403 752 -205.403C1070.34 -205.403 1328.4 52.5037 1328.4 370.646Z"
-                                    stroke="white"
-                                    stroke-width="3"
-                                />
-                                <ellipse
-                                    opacity="0.4"
-                                    cx="752"
-                                    cy="370.646"
-                                    rx="519.83"
-                                    ry="519.476"
-                                    stroke="white"
-                                    stroke-width="3"
-                                    stroke-miterlimit="4.62023"
-                                    stroke-linecap="round"
-                                    stroke-dasharray="35 50 15 15"
-                                />
-                                <path
-                                    opacity="0.5"
-                                    d="M1211.55 370.646C1211.55 624.251 1005.8 829.84 752 829.84C498.197 829.84 292.452 624.251 292.452 370.646C292.452 117.041 498.197 -88.5479 752 -88.5479C1005.8 -88.5479 1211.55 117.041 1211.55 370.646Z"
-                                    stroke="white"
-                                    stroke-width="3"
-                                />
-                                <path
-                                    opacity="0.6"
-                                    d="M1155.6 370.646C1155.6 593.351 974.903 773.891 752 773.891C529.097 773.891 348.401 593.351 348.401 370.646C348.401 147.942 529.097 -32.5986 752 -32.5986C974.903 -32.5986 1155.6 147.942 1155.6 370.646Z"
-                                    stroke="white"
-                                    stroke-width="3"
-                                />
-                                <ellipse
-                                    opacity="0.7"
-                                    cx="752"
-                                    cy="370.646"
-                                    rx="350.567"
-                                    ry="350.212"
-                                    stroke="white"
-                                    stroke-width="3"
-                                    stroke-miterlimit="4.62023"
-                                    stroke-linecap="round"
-                                    stroke-dasharray="35 50 15 15"
-                                />
-                                <path
-                                    opacity="0.8"
-                                    d="M1040.16 370.647C1040.16 529.596 911.148 658.453 752 658.453C592.852 658.453 463.84 529.596 463.84 370.647C463.84 211.698 592.852 82.8408 752 82.8408C911.148 82.8408 1040.16 211.698 1040.16 370.647Z"
-                                    stroke="white"
-                                    stroke-width="3"
-                                />
-                                <ellipse
-                                    opacity="0.9"
-                                    cx="752"
-                                    cy="370.646"
-                                    rx="223.088"
-                                    ry="222.734"
-                                    stroke="white"
-                                    stroke-width="3"
-                                    stroke-miterlimit="4.62023"
-                                    stroke-linecap="round"
-                                    stroke-dasharray="35 50 15 15"
-                                />
-                                <path
-                                    d="M909.848 370.646C909.848 457.624 839.18 528.14 752 528.14C664.82 528.14 594.152 457.624 594.152 370.646C594.152 283.667 664.82 213.151 752 213.151C839.18 213.151 909.848 283.667 909.848 370.646Z"
-                                    stroke="white"
-                                    stroke-width="3"
-                                />
-                                <ellipse
-                                    cx="752"
-                                    cy="370.646"
-                                    rx="106.941"
-                                    ry="106.586"
-                                    stroke="white"
-                                    stroke-width="3"
-                                    stroke-miterlimit="4.62023"
-                                    stroke-linecap="round"
-                                    stroke-dasharray="35 50 15 15"
-                                />
-                            </g>
-                        </svg>
-                    </div>
-                </section>
-
-                <section class="bg-gradient-to-t from-white/[55%] to-transparent py-14 dark:bg-white/[0.02] dark:from-transparent lg:py-20">
-                    <div class="container mb-20">
-                        <div class="heading text-center">
-                            <h6>FAQs</h6>
-                            <h4>Frequently Asked Questions</h4>
-                            <p class="mt-5 text-lg font-bold">Perguntinhas? SPEEDY IS HERE =)</p>
-                        </div>
-                        <div class="accordion-container mx-auto lg:w-[730px]">
-                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent">
-                                <h2 class="ac-header">
-                                    <button
-                                        type="button"
-                                        class="ac-trigger relative !flex w-full items-center justify-between gap-2 !py-2.5 !px-0 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white"
-                                    >
-                                        <div>Qual o nível desse projeto?</div>
-                                        <div class="trigger-icon grid h-6 w-6 place-content-center rounded-full border-2 border-gray text-gray transition">
-                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
-                                                    fill="currentColor"
-                                                />
-                                                <path
-                                                    d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
-                                                    fill="currentColor"
-                                                />
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </h2>
-                                <div class="ac-panel lg:w-4/5">
-                                    <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
-                                        Esse projeto atende *todos* os niveis, desde quem nunca nunca sequer programou na
-                                        vida, até alguém experiente em busca de ténicas para iniciar projeto ou algum conhecimento a mais de linguagens. 
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent">
-                                <h2 class="ac-header">
-                                    <button
-                                        type="button"
-                                        class="ac-trigger relative !flex w-full items-center justify-between gap-2 !py-2.5 !px-0 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white"
-                                    >
-                                        <div class="flex-1">Tenho acesso a alguma comunidade / grupo?</div>
-                                        <div
-                                            class="trigger-icon grid h-6 w-6 flex-none place-content-center rounded-full border-2 border-gray text-gray transition"
-                                        >
-                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
-                                                    fill="currentColor"
-                                                />
-                                                <path
-                                                    d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
-                                                    fill="currentColor"
-                                                />
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </h2>
-                                <div class="ac-panel lg:w-4/5">
-                                    <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
-                                        Sim, você tem acesso ao nosso discord como um membro especial, tendo acesso a canal direto do umpordez
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent">
-                                <h2 class="ac-header">
-                                    <button
-                                        type="button"
-                                        class="ac-trigger relative !flex w-full items-center justify-between gap-2 !py-2.5 !px-0 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white"
-                                    >
-                                        <div class="flex-1">Qual o conteúdo total dessa oportunidade?</div>
-                                        <div
-                                            class="trigger-icon grid h-6 w-6 flex-none place-content-center rounded-full border-2 border-gray text-gray transition"
-                                        >
-                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
-                                                    fill="currentColor"
-                                                />
-                                                <path
-                                                    d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
-                                                    fill="currentColor"
-                                                />
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </h2>
-                                <div class="ac-panel lg:w-4/5">
-                                    <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
-
-                                        Ao adquirir essa oportunidade você terá acesso a TODOS os cursos do umpordez por dois anos.
-                                        <br />
-                                        <br />
-No momento incluem:<br />
-                                        - umpordez (será lançado no dia 01/02/2025) <br />
-                                        - Console BOSS (será lançado no dia 08/02/2025) <br />
-                                        - Node.js ESM (será lançado no dia 22/02/2025) <br />
-                                        - JavaScript Moderno (será lançado no dia 22/02/2025) <br />
-                                        - Cursos do Fundamentos de um Desenvolvedor <br />
-                                        <br />
-                                        Duas aulas ao vivo no discord por semana, todo o treinamento será personalizado para a sua necessidade. <br />
-                                        <br />
-                                        Você também recebe acesso a todos os repositórios do umpordez. <br />
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="ac mt-6 border-0 border-b-2 border-gray/20 bg-transparent">
-                                <h2 class="ac-header">
-                                    <button
-                                        type="button"
-                                        class="ac-trigger relative !flex w-full items-center justify-between gap-2 !py-2.5 !px-0 !font-mulish !text-lg !font-bold !text-black after:!hidden ltr:text-left rtl:text-right dark:!text-white"
-                                    >
-                                        <div class="flex-1">Posso cancelar?</div>
-                                        <div
-                                            class="trigger-icon grid h-6 w-6 flex-none place-content-center rounded-full border-2 border-gray text-gray transition"
-                                        >
-                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
-                                                    fill="currentColor"
-                                                />
-                                                <path
-                                                    d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
-                                                    fill="currentColor"
-                                                />
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </h2>
-                                <div class="ac-panel lg:w-4/5">
-                                    <p class="ac-text !px-0 !pb-5 !pt-0 !font-mulish !text-sm !font-bold !leading-[18px] !text-gray">
-                                        Sim! Caso não goste ou ache que não valeu a pena, basta você acessar a sua área do aluno e solicitar o cancelamento (em até 7 dias)
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <%- include('partials/about-me.ejs') %>
-                    </div>
-                </section>
+                <%- include('partials/about-me.ejs') %>
             </div>
 
             <%- include('partials/footer.ejs') %>
@@ -536,7 +76,7 @@ No momento incluem:<br />
 
         <script src="/lib/swiper-bundle.min.js"></script>
         <script src="/lib/aos.min.js"></script>
-        <script src="/lib/accordion.min.js"></script>
-        <script type='module' src="/src/js/design-patterns.js"></script>
+        <script type='module' src="/src/js/arquitetura-web-apps.js"></script>
     </body>
 </html>
+

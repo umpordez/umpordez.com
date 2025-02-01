@@ -121,7 +121,7 @@ app.get('/fundamentos-do-desenvolvedor', buildHandler((req, res) => {
 }));
 
 app.get('/', buildHandler((req, res) => {
-    res.render('umpordez');
+    res.render('home');
 }));
 
 app.get('/tao', buildHandler((req, res) => {
@@ -300,6 +300,24 @@ app.post('/newsletter', express.json(), buildAjaxHandler(async (req, res) => {
         email,
         courses: JSON.stringify(courses)
     }).onConflict('email').merge();
+
+    try {
+        await fetch(`${process.env.LISTMONK_URL}/api/subscribers`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `token ${process.env.LISTMONK_TOKEN}`
+            },
+            body: JSON.stringify({
+                email,
+                status: 'enabled',
+                name: '',
+                lists: [6]
+            })
+        });
+    } catch (ex) {
+        logger.error(ex);
+    }
 
     res.status(200).json({ ok: true });
 }));
