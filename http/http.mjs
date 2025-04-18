@@ -121,7 +121,7 @@ app.get('/fundamentos-do-desenvolvedor', buildHandler((req, res) => {
 }));
 
 app.get('/', buildHandler((req, res) => {
-    res.render('umpordez');
+    res.render('home');
 }));
 
 app.get('/tao', buildHandler((req, res) => {
